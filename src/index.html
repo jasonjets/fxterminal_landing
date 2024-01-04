@@ -8,11 +8,9 @@
   </head>
   <body
     x-data="{ page: 'home', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
-    x-init="
-         darkMode = JSON.parse(localStorage.getItem('darkMode'));
-         $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+    x-init="darkMode = true; $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
     :class="{'dark bg-black': darkMode === true}"
-  >
+>
     <!-- ===== Bg Lines Start ===== -->
     <include src="./partials/lines.html" />
     <!-- ===== Bg Lines End ===== -->
