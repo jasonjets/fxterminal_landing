@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Solid - Tailwind CSS Saas Template</title>
+    <title>FXTerminal.io | Max Returns</title>
   </head>
   <body
     x-data="{ page: 'home', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
@@ -27,15 +27,19 @@
         <div class="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
           <div class="flex lg:items-center lg:gap-8 xl:gap-32.5">
             <div class="animate_left md:w-1/2">
-              <h4 class="text-black dark:text-white text-lg font-medium mb-4.5">🔥 Solid is one of the best option for you.</h4>
+              <h4 class="text-black dark:text-white text-lg font-medium mb-4.5">FX Terminal - Elevate Your Trading</h4>
               <h1 class="text-black dark:text-white text-3xl xl:text-hero font-bold mb-5">
-                Complete Tailwind CSS
-                <span class="inline-block relative before:absolute before:bottom-2.5 before:left-0 before:w-full before:h-3 before:bg-titlebg dark:before:bg-titlebgdark before:-z-1">Template</span>
-                for SaaS Website
+                Powerful Forex Dashboard
+                <span class="inline-block relative before:absolute before:bottom-2.5 before:left-0 before:w-full before:h-3 before:bg-titlebg dark:before:bg-titlebgdark before:-z-1">Enhanced</span>
+                with AI
               </h1>
-              <p>Solid is a complete Tailwind CSS template crafted specially for SaaS, Software Mobile App and Web App Sites.</p>
+              <p>
+                FX Terminal is your all-in-one solution for monitoring and optimizing forex performance. Utilize cutting-edge AI technology to achieve unparalleled results across various trading
+                platforms.
+              </p>
 
               <div class="mt-10">
+                <!-- 
                 <form action="https://formbold.com/s/unique_form_id" method="POST">
                   <div class="flex flex-wrap gap-5">
                     <input
@@ -47,7 +51,7 @@
                   </div>
                 </form>
 
-                <p class="text-black dark:text-white mt-5">Try for free no credit card required.</p>
+                <p class="text-black dark:text-white mt-5">Try for free no credit card required.</p>-->
               </div>
             </div>
             <div class="animate_right md:w-1/2 hidden lg:block">
@@ -56,8 +60,8 @@
                 <img src="./images/shape/shape-02.svg" alt="shape" class="absolute right-0 bottom-0" />
                 <img src="./images/shape/shape-03.svg" alt="shape" class="absolute -right-6.5 bottom-0" />
                 <div>
-                  <img class="dark:hidden shadow-solid-l" src="./images/hero/hero-light.svg" alt="Hero" />
-                  <img class="hidden dark:block shadow-solid-l" src="./images/hero/hero-dark.svg" alt="Hero" />
+                  <!-- <img class="dark:hidden shadow-solid-l" src="./images/hero/hero-light.svg" alt="Hero" /> -->
+                  <img class="hidden dark:block shadow-solid-l" src="./images/hero/fx-hero-dark.svg" alt="Hero" />
                 </div>
               </div>
             </div>
@@ -66,7 +70,55 @@
       </section>
       <!-- ===== Hero End ===== -->
 
-      <!-- ===== Clients Start ===== -->
+
+
+
+      <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols": [
+    {
+      "proName": "FOREXCOM:SPXUSD",
+      "title": "S&P 500"
+    },
+    {
+      "proName": "FOREXCOM:NSXUSD",
+      "title": "US 100"
+    },
+    {
+      "proName": "FX_IDC:EURUSD",
+      "title": "EUR to USD"
+    },
+    {
+      "proName": "BITSTAMP:BTCUSD",
+      "title": "Bitcoin"
+    },
+    {
+      "proName": "BITSTAMP:ETHUSD",
+      "title": "Ethereum"
+    }
+  ],
+  "showSymbolLogo": true,
+  "isTransparent": true,
+  "largeChartUrl": "",
+  "displayMode": "regular",
+  "colorTheme": "dark",
+  "locale": "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+
+
+
+
+
+
+
+      <!-- ===== Clients Start ===== 
+      
       <section class="bg-alabaster dark:bg-black border border-x-0 border-y-stroke dark:border-y-strokedark py-11">
         <div class="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
           <div class="grid grid-cols-3 md:grid-cols-6 gap-7.5 lg:gap-12.5 xl:gap-29 justify-center items-center">
@@ -97,7 +149,7 @@
           </div>
         </div>
       </section>
-      <!-- ===== Clients End ===== -->
+       ===== Clients End ===== -->
 
       <!-- ===== Features Start ===== -->
       <section id="features" class="py-20 lg:py-25 xl:py-30">
@@ -105,7 +157,7 @@
           <!-- Section Title Start -->
           <div
             class="animate_top text-center mx-auto"
-            x-data="{ sectionTitle: `SAAS FEATURES`, sectionSubtitle: `Our Software's Core Features`, sectionTitlePara: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.`}"
+            x-data="{ sectionTitle: `FEATURES`, sectionSubtitle: `Terminal Features`, sectionTitlePara: `Explore the features that make FX Terminal a game-changer in the forex industry. From advanced analytics to seamless integration with AI, experience innovation at your fingertips.`}"
           >
             <include src="./partials/section-title.html" />
           </div>
@@ -113,62 +165,75 @@
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7.5 xl:gap-12.5 mt-12.5 lg:mt-15 xl:mt-20">
             <!-- Features item Start -->
-            <div class="animate_top border border-white shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all hover:shadow-solid-4 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection">
+            <div
+              class="animate_top border border-white shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all hover:shadow-solid-4 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection"
+            >
               <div class="flex items-center justify-center rounded-[4px] bg-primary w-16 h-16">
                 <img src="./images/icon/icon-01.svg" alt="Icon" />
               </div>
-              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">Crafted for SaaS</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.</p>
+              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">AI Integration</h3>
+              <p>Elevate your trading experience with our intelligent OpenAI integration. 
+              </p>
             </div>
             <!-- Features item End -->
 
             <!-- Features item Start -->
-            <div class="animate_top border border-white shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all hover:shadow-solid-4 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection">
+            <div
+              class="animate_top border border-white shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all hover:shadow-solid-4 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection"
+            >
               <div class="flex items-center justify-center rounded-[4px] bg-primary w-16 h-16">
                 <img src="./images/icon/icon-02.svg" alt="Icon" />
               </div>
-              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">High-quality Design</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.</p>
+              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">Connect to Multiple  Accounts</h3>
+              <p>Seamlessly manage and monitor your forex performance across various platforms.</p>
             </div>
             <!-- Features item End -->
 
             <!-- Features item Start -->
-            <div class="animate_top border border-white shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all hover:shadow-solid-4 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection">
+            <div
+              class="animate_top border border-white shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all hover:shadow-solid-4 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection"
+            >
               <div class="flex items-center justify-center rounded-[4px] bg-primary w-16 h-16">
                 <img src="./images/icon/icon-03.svg" alt="Icon" />
               </div>
-              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">All Essential Sections</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.</p>
+              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">Access on All Devices</h3>
+              <p>Manage your accounts and performance from anywhere, on any device. </p>
             </div>
             <!-- Features item End -->
 
             <!-- Features item Start -->
-            <div class="animate_top border border-white shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all hover:shadow-solid-4 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection">
+            <div
+              class="animate_top border border-white shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all hover:shadow-solid-4 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection"
+            >
               <div class="flex items-center justify-center rounded-[4px] bg-primary w-16 h-16">
                 <img src="./images/icon/icon-04.svg" alt="Icon" />
               </div>
-              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">Speed Optimized</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.</p>
+              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">Dynamic Analytics</h3>
+              <p>Gain deep insights with dynamic analytics tools. Monitor trends, analyze performance, and make informed decisions </p>
             </div>
             <!-- Features item End -->
 
             <!-- Features item Start -->
-            <div class="animate_top border border-white shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all hover:shadow-solid-4 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection">
+            <div
+              class="animate_top border border-white shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all hover:shadow-solid-4 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection"
+            >
               <div class="flex items-center justify-center rounded-[4px] bg-primary w-16 h-16">
                 <img src="./images/icon/icon-05.svg" alt="Icon" />
               </div>
-              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">Fully Customizable</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.</p>
+              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">Financial Metrics</h3>
+              <p>Dive into comprehensive financial metrics such as Sharpe Ratio, Drawdown, and more.  </p>
             </div>
             <!-- Features item End -->
 
             <!-- Features item Start -->
-            <div class="animate_top border border-white shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all hover:shadow-solid-4 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection">
+            <div
+              class="animate_top border border-white shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all hover:shadow-solid-4 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection"
+            >
               <div class="flex items-center justify-center rounded-[4px] bg-primary w-16 h-16">
                 <img src="./images/icon/icon-06.svg" alt="Icon" />
               </div>
-              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">Regular Updates</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.</p>
+              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">Smart Risk Management</h3>
+              <p>Enhance your risk management strategy with smart tools. Identify potential risks and optimize your portfolio for sustainable and profitable trading.</p>
             </div>
             <!-- Features item End -->
           </div>
@@ -176,31 +241,34 @@
       </section>
       <!-- ===== Features End ===== -->
 
+
+
+
       <!-- ===== About Start ===== -->
       <section class="pb-20 lg:pb-25 xl:pb-30 overflow-hidden">
         <div class="mx-auto max-w-c-1235 px-4 md:px-8 xl:px-0">
           <div class="flex items-center gap-8 lg:gap-32.5">
             <div class="animate_left hidden md:block md:w-1/2">
               <img src="./images/about/about-light-01.svg" alt="About" class="dark:hidden" />
-              <img src="./images/about/about-dark-01.svg" alt="About" class="hidden dark:block" />
+              <img src="./images/about/fx-about-dark-02.svg" alt="About" class="hidden dark:block" />
             </div>
             <div class="animate_right md:w-1/2">
               <h4 class="text-black dark:text-white font-medium uppercase">
-                <a href="#" class="bg-meta text-white text-metatitle inline-flex rounded-full py-1 px-4.5 mr-4 mb-4">New</a> start tracking visitors
+                <a href="#" class="bg-meta text-white text-metatitle inline-flex rounded-full py-1 px-4.5 mr-4 mb-4">New</a> Unlock Powerful Insights
               </h4>
               <h2 class="relative font-bold text-black dark:text-white text-3xl xl:text-hero mb-6">
-                Know More About Our
-                <span class="inline-block relative before:absolute before:bottom-2.5 before:left-0 before:w-full before:h-3 before:bg-titlebg dark:before:bg-titlebgdark before:-z-1">Product.</span>
+                Discover your full potential
+                <span class="inline-block relative before:absolute before:bottom-2.5 before:left-0 before:w-full before:h-3 before:bg-titlebg dark:before:bg-titlebgdark before:-z-1">potential</span>
               </h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies lacus non fermentum ultrices. Fusce consectetur le.</p>
+              <p>Optimize your trading strategy with intelligent tracking   </p>
 
               <div class="mt-7.5 flex items-center gap-5">
                 <div class="w-15 h-15 rounded-[50%] border border-stroke dark:border-strokedark dark:bg-blacksection flex items-center justify-center">
                   <p class="text-black dark:text-white font-semibold text-metatitle2">01</p>
                 </div>
                 <div class="w-3/4">
-                  <h5 class="text-black dark:text-white text-metatitle2 mb-0.5">Lorem ipsum dolor.</h5>
-                  <p>Ut ultricies lacus non fermentum ultrices.</p>
+                  <h5 class="text-black dark:text-white text-metatitle2 mb-0.5">Monitor Several Accounts.</h5>
+                  <p>No need to log in to all your accounts or VPS daily.</p>
                 </div>
               </div>
               <div class="mt-7.5 flex items-center gap-5">
@@ -208,8 +276,8 @@
                   <p class="text-black dark:text-white font-semibold text-metatitle2">02</p>
                 </div>
                 <div class="w-3/4">
-                  <h5 class="text-black dark:text-white text-metatitle2 mb-0.5">Fusce consectetur le.</h5>
-                  <p>consectetur adipiscing elit fermentum ultricies.</p>
+                  <h5 class="text-black dark:text-white text-metatitle2 mb-0.5">Powerful Dashboard.</h5>
+                  <p>Perfect for fund managers and prop traders.</p>
                 </div>
               </div>
             </div>
@@ -223,27 +291,32 @@
         <div class="mx-auto max-w-c-1235 px-4 md:px-8 2xl:px-0 overflow-hidden">
           <div class="flex items-center gap-8 lg:gap-32.5">
             <div class="animate_left md:w-1/2">
-              <h4 class="text-black dark:text-white font-medium uppercase">grow your business faster</h4>
+              <h4 class="text-black dark:text-white font-medium uppercase">Develop your algorithms</h4>
               <h2 class="relative font-bold text-black dark:text-white text-3xl xl:text-hero mb-6">
-                Track Your Audience
-                <span class="inline-block relative before:absolute before:bottom-2.5 before:left-0 before:w-full before:h-3 before:bg-titlebg2 dark:before:bg-titlebgdark before:-z-1">Activities</span>
+                Use our AI Code Generator for 
+                <span class="inline-block relative before:absolute before:bottom-2.5 before:left-0 before:w-full before:h-3 before:bg-titlebg2 dark:before:bg-titlebgdark before:-z-1">Development</span>
               </h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies lacus non fermentum ultrices. Fusce consectetur le.</p>
+              <p>Harness the power of cutting-edge AI to craft sophisticated algorithms. 
+                Explore the limitless possibilities of automated trading.</p>
 
-              <a href="#" class="flex items-center gap-2.5 text-black dark:text-white mt-7.5">
-                Know More
+              <a href="https://fxterminal.io/sign-up" class="flex items-center gap-2.5 text-black dark:text-white mt-7.5">
+                Create Account
                 <img class="dark:hidden" src="./images/icon/icon-arrow-light.svg" alt="Arrow" />
                 <img class="hidden dark:block" src="./images/icon/icon-arrow-dark.svg" alt="Arrow" />
               </a>
             </div>
             <div class="animate_right hidden md:block md:w-1/2">
-              <img src="./images/about/about-light-02.svg" alt="About" class="dark:hidden" />
-              <img src="./images/about/about-dark-02.svg" alt="About" class="hidden dark:block" />
+              <img src="./images/about/fx-about-dark-05.svg" type="image/svg+xml" />
             </div>
           </div>
         </div>
       </section>
       <!-- ===== About Two End ===== -->
+
+
+
+
+
 
       <!-- ===== Features Tab Start ===== -->
       <section class="pt-18.5 pb-20 lg:pb-22.5 relative" x-data="{ featuresTab: 'tabOne' }">
@@ -266,7 +339,7 @@
                 <p class="text-black dark:text-white font-medium text-metatitle3">01</p>
               </div>
               <div class="lg:w-auto md:w-3/5">
-                <h5 class="text-black dark:text-white text-sm xl:text-regular font-medium">Clean User Interface</h5>
+                <h5 class="text-black dark:text-white text-sm xl:text-regular font-medium">Optimize Your Trading</h5>
               </div>
             </div>
             <div
@@ -278,7 +351,7 @@
                 <p class="text-black dark:text-white font-medium text-metatitle3">02</p>
               </div>
               <div class="lg:w-auto md:w-3/5">
-                <h5 class="text-black dark:text-white text-sm xl:text-regular font-medium">Cloud Data Save Options</h5>
+                <h5 class="text-black dark:text-white text-sm xl:text-regular font-medium">Track the Economy</h5>
               </div>
             </div>
             <div
@@ -290,7 +363,7 @@
                 <p class="text-black dark:text-white font-medium text-metatitle3">03</p>
               </div>
               <div class="lg:w-auto md:w-3/5">
-                <h5 class="text-black dark:text-white text-sm xl:text-regular font-medium">Management And Collaboration</h5>
+                <h5 class="text-black dark:text-white text-sm xl:text-regular font-medium">Learn from Trade History</h5>
               </div>
             </div>
           </div>
@@ -301,13 +374,17 @@
             <div x-show="featuresTab === 'tabOne'">
               <div class="flex items-center gap-8 lg:gap-19">
                 <div class="md:w-1/2">
-                  <h2 class="text-black dark:text-white text-3xl xl:text-sectiontitle2 font-bold mb-7">Solid Has Neat & Clean User Interface.</h2>
-                  <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies lacus non fermentum ultrices. Fusce consectetur le.</p>
-                  <p class="w-11/12">Nam id eleifend dui, id iaculis purus. Etiam lobortis neque nec finibus sagittis. Nulla ligula nunc egestas ut.</p>
+                  <h2 class="text-black dark:text-white text-3xl xl:text-sectiontitle2 font-bold mb-7">Trade like the Elite</h2>
+                  <p class="mb-5">Unlock a new era of trading efficiency. FX Terminal provides
+                    real-time overviews of profits, drawdowns, and Sharpe ratios
+                    and more.</p>
+                  <p class="w-11/12">Stay informed with economic events, track trade history, and
+                    leverage our AI code generator, akin to ChatGPT, for smarter
+                    trading.</p>
                 </div>
                 <div class="hidden md:block md:w-1/2">
                   <img src="./images/features/features-light-01.svg" alt="Features" class="dark:hidden" />
-                  <img src="./images/features/features-dark-01.svg" alt="Features" class="hidden dark:block" />
+                  <img src="./images/features/fx-features-dark-01.svg" alt="Features" class="hidden dark:block" />
                 </div>
               </div>
             </div>
@@ -315,9 +392,13 @@
             <div x-show="featuresTab === 'tabTwo'">
               <div class="flex items-center gap-8 lg:gap-19">
                 <div class="md:w-1/2">
-                  <h2 class="text-black dark:text-white text-3xl xl:text-sectiontitle2 font-bold mb-7">Solid Has Cloud Data Save Options.</h2>
-                  <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies lacus non fermentum ultrices. Fusce consectetur le.</p>
-                  <p class="w-11/12">Nam id eleifend dui, id iaculis purus. Etiam lobortis neque nec finibus sagittis. Nulla ligula nunc egestas ut.</p>
+                  <h2 class="text-black dark:text-white text-3xl xl:text-sectiontitle2 font-bold mb-7">Real-Time Economic Data</h2>
+                  <p class="mb-5">Stay ahead of the curve with FX Terminal's real-time economic
+                    event tracking. Gain valuable insights into market dynamics
+                    and make informed decisions.</p>
+                  <p class="w-11/12">Seamlessly integrate economic events into your trading
+                    strategy, ensuring you're always in sync with the latest
+                    market developments.</p>
                 </div>
                 <div class="hidden md:block md:w-1/2">
                   <img src="./images/features/features-light-01.svg" alt="Features" class="dark:hidden" />
@@ -329,9 +410,13 @@
             <div x-show="featuresTab === 'tabThree'">
               <div class="flex items-center gap-8 lg:gap-19">
                 <div class="md:w-1/2">
-                  <h2 class="text-black dark:text-white text-3xl xl:text-sectiontitle2 font-bold mb-7">Solid Has Management And Collaboration.</h2>
-                  <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies lacus non fermentum ultrices. Fusce consectetur le.</p>
-                  <p class="w-11/12">Nam id eleifend dui, id iaculis purus. Etiam lobortis neque nec finibus sagittis. Nulla ligula nunc egestas ut.</p>
+                  <h2 class="text-black dark:text-white text-3xl xl:text-sectiontitle2 font-bold mb-7">Constantly Improve</h2>
+                  <p class="mb-5">Dive deep into your trading journey with our comprehensive
+                    trade history analysis. Visualize patterns, identify
+                    strengths, and learn from past trades. </p>
+                  <p class="w-11/12">FX Terminal provides
+                    detailed metrics, empowering you to refine your strategy and
+                    continuously improve your trading performance over time.</p>
                 </div>
                 <div class="hidden md:block md:w-1/2">
                   <img src="./images/features/features-light-01.svg" alt="Features" class="dark:hidden" />
@@ -345,7 +430,7 @@
       </section>
       <!-- ===== Features Tab End ===== -->
 
-      <!-- ===== Funfact Start ===== -->
+      <!-- ===== Funfact Start ===== 
       <section class="py-20 lg:py-22.5 px-4 md:px-8 2xl:px-0">
         <div
           class="mx-auto max-w-c-1390 py-22.5 xl:py-27.5 relative z-1 rounded-lg bg-gradient-to-t from-[#F8F9FF] to-[#DEE7FF] dark:bg-gradient-to-t dark:from-transparent dark:to-transparent dark:bg-blacksection dark:stroke-strokedark"
@@ -375,20 +460,20 @@
             </div>
           </div>
         </div>
-      </section>
+      </section>-->
       <!-- ===== Funfact End ===== -->
 
-      <!-- ===== Integrations Start ===== -->
+      <!-- ===== Integrations Start ===== 
       <section>
-        <div class="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-          <!-- Section Title Start -->
+        <div class="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">-->
+          <!-- Section Title Start
           <div
             class="animate_top text-center mx-auto"
             x-data="{ sectionTitle: `INTEGRATIONS`, sectionSubtitle: `Remotely Maintain Your Data, From Anywhere, Anytime.`, sectionTitlePara: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.`}"
           >
             <include src="./partials/section-title.html" />
-          </div>
-          <!-- Section Title End -->
+          </div> -->
+          <!-- Section Title End 
         </div>
 
         <div class="mx-auto max-w-c-1154 px-4 md:px-8 xl:px-0 relative z-50 mt-15 xl:mt-20">
@@ -454,7 +539,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
       <!-- ===== Integrations End ===== -->
 
       <!-- ===== CTA Start ===== -->
@@ -464,14 +549,17 @@
         >
           <div class="flex flex-wrap md:flex-nowrap md:items-center md:justify-between gap-8 md:gap-0">
             <div class="animate_left md:w-[70%] lg:w-1/2">
-              <h2 class="text-black dark:text-white text-3xl xl:text-sectiontitle4 font-bold mb-4 w-11/12">Join With Us Today & Increase Your Productivity</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.</p>
+              <h2 class="text-black dark:text-white text-3xl xl:text-sectiontitle4 font-bold mb-4 w-11/12">Supercharge Your Trading: Join the Beta Now!</h2>
+              <p>              Gain exclusive access to AI-powered
+                insights, economic event tracking, and more. Join our
+                growing community and shape the future of passive trading!
+  </p>
             </div>
             <div class="animate_right lg:w-[45%]">
               <div class="flex items-center justify-end xl:justify-between">
                 <img src="./images/shape/shape-06.svg" alt="Saly" class="hidden xl:block" />
-                <a href="signup.html" class="inline-flex items-center gap-2.5 font-medium text-white dark:text-black bg-black dark:bg-white rounded-full py-3 px-6">
-                  Sign up free
+                <a href="https://fxterminal.io/sign-up" class="inline-flex items-center gap-2.5 font-medium text-white dark:text-black bg-black dark:bg-white rounded-full py-3 px-6">
+                  Create Account
                   <img src="./images/icon/icon-arrow-dark.svg" alt="Arrow" class="dark:hidden" />
                   <img src="./images/icon/icon-arrow-light.svg" alt="Arrow" class="hidden dark:block" />
                 </a>
@@ -496,12 +584,12 @@
                 Frequently Asked
                 <span class="inline-block relative before:absolute before:bottom-2.5 before:left-0 before:w-full before:h-3 before:bg-titlebg2 dark:before:bg-titlebgdark before:-z-1">Questions</span>
               </h2>
-
+              <!-- 
               <a href="#" class="flex items-center gap-2.5 text-black dark:text-white mt-25">
                 Know More
                 <img class="dark:hidden" src="./images/icon/icon-arrow-light.svg" alt="Arrow" />
                 <img class="hidden dark:block" src="./images/icon/icon-arrow-dark.svg" alt="Arrow" />
-              </a>
+              </a>-->
             </div>
 
             <div class="animate_right md:w-3/5 lg:w-1/2">
@@ -511,14 +599,14 @@
                     @click="selected !== 0 ? selected = 0 : selected = null"
                     class="cursor-pointer flex justify-between items-center font-medium text-metatitle3 text-black dark:text-white py-5 lg:py-7.5 px-6 lg:px-9"
                   >
-                    Lorem ipsum dolor sit amet, consectetur.
+                  What platforms does FX Terminal support?
                     <img src="./images/icon/icon-plus-light.svg" alt="plus" class="dark:hidden" :class="selected == 0 ? 'hidden' : 'block'" />
                     <img src="./images/icon/icon-minus-light.svg" alt="minus" class="dark:hidden" :class="selected == 0 ? 'block' : 'hidden'" />
                     <img src="./images/icon/icon-plus-dark.svg" alt="plus" class="hidden dark:block" :class="selected == 0 ? 'dark:hidden' : 'dark:block'" />
                     <img src="./images/icon/icon-minus-dark.svg" alt="minus" class="hidden dark:block" :class="selected == 0 ? 'dark:block' : 'dark:hidden'" />
                   </h4>
                   <p x-show="selected == 0" class="py-5 lg:py-7.5 px-6 lg:px-9 border-t border-stroke dark:border-strokedark">
-                    We provide digital experience services to startups and small businesses. We help our clients succeed by creating brand identities, digital experiences.
+                    MetaTrader 5 is chosen for its widespread adoption among brokers and its robust position for the future. Please inform us about your preferred platform, and we will integrate it based on demand.
                   </p>
                 </div>
                 <div class="flex flex-col border-b border-stroke dark:border-strokedark">
@@ -526,14 +614,14 @@
                     @click="selected !== 1 ? selected = 1 : selected = null"
                     class="cursor-pointer flex justify-between items-center font-medium text-metatitle3 text-black dark:text-white py-5 lg:py-7.5 px-6 lg:px-9"
                   >
-                    Lorem ipsum dolor sit amet, consectetur.
+                  How does billing and cancellation work?
                     <img src="./images/icon/icon-plus-light.svg" alt="plus" class="dark:hidden" :class="selected == 1 ? 'hidden' : 'block'" />
                     <img src="./images/icon/icon-minus-light.svg" alt="minus" class="dark:hidden" :class="selected == 1 ? 'block' : 'hidden'" />
                     <img src="./images/icon/icon-plus-dark.svg" alt="plus" class="hidden dark:block" :class="selected == 1 ? 'dark:hidden' : 'dark:block'" />
                     <img src="./images/icon/icon-minus-dark.svg" alt="minus" class="hidden dark:block" :class="selected == 1 ? 'dark:block' : 'dark:hidden'" />
                   </h4>
                   <p x-show="selected == 1" class="py-5 lg:py-7.5 px-6 lg:px-9 border-t border-stroke dark:border-strokedark">
-                    We provide digital experience services to startups and small businesses. We help our clients succeed by creating brand identities, digital experiences.
+                    You will be billed on a monthly basis, and you have the flexibility to cancel anytime with just a few clicks.
                   </p>
                 </div>
                 <div class="flex flex-col">
@@ -541,14 +629,14 @@
                     @click="selected !== 2 ? selected = 2 : selected = null"
                     :class="{'cursor-pointer flex justify-between items-center font-medium text-metatitle3 text-black dark:text-white py-5 lg:py-7.5 px-6 lg:px-9': true, 'rounded-b': selected != 2}"
                   >
-                    Lorem ipsum dolor sit amet, consectetur.
+                  Who is FX Terminal for?
                     <img src="./images/icon/icon-plus-light.svg" alt="plus" class="dark:hidden" :class="selected == 2 ? 'hidden' : 'block'" />
                     <img src="./images/icon/icon-minus-light.svg" alt="minus" class="dark:hidden" :class="selected == 2 ? 'block' : 'hidden'" />
                     <img src="./images/icon/icon-plus-dark.svg" alt="plus" class="hidden dark:block" :class="selected == 2 ? 'dark:hidden' : 'dark:block'" />
                     <img src="./images/icon/icon-minus-dark.svg" alt="minus" class="hidden dark:block" :class="selected == 2 ? 'dark:block' : 'dark:hidden'" />
                   </h4>
                   <p x-show="selected == 2" :class="{'py-5 lg:py-7.5 px-6 lg:px-9 border-t border-stroke dark:border-strokedark': true, 'rounded-b': selected == 2}">
-                    We provide digital experience services to startups and small businesses. We help our clients succeed by creating brand identities, digital experiences.
+                    From retail traders to fund managers aiming to boost profits through passive or automated trading. Packed with numerous features, our platform caters to diverse needs. Join our community for shared insights and strategies, creating a dynamic space for traders at every level.
                   </p>
                 </div>
               </div>
@@ -564,7 +652,7 @@
           <!-- Section Title Start -->
           <div
             class="animate_top text-center mx-auto"
-            x-data="{ sectionTitle: `TESTIMONIALS`, sectionSubtitle: `Client’s Testimonials`, sectionTitlePara: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.`}"
+            x-data="{ sectionTitle: `TESTIMONIALS`, sectionSubtitle: `User Testimonials`, sectionTitlePara: `Hear what real users are saying about their experience with FX Terminal.`}"
           >
             <include src="./partials/section-title.html" />
           </div>
@@ -581,26 +669,26 @@
                 <div class="bg-white rounded-lg shadow-solid-9 dark:shadow-none dark:bg-blacksection dark:border dark:border-strokedark p-9 pt-7.5">
                   <div class="flex justify-between border-b border-stroke dark:border-strokedark pb-6 mb-7.5">
                     <div>
-                      <h4 class="text-black dark:text-white text-metatitle3 mb-1.5">Devid Smith</h4>
-                      <p>Founter @democompany</p>
+                      <h4 class="text-black dark:text-white text-metatitle3 mb-1.5">Jason Jets</h4>
+                      <p>Prop Trader</p>
                     </div>
-                    <img class="" src="./images/user/user-01.svg" alt="User" />
+                    <img class="" src="./images/user/user-02.svg" alt="User" />
                   </div>
 
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit, ligula sit amet cursus tincidunt, lorem sem elementum nisi, convallis fringilla ante nibh non urna.</p>
+                  <p>Using FX Terminal saves me hours per day of screen time and hassle when it comes to managing my accounts on a VPS. As an algo trader I'm able to relax and let the app tell me when to act.</p>
                 </div>
               </div>
               <div class="swiper-slide">
                 <div class="bg-white rounded-lg shadow-solid-9 dark:shadow-none dark:bg-blacksection dark:border dark:border-strokedark p-9 pt-7.5">
                   <div class="flex justify-between border-b border-stroke dark:border-strokedark pb-6 mb-7.5">
                     <div>
-                      <h4 class="text-black dark:text-white text-metatitle3 mb-1.5">Jhon Abraham</h4>
-                      <p>Founter @democompany</p>
+                      <h4 class="text-black dark:text-white text-metatitle3 mb-1.5">Eden Santos</h4>
+                      <p>Treasurer </p>
                     </div>
-                    <img class="" src="./images/user/user-02.svg" alt="User" />
+                    <img class="" src="./images/user/user-01.svg" alt="User" />
                   </div>
 
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit, ligula sit amet cursus tincidunt, lorem sem elementum nisi, convallis fringilla ante nibh non urna.</p>
+                  <p>Managing a small fund is much easier to manage with the high level dashboard and performance metrics. I can manage 10 or more accounts without it being a huge hassle</p>
                 </div>
               </div>
             </div>
@@ -617,7 +705,7 @@
           <!-- Section Title Start -->
           <div
             class="animate_top text-center mx-auto"
-            x-data="{ sectionTitle: `PRICING PLANS`, sectionSubtitle: `Simple Pricing`, sectionTitlePara: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.`}"
+            x-data="{ sectionTitle: `PRICING`, sectionSubtitle: `Beta Subscription`, sectionTitlePara: `Help us grow into the tool you need`}"
           >
             <include src="./partials/section-title.html" />
           </div>
@@ -629,8 +717,12 @@
             <img src="./images/shape/shape-dotted-light.svg" alt="Dotted" class="dark:hidden" />
           </div>
           <div class="flex flex-wrap lg:flex-nowrap justify-center gap-7.5 xl:gap-12.5">
-            <!-- Pricing Item -->
-            <div class="animate_top md:w-[45%] lg:w-1/3 group relative bg-white dark:bg-blacksection rounded-lg shadow-solid-10 dark:shadow-none border border-stroke dark:border-strokedark p-7.5 xl:p-12.5">
+
+
+            <!-- Pricing Item
+            <div
+              class="animate_top md:w-[45%] lg:w-1/3 group relative bg-white dark:bg-blacksection rounded-lg shadow-solid-10 dark:shadow-none border border-stroke dark:border-strokedark p-7.5 xl:p-12.5"
+            >
               <h3 class="text-black dark:text-white font-bold text-3xl xl:text-sectiontitle3 mb-7.5">$10 <span class="text-regular text-waterloo dark:text-manatee">/month</span></h3>
               <h4 class="text-black dark:text-white font-medium text-para2 mb-2.5">Small Pack</h4>
               <p>Lorem ipsum dolor sit amet, consec adipisicing elit.</p>
@@ -650,35 +742,41 @@
                   <path d="M10.4767 6.17348L6.00668 1.70348L7.18501 0.525146L13.6667 7.00681L7.18501 13.4885L6.00668 12.3101L10.4767 7.84015H0.333344V6.17348H10.4767Z" fill="" />
                 </svg>
               </a>
-            </div>
+            </div> -->
 
             <!-- Pricing Item -->
-            <div class="animate_top md:w-[45%] lg:w-1/3 group relative bg-white dark:bg-blacksection rounded-lg shadow-solid-10 dark:shadow-none border border-stroke dark:border-strokedark p-7.5 xl:p-12.5">
-              <div class="absolute top-7.5 -right-3.5 -rotate-90 rounded-tl-full rounded-bl-full bg-primary font-medium text-white text-metatitle uppercase py-1.5 px-4.5">popular</div>
+            <div
+              class="animate_top md:w-[45%] lg:w-1/3 group relative bg-white dark:bg-blacksection rounded-lg shadow-solid-10 dark:shadow-none border border-stroke dark:border-strokedark p-7.5 xl:p-12.5"
+            >
+              <div class="absolute top-4 -right-3.5 -rotate-90 rounded-tl-full rounded-bl-full bg-primary font-medium text-white text-metatitle uppercase py-1.5 px-4.5">Beta </div>
 
-              <h3 class="text-black dark:text-white font-bold text-3xl xl:text-sectiontitle3 mb-7.5">$59 <span class="text-regular text-waterloo dark:text-manatee">/month</span></h3>
-              <h4 class="text-black dark:text-white font-medium text-para2 mb-2.5">Medium Pack</h4>
-              <p>Lorem ipsum dolor sit amet, consec adipisicing elit.</p>
+              <h3 class="text-black dark:text-white font-bold text-3xl xl:text-sectiontitle3 mb-7.5">$32 <span class="text-regular text-waterloo dark:text-manatee">/month</span></h3>
+              <h4 class="text-black dark:text-white font-medium text-para2 mb-2.5">Full Access Beta</h4>
+              <p>Beta users gain lifetime access to ALL current and future features.</p>
 
               <div class="border-t border-stroke dark:border-strokedark mt-9 pt-9 pb-12.5">
                 <ul>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0">300 GB Storage</li>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0">Unlimited Photos and Videos</li>
+                  <li class="text-black dark:text-manatee mb-4 last:mb-0">Portfolio Management Dashboard</li>
+                  <li class="text-black dark:text-manatee mb-4 last:mb-0">AI Software Generator</li>
+                  <li class="text-black dark:text-manatee mb-4 last:mb-0">News and Research tools</li>
+                  <li class="text-black dark:text-manatee mb-4 last:mb-0">Access to future app features</li>
                   <li class="text-black dark:text-manatee mb-4 last:mb-0">Exclusive Support</li>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0 opacity-40">Custom Branding Strategy</li>
+                  <li class="text-black dark:text-manatee mb-4 last:mb-0">Cross Platform Access</li>
                 </ul>
               </div>
 
-              <a href="#" class="inline-flex items-center gap-2.5 text-primary dark:text-white dark:hover:text-primary font-medium transition-all duration-300">
-                Get the Plan
+              <a href="https://fxterminal.io/sign-up" class="inline-flex items-center gap-2.5 text-primary dark:text-white dark:hover:text-primary font-medium transition-all duration-300">
+                Create Account
                 <svg class="fill-primary dark:fill-white dark:hover:fill-primary transition-all duration-300" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M10.4767 6.17348L6.00668 1.70348L7.18501 0.525146L13.6667 7.00681L7.18501 13.4885L6.00668 12.3101L10.4767 7.84015H0.333344V6.17348H10.4767Z" fill="" />
                 </svg>
               </a>
             </div>
 
-            <!-- Pricing Item -->
-            <div class="animate_top md:w-[45%] lg:w-1/3 group relative bg-white dark:bg-blacksection rounded-lg shadow-solid-10 dark:shadow-none border border-stroke dark:border-strokedark p-7.5 xl:p-12.5">
+            <!-- Pricing Item 
+            <div
+              class="animate_top md:w-[45%] lg:w-1/3 group relative bg-white dark:bg-blacksection rounded-lg shadow-solid-10 dark:shadow-none border border-stroke dark:border-strokedark p-7.5 xl:p-12.5"
+            >
               <h3 class="text-black dark:text-white font-bold text-3xl xl:text-sectiontitle3 mb-7.5">$189 <span class="text-regular text-waterloo dark:text-manatee">/month</span></h3>
               <h4 class="text-black dark:text-white font-medium text-para2 mb-2.5">Large Pack</h4>
               <p>Lorem ipsum dolor sit amet, consec adipisicing elit.</p>
@@ -700,11 +798,11 @@
               </a>
             </div>
           </div>
-        </div>
+        </div>-->
       </section>
       <!-- ===== Pricing Table End ===== -->
 
-      <!-- ===== Contact Start ===== -->
+      <!-- ===== Contact Start ===== 
       <section id="support" class="px-4 md:px-8 2xl:px-0">
         <div class="mx-auto max-w-c-1390 relative pt-10 lg:pt-15 xl:pt-20 px-7.5 lg:px-15 xl:px-20 overflow-hidden">
           <div class="absolute -z-1 rounded-lg left-0 top-0 w-full h-2/3 bg-gradient-to-t from-[#F8F9FF] to-[#DEE7FF] dark:bg-gradient-to-t dark:from-[#24283E] dark:to-[#252A42]"></div>
@@ -803,24 +901,24 @@
           </div>
         </div>
       </section>
-      <!-- ===== Contact End ===== -->
+       ===== Contact End ===== -->
 
-      <!-- ===== Blog Start ===== -->
+      <!-- ===== Blog Start ===== 
       <section class="py-20 lg:py-25 xl:py-30">
-        <div class="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
-          <!-- Section Title Start -->
+        <div class="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">-->
+          <!-- Section Title Start 
           <div
             class="animate_top text-center mx-auto"
             x-data="{ sectionTitle: `NEWS & BLOGS`, sectionSubtitle: `Latest News & Blogs`, sectionTitlePara: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.`}"
           >
             <include src="./partials/section-title.html" />
-          </div>
-          <!-- Section Title End -->
+          </div>-->
+          <!-- Section Title End 
         </div>
 
         <div class="mx-auto max-w-c-1280 px-4 md:px-8 xl:px-0 mt-15 xl:mt-20">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7.5 xl:gap-10">
-            <!-- Blog Item -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7.5 xl:gap-10">-->
+            <!-- Blog Item 
             <div class="animate_top bg-white dark:bg-blacksection rounded-lg shadow-solid-8 p-4 pb-9">
               <a href="#" class="block">
                 <img src="./images/blog/blog-01.png" alt="Blog" />
@@ -832,9 +930,9 @@
                 </h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit convallis tortor.</p>
               </div>
-            </div>
+            </div>-->
 
-            <!-- Blog Item -->
+            <!-- Blog Item 
             <div class="animate_top bg-white dark:bg-blacksection rounded-lg shadow-solid-8 p-4 pb-9">
               <a href="#" class="block">
                 <img src="./images/blog/blog-02.png" alt="Blog" />
@@ -846,9 +944,9 @@
                 </h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit convallis tortor.</p>
               </div>
-            </div>
+            </div>-->
 
-            <!-- Blog Item -->
+            <!-- Blog Item 
             <div class="animate_top bg-white dark:bg-blacksection rounded-lg shadow-solid-8 p-4 pb-9">
               <a href="#" class="block">
                 <img src="./images/blog/blog-03.png" alt="Blog" />
@@ -863,7 +961,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section>-->
       <!-- ===== Blog End ===== -->
     </main>
     <!-- ===== Footer Start ===== -->
