@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FXTerminal.io | Max Returns</title>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11463643965"></script>
     <script>
@@ -14,24 +15,18 @@
 
       gtag('config', 'AW-11463643965');
     </script>
-    <!-- Event snippet for Page view conversion page
-    In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+
+    <!-- Event snippet for Page view conversion page -->
     <script>
-      function gtag_report_conversion(url) {
-        var callback = function () {
-          if (typeof(url) != 'undefined') {
-            window.location = url;
-          }
-        };
-        gtag('event', 'conversion', {
-            'send_to': 'AW-11463643965/-craCNeVoYUZEL2mpdoq',
-            'value': 1.0,
-            'currency': 'USD',
-            'event_callback': callback
-        });
-        return false;
-      }
-      </script>
+      gtag('event', 'conversion', {
+          'send_to': 'AW-11463643965/-craCNeVoYUZEL2mpdoq',
+          'value': 1.0,
+          'currency': 'USD'
+      });
+    </script>
+
+
+    
   </head>
 
   
