@@ -35,6 +35,10 @@
     x-init="darkMode = true; $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
     :class="{'dark bg-black': darkMode === true}"
 >
+  <!-- Begin Constant Contact Active Forms -->
+  <script> var _ctct_m = "c0ba213abdee853aa9282986a649d7aa"; </script>
+  <script id="signupScript" src="//static.ctctcdn.com/js/signup-form-widget/current/signup-form-widget.min.js" async defer></script>
+  <!-- End Constant Contact Active Forms -->
     <!-- ===== Bg Lines Start ===== -->
     <include src="./partials/lines.html" />
     <!-- ===== Bg Lines End ===== -->
