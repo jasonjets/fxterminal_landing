@@ -42,37 +42,52 @@
   
   <body
     x-data="{ page: 'home', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
-    x-init="darkMode = true; $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+    x-init="
+         darkMode = JSON.parse(localStorage.getItem('darkMode'));
+         $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
     :class="{'dark bg-black': darkMode === true}"
->
+  >
   <!-- Begin Constant Contact Active Forms -->
   <script> var _ctct_m = "c0ba213abdee853aa9282986a649d7aa"; </script>
   <script id="signupScript" src="//static.ctctcdn.com/js/signup-form-widget/current/signup-form-widget.min.js" async defer></script>
   <!-- End Constant Contact Active Forms -->
     <!-- ===== Bg Lines Start ===== -->
     <include src="./partials/lines.html" />
+    <include src="./partials/header.html" />
     <!-- ===== Bg Lines End ===== -->
 
-    <main>
+    <main class="pt-8">
 <!-- ===== Hero Start ===== -->
-<section class="bg-gray-100 dark:bg-gray-800">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+<section class="bg-gray-100">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-0 pt-12">
+    <div class="py-0 flex flex-col md:flex-row items-center justify-between gap-2">
       <div class="w-full md:w-1/2 animate__animated animate__fadeInLeft">
-        <h4 class="text-primary font-medium mb-2">Unlock Financial Freedom</h4>
-        <h1 class="text-gray-900 dark:text-white text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
-          Invest Smarter<br>
-          Grow <span class="relative before:absolute before:bottom-2 before:left-0 before:w-full before:h-2 before:bg-primary before:-z-1">Faster</span>
+        <h4 class="text-primary font-semibold mb-2 text-lg">All-in-One Personal Wealth Management</h4>
+        <h1 class="text-black dark:text-white text-3xl xl:text-hero font-bold mb-5">
+          Empower your Finances<br>
+          Elevate your 
+          <span class="
+              relative 
+              inline-block 
+              before:absolute 
+              before:bottom-2 
+              before:left-0 
+              before:w-full 
+              before:h-2 
+              before:bg-primary/30 
+              before:-z-1">Impact</span>
         </h1>
-        <p class="text-gray-600 dark:text-gray-400 mb-6">Where Retail Investors Become Wealth Managers</p>
+        <p class="text-gray-700 text-lg mb-6">
+            The ultimate financial platform for smarter spending, 
+            saving, business, and long-term wealth creation.</p>
         <form action="https://formbold.com/s/unique_form_id" method="POST">
           <div class="flex flex-wrap gap-4">
-            <button class="bg-primary hover:bg-primaryho text-white rounded-full px-6 py-3 text-sm transition-colors duration-300">Try for free for 7 days!</button>
+            <button class="bg-primary hover:bg-primary-dark text-white font-semibold rounded-full px-8 py-4 text-base transition-colors duration-300 shadow-lg hover:shadow-xl">Join Early Access</button>
           </div>
         </form>
       </div>
-      <div class="w-full md:w-1/2 animate__animated animate__fadeInRight">
-        <img class="w-full max-w-lg mx-auto" src="./images/hero/test6.png" alt="Hero" />
+      <div class="w-full md:w-1/2 animate__animated animate__fadeInRight h-auto">
+        <img class="w-full h-full max-h-[500px] object-cover mx-auto" src="./images/hero/test6.png" alt="Hero" style="margin: 0; padding: 0;" />
       </div>
     </div>
   </div>
@@ -83,7 +98,6 @@
 
       <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
-  <div class="tradingview-widget-container__widget"></div>
   <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
   {
   "symbols": [
@@ -109,7 +123,7 @@
     }
   ],
   "showSymbolLogo": true,
-  "isTransparent": true,
+  "isTransparent": false,
   "largeChartUrl": "",
   "displayMode": "regular",
   "colorTheme": "dark",
@@ -165,8 +179,14 @@
           <!-- Section Title Start -->
           <div
             class="animate_top text-center mx-auto"
-            x-data="{ sectionTitle: `Become 10x More Efficient`, sectionSubtitle: `All in one investment tool`, sectionTitlePara: `The code is already written, tested by the community, and easy to deploy.
-            Monitor multiple accounts on one Dashboard`}"
+            x-data="{ 
+              sectionTitle: `Simplify Your Wealth Journey`, 
+              sectionSubtitle: `All your money in one place`, 
+              sectionTitlePara: `
+                Seamlessly connect and manage all your accounts 
+                in one place, with tools to track and optimize 
+                your financial progress.
+                `}"
           >
             <include src="./partials/section-title.html" />
           </div>
@@ -174,54 +194,45 @@
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7.5 xl:gap-12.5 mt-12.5 lg:mt-15 xl:mt-20">
             <!-- Features item Start -->
-            <div
-              class="animate_top border border-white shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all hover:shadow-solid-4 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection"
-            >
+            <div class="animate_top border border-white shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all hover:shadow-solid-4 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection">
               <div class="flex items-center justify-center rounded-[4px] bg-primary w-16 h-16">
                 <img src="./images/icon/icon-01.svg" alt="Icon" />
               </div>
-              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">ChatGPT 4 Included</h3>
-              <p>Elevate your investing experience with our intelligent OpenAI integration. 
-              </p>
+              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">Comprehensive Financial Overview</h3>
+              <p>Access a complete view of your financial life, including metrics on recurring payments, monthly spending, and disposable income.</p>
             </div>
             <!-- Features item End -->
-
+          
             <!-- Features item Start -->
-            <div
-              class="animate_top border border-white shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all hover:shadow-solid-4 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection"
-            >
+            <div class="animate_top border border-white shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all hover:shadow-solid-4 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection">
               <div class="flex items-center justify-center rounded-[4px] bg-primary w-16 h-16">
                 <img src="./images/icon/icon-02.svg" alt="Icon" />
               </div>
-              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">Connect Unlimited  Accounts</h3>
-              <p>Manage and monitor your investing performance across various platforms.</p>
+              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">Connect Unlimited Accounts</h3>
+              <p>Effortlessly connect and monitor all your financial accounts in one place for streamlined management.</p>
             </div>
             <!-- Features item End -->
-
+          
             <!-- Features item Start -->
-            <div
-              class="animate_top border border-white shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all hover:shadow-solid-4 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection"
-            >
+            <div class="animate_top border border-white shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all hover:shadow-solid-4 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection">
               <div class="flex items-center justify-center rounded-[4px] bg-primary w-16 h-16">
                 <img src="./images/icon/icon-03.svg" alt="Icon" />
               </div>
               <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">Access on All Devices</h3>
-              <p>Manage your accounts and performance from anywhere, on any device. </p>
+              <p>Manage your financial accounts and performance from anywhere, on any device.</p>
             </div>
             <!-- Features item End -->
-
+          
             <!-- Features item Start -->
-            <div
-              class="animate_top border border-white shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all hover:shadow-solid-4 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection"
-            >
+            <div class="animate_top border border-white shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all hover:shadow-solid-4 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection">
               <div class="flex items-center justify-center rounded-[4px] bg-primary w-16 h-16">
                 <img src="./images/icon/icon-04.svg" alt="Icon" />
               </div>
-              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">Analytics Dashboard</h3>
-              <p>Gain deep insights monitor trends, analyze performance, and make informed decisions. </p>
+              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">Real-Time Analytics Dashboard</h3>
+              <p>Monitor trends, analyze performance, and receive insights to make informed financial decisions.</p>
             </div>
             <!-- Features item End -->
-
+          
             <!-- Features item Start -->
             <div class="animate_top border border-white shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all hover:shadow-solid-4 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection">
               <div class="flex items-center justify-between mb-4">
@@ -230,70 +241,69 @@
                 </div>
                 <div class="bg-meta text-white text-metatitle inline-flex rounded-full py-1 px-4.5">New</div>
               </div>
-            
-              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">Investing Robots</h3>
-              <p>Use custom built and tested algorithms for a 'hands off' income approach.</p>
+              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">Automated Account Routing</h3>
+              <p>Set up automated routing for savings, tithing, and investments based on your preferences.</p>
             </div>
             <!-- Features item End -->
-
+          
             <!-- Features item Start -->
-            <div
-              class="animate_top border border-white shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all hover:shadow-solid-4 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection"
-            >
+            <div class="animate_top border border-white shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all hover:shadow-solid-4 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection">
               <div class="flex items-center justify-center rounded-[4px] bg-primary w-16 h-16">
                 <img src="./images/icon/icon-06.svg" alt="Icon" />
               </div>
-              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">Smart Risk Management</h3>
-              <p>Know your limits and manage them properly.</p>
+              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">Investment Statistics</h3>
+              <p>Track essential investment metrics like Sharpe ratio, volume profit ratio, and total AUM for better decisions.</p>
             </div>
             <!-- Features item End -->
           </div>
+          
+          
         </div>
       </section>
       <!-- ===== Features End ===== -->
 
 
-      <!-- ===== About Start ===== -->
-      <section class="pb-20 lg:pb-25 xl:pb-30 overflow-hidden">
-        <div class="mx-auto max-w-c-1235 px-4 md:px-8 xl:px-0">
-          <div class="flex items-center gap-8 lg:gap-32.5">
-            <div class="animate_left hidden md:block md:w-1/2">
-              <img src="./images/about/about-light-01.svg" alt="About" class="dark:hidden" />
-              <img src="./images/hero/grow.png" alt="About" class="hidden dark:block" />
-            </div>
-            <div class="animate_right md:w-1/2">
-              <h4 class="text-black dark:text-white font-medium uppercase">
-                <a href="#" class="bg-meta text-white text-metatitle inline-flex rounded-full py-1 px-4.5 mr-4 mb-4">New</a> Gain Freedom
-              </h4>
-              <h2 class="relative font-bold text-black dark:text-white text-3xl xl:text-hero mb-6">
-                Grow Your
-                <span class="inline-block relative before:absolute before:bottom-2.5 before:left-0 before:w-full before:h-3 before:bg-titlebg dark:before:bg-titlebgdark before:-z-1">Wealth</span>
-              </h2>
-              <p>Maximize Your Income Potential with Intelligent Strategies</p>
+    <!-- ===== About Start ===== -->
+<section class="pb-20 lg:pb-25 xl:pb-30 overflow-hidden">
+  <div class="mx-auto max-w-c-1235 px-4 md:px-8 xl:px-0">
+    <div class="flex items-center gap-8 lg:gap-32.5">
+      <div class="animate_left hidden md:block md:w-1/2">
+        <img src="./images/hero/grow.png" alt="About" class="block" />
+      </div>
+      <div class="animate_right md:w-1/2">
+        <h4 class="text-black dark:text-white font-medium uppercase">
+          <a href="#" class="bg-meta text-white text-metatitle inline-flex rounded-full py-1 px-4.5 mr-4 mb-4">New</a> Navigate Your Finances
+        </h4>
+        <h2 class="relative font-bold text-black dark:text-white text-3xl xl:text-hero mb-6">
+          Take Control of  
+          <span class="inline-block relative before:absolute before:bottom-2.5 before:left-0 before:w-full before:h-3 before:bg-titlebg dark:before:bg-titlebgdark before:-z-1"> Your Wealth</span>
+        </h2>
+        <p>Unlock your financial potential with a unified platform for managing your wealth.</p>
 
-              <div class="mt-7.5 flex items-center gap-5">
-                <div class="w-15 h-15 rounded-[50%] border border-stroke dark:border-strokedark dark:bg-blacksection flex items-center justify-center">
-                  <p class="text-black dark:text-white font-semibold text-metatitle2">01</p>
-                </div>
-                <div class="w-3/4">
-                  <h5 class="text-black dark:text-white text-metatitle2 mb-0.5">Pre Built MT5 EAs</h5>
-                  <p>Backtest and optimize pre-built metatrader 5 automated strategies.</p>
-                </div>
-              </div>
-              <div class="mt-7.5 flex items-center gap-5">
-                <div class="w-15 h-15 rounded-[50%] border border-stroke dark:border-strokedark dark:bg-blacksection flex items-center justify-center">
-                  <p class="text-black dark:text-white font-semibold text-metatitle2">02</p>
-                </div>
-                <div class="w-3/4">
-                  <h5 class="text-black dark:text-white text-metatitle2 mb-0.5">Powerful Dashboard.</h5>
-                  <p>Analyze performance from unlimited accounts at a glance.</p>
-                </div>
-              </div>
-            </div>
+        <div class="mt-7.5 flex items-center gap-5">
+          <div class="w-15 h-15 rounded-[50%] border border-stroke dark:border-strokedark dark:bg-blacksection flex items-center justify-center">
+            <p class="text-black dark:text-white font-semibold text-metatitle2">01</p>
+          </div>
+          <div class="w-3/4">
+            <h5 class="text-black dark:text-white text-metatitle2 mb-0.5">Seamless Account Connectivity</h5>
+            <p>Easily connect and manage multiple financial accounts in one place.</p>
           </div>
         </div>
-      </section>
-      <!-- ===== About End ===== -->
+        <div class="mt-7.5 flex items-center gap-5">
+          <div class="w-15 h-15 rounded-[50%] border border-stroke dark:border-strokedark dark:bg-blacksection flex items-center justify-center">
+            <p class="text-black dark:text-white font-semibold text-metatitle2">02</p>
+          </div>
+          <div class="w-3/4">
+            <h5 class="text-black dark:text-white text-metatitle2 mb-0.5">Comprehensive Analytics</h5>
+            <p>Gain insights into your financial performance and make informed decisions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== About End ===== -->
+
 
  
 
@@ -303,115 +313,103 @@
 
 
       <!-- ===== Features Tab Start ===== -->
-      <section class="pt-18.5 pb-20 lg:pb-22.5 relative" x-data="{ featuresTab: 'tabOne' }">
-        <div class="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-          <div class="absolute top-0 -z-1">
-            <img class="dark:hidden" src="./images/shape/shape-dotted-light.svg" alt="Dotted Shape" />
-            <img class="hidden dark:block" src="./images/shape/shape-dotted-dark.svg" alt="Dotted Shape" />
-          </div>
+<section class="pt-18.5 pb-20 lg:pb-22.5 relative" x-data="{ featuresTab: 'tabOne' }">
+  <div class="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+    <div class="absolute top-0 -z-1">
+      <img class="dark:hidden" src="./images/shape/shape-dotted-light.svg" alt="Dotted Shape" />
+      <img class="block" src="./images/shape/shape-dotted-dark.svg" alt="Dotted Shape" />
+    </div>
 
-          <!-- Tab Menues Start -->
-          <div
-            class="animate_top border border-stroke dark:border-strokedark dark:bg-blacksection shadow-solid-5 dark:shadow-solid-6 bg-white rounded-[10px] flex flex-wrap md:flex-nowrap md:items-center justify-center lg:gap-7.5 xl:gap-12.5 mb-15 xl:mb-21.5"
-          >
-            <div
-              class="relative cursor-pointer w-full md:w-auto border-b last:border-0 md:border-0 border-stroke dark:border-strokedark flex items-center gap-4 py-2 xl:py-5 px-6 xl:px-13.5"
-              :class="{ 'active before:w-full before:h-1 before:bg-primary before:absolute before:bottom-0 before:left-0 before:rounded-tl-[4px] before:rounded-tr-[4px]': featuresTab === 'tabOne' }"
-              @click.prevent="featuresTab = 'tabOne'"
-            >
-              <div class="w-12.5 h-12.5 rounded-[50%] border border-stroke dark:border-strokedark dark:bg-blacksection flex items-center justify-center">
-                <p class="text-black dark:text-white font-medium text-metatitle3">01</p>
-              </div>
-              <div class="lg:w-auto md:w-3/5">
-                <h5 class="text-black dark:text-white text-sm xl:text-regular font-medium">Optimize Your Portfolio</h5>
-              </div>
-            </div>
-            <div
-              class="relative cursor-pointer w-full md:w-auto border-b last:border-0 md:border-0 border-stroke dark:border-strokedark flex items-center gap-4 py-2 xl:py-5 px-6 xl:px-13.5"
-              :class="{ 'active before:w-full before:h-1 before:bg-primary before:absolute before:bottom-0 before:left-0 before:rounded-tl-[4px] before:rounded-tr-[4px]': featuresTab === 'tabTwo' }"
-              @click.prevent="featuresTab = 'tabTwo'"
-            >
-              <div class="w-12.5 h-12.5 rounded-[50%] border border-stroke dark:border-strokedark dark:bg-blacksection flex items-center justify-center">
-                <p class="text-black dark:text-white font-medium text-metatitle3">02</p>
-              </div>
-              <div class="lg:w-auto md:w-3/5">
-                <h5 class="text-black dark:text-white text-sm xl:text-regular font-medium">Track the Economy</h5>
-              </div>
-            </div>
-            <div
-              class="relative cursor-pointer w-full md:w-auto border-b last:border-0 md:border-0 border-stroke dark:border-strokedark flex items-center gap-4 py-2 xl:py-5 px-6 xl:px-13.5"
-              :class="{ 'active before:w-full before:h-1 before:bg-primary before:absolute before:bottom-0 before:left-0 before:rounded-tl-[4px] before:rounded-tr-[4px]': featuresTab === 'tabThree' }"
-              @click.prevent="featuresTab = 'tabThree'"
-            >
-              <div class="w-12.5 h-12.5 rounded-[50%] border border-stroke dark:border-strokedark dark:bg-blacksection flex items-center justify-center">
-                <p class="text-black dark:text-white font-medium text-metatitle3">03</p>
-              </div>
-              <div class="lg:w-auto md:w-3/5">
-                <h5 class="text-black dark:text-white text-sm xl:text-regular font-medium">Learn from Performance History</h5>
-              </div>
-            </div>
-          </div>
-          <!-- Tab Menues End -->
-
-          <!-- Tab Content Start -->
-          <div class="animate_top mx-auto max-w-c-1154">
-            <div x-show="featuresTab === 'tabOne'">
-              <div class="flex items-center gap-8 lg:gap-19">
-                <div class="md:w-1/2">
-                  <h2 class="text-black dark:text-white text-3xl xl:text-sectiontitle2 font-bold mb-7">Invest like the Elite</h2>
-                  <p class="mb-5">Unlock the next generation of investing. FX Terminal provides
-                    real-time overviews of profits, drawdowns, and Sharpe ratios
-                    and more.</p>
-                  <p class="w-11/12">Stay informed with economic events, track performance history, and
-                    leverage our AI chat assistant.</p>
-                </div>
-                <div class="hidden md:block md:w-1/2">
-                  <!-- <img src="./images/features/features-light-01.svg" alt="Features" class="dark:hidden" /> -->
-                  <img src="./images/hero/test.png" alt="Features" class="hidden dark:block" />
-                </div>
-              </div>
-            </div>
-
-            <div x-show="featuresTab === 'tabTwo'">
-              <div class="flex items-center gap-8 lg:gap-19">
-                <div class="md:w-1/2">
-                  <h2 class="text-black dark:text-white text-3xl xl:text-sectiontitle2 font-bold mb-7">Real-Time Economic Data</h2>
-                  <p class="mb-5">Stay ahead of the curve with FX Terminal's real-time economic
-                    event tracking. Gain valuable insights into market dynamics
-                    and make informed decisions.</p>
-                  <p class="w-11/12">Seamlessly integrate economic events into your
-                    strategy, ensuring you're always in sync with the latest
-                    market developments.</p>
-                </div>
-                <div class="hidden md:block md:w-1/2">
-                  <!-- <img src="./images/features/features-light-01.svg" alt="Features" class="dark:hidden" /> -->
-                  <img src="./images/hero/floating.png" alt="Features" class="hidden dark:block" />
-                </div>
-              </div>
-            </div>
-
-            <div x-show="featuresTab === 'tabThree'">
-              <div class="flex items-center gap-8 lg:gap-19">
-                <div class="md:w-1/2">
-                  <h2 class="text-black dark:text-white text-3xl xl:text-sectiontitle2 font-bold mb-7">Constantly Improve</h2>
-                  <p class="mb-5">Dive deep into your performance with  comprehensive
-                     analysis. Visualize patterns, identify
-                    strengths, and learn from past performance. </p>
-                  <p class="w-11/12">FX Terminal provides
-                    detailed metrics, empowering you to refine your strategy and
-                    continuously improve your performance over time.</p>
-                </div>
-                <div class="hidden md:block md:w-1/2">
-                  <!-- <img src="./images/features/features-light-01.svg" alt="Features" class="dark:hidden" /> --> 
-                  <img src="./images/hero/tri.png" alt="Features" class="hidden dark:block" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Tab Content End -->
+    <!-- Tab Menues Start -->
+    <div
+      class="animate_top border border-stroke dark:border-strokedark dark:bg-blacksection shadow-solid-5 dark:shadow-solid-6 bg-white rounded-[10px] flex flex-wrap md:flex-nowrap md:items-center justify-center lg:gap-7.5 xl:gap-12.5 mb-15 xl:mb-21.5"
+    >
+      <div
+        class="relative cursor-pointer w-full md:w-auto border-b last:border-0 md:border-0 border-stroke dark:border-strokedark flex items-center gap-4 py-2 xl:py-5 px-6 xl:px-13.5"
+        :class="{ 'active before:w-full before:h-1 before:bg-primary before:absolute before:bottom-0 before:left-0 before:rounded-tl-[4px] before:rounded-tr-[4px]': featuresTab === 'tabOne' }"
+        @click.prevent="featuresTab = 'tabOne'"
+      >
+        <div class="w-12.5 h-12.5 rounded-[50%] border border-stroke dark:border-strokedark dark:bg-blacksection flex items-center justify-center">
+          <p class="text-black dark:text-white font-medium text-metatitle3">01</p>
         </div>
-      </section>
-      <!-- ===== Features Tab End ===== -->
+        <div class="lg:w-auto md:w-3/5">
+          <h5 class="text-black dark:text-white text-sm xl:text-regular font-medium">Smart Budgeting Tools</h5>
+        </div>
+      </div>
+      <div
+        class="relative cursor-pointer w-full md:w-auto border-b last:border-0 md:border-0 border-stroke dark:border-strokedark flex items-center gap-4 py-2 xl:py-5 px-6 xl:px-13.5"
+        :class="{ 'active before:w-full before:h-1 before:bg-primary before:absolute before:bottom-0 before:left-0 before:rounded-tl-[4px] before:rounded-tr-[4px]': featuresTab === 'tabTwo' }"
+        @click.prevent="featuresTab = 'tabTwo'"
+      >
+        <div class="w-12.5 h-12.5 rounded-[50%] border border-stroke dark:border-strokedark dark:bg-blacksection flex items-center justify-center">
+          <p class="text-black dark:text-white font-medium text-metatitle3">02</p>
+        </div>
+        <div class="lg:w-auto md:w-3/5">
+          <h5 class="text-black dark:text-white text-sm xl:text-regular font-medium">Automated Saving Strategies</h5>
+        </div>
+      </div>
+      <div
+        class="relative cursor-pointer w-full md:w-auto border-b last:border-0 md:border-0 border-stroke dark:border-strokedark flex items-center gap-4 py-2 xl:py-5 px-6 xl:px-13.5"
+        :class="{ 'active before:w-full before:h-1 before:bg-primary before:absolute before:bottom-0 before:left-0 before:rounded-tl-[4px] before:rounded-tr-[4px]': featuresTab === 'tabThree' }"
+        @click.prevent="featuresTab = 'tabThree'"
+      >
+        <div class="w-12.5 h-12.5 rounded-[50%] border border-stroke dark:border-strokedark dark:bg-blacksection flex items-center justify-center">
+          <p class="text-black dark:text-white font-medium text-metatitle3">03</p>
+        </div>
+        <div class="lg:w-auto md:w-3/5">
+          <h5 class="text-black dark:text-white text-sm xl:text-regular font-medium">Investment Tracking</h5>
+        </div>
+      </div>
+    </div>
+    <!-- Tab Menues End -->
+
+    <!-- Tab Content Start -->
+    <div class="animate_top mx-auto max-w-c-1154">
+      <div x-show="featuresTab === 'tabOne'">
+        <div class="flex items-center gap-8 lg:gap-19">
+          <div class="md:w-1/2">
+            <h2 class="text-black dark:text-white text-3xl xl:text-sectiontitle2 font-bold mb-7">Smart Budgeting Tools</h2>
+            <p class="mb-5">Easily manage your budget with user-friendly tools that help you categorize expenses, set savings goals, and stay on track with your financial plan.</p>
+            <p class="w-11/12">Gain insights into your spending habits to make informed decisions about your finances.</p>
+          </div>
+          <div class="hidden md:block md:w-1/2">
+            <img src="./images/hero/test.png" alt="Features" class="block" />
+          </div>
+        </div>
+      </div>
+
+      <div x-show="featuresTab === 'tabTwo'">
+        <div class="flex items-center gap-8 lg:gap-19">
+          <div class="md:w-1/2">
+            <h2 class="text-black dark:text-white text-3xl xl:text-sectiontitle2 font-bold mb-7">Automated Saving Strategies</h2>
+            <p class="mb-5">Set up automatic transfers to your savings goals, ensuring you save consistently without thinking about it.</p>
+            <p class="w-11/12">Tailor your savings plan to fit your unique financial situation and objectives.</p>
+          </div>
+          <div class="hidden md:block md:w-1/2">
+            <img src="./images/hero/floating.png" alt="Features" class="block" />
+          </div>
+        </div>
+      </div>
+
+      <div x-show="featuresTab === 'tabThree'">
+        <div class="flex items-center gap-8 lg:gap-19">
+          <div class="md:w-1/2">
+            <h2 class="text-black dark:text-white text-3xl xl:text-sectiontitle2 font-bold mb-7">Investment Tracking</h2>
+            <p class="mb-5">Monitor your investments in real time, track performance, and adjust your strategy as needed.</p>
+            <p class="w-11/12">Get a clear overview of your investment portfolio and understand your returns effortlessly.</p>
+          </div>
+          <div class="hidden md:block md:w-1/2">
+            <img src="./images/hero/tri.png" alt="Features" class="block" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Tab Content End -->
+  </div>
+</section>
+<!-- ===== Features Tab End ===== -->
+
+
 
       <!-- ===== Funfact Start ===== 
       <section class="py-20 lg:py-22.5 px-4 md:px-8 2xl:px-0">
@@ -525,266 +523,194 @@
       </section> -->
       <!-- ===== Integrations End ===== -->
 
-      <!-- ===== CTA Start ===== -->
-      <section class="py-20 lg:py-25 xl:py-30 px-4 md:px-8 2xl:px-0 overflow-hidden">
-        <div
-          class="mx-auto max-w-c-1390 px-7.5 md:px-12.5 xl:px-17.5 py-12.5 xl:py-0 rounded-lg bg-gradient-to-t from-[#F8F9FF] to-[#DEE7FF] dark:bg-gradient-to-t dark:from-transparent dark:to-transparent dark:bg-blacksection dark:stroke-strokedark"
-        >
-          <div class="flex flex-wrap md:flex-nowrap md:items-center md:justify-between gap-8 md:gap-0">
-            <div class="animate_left md:w-[70%] lg:w-1/2">
-              <h2 class="text-black dark:text-white text-3xl xl:text-sectiontitle4 font-bold mb-4 w-11/12">Take Control of Your Freedom!</h2>
-              <p>              Start using pre-built strategies to auto invest and manage wealth today.
-  </p>
-            </div>
-            <div class="animate_right lg:w-[45%]">
-              <div class="flex items-center justify-end xl:justify-between">
-                <img src="./images/shape/shape-06.svg" alt="Saly" class="hidden xl:block" />
-               <!-- --> 
-               <a href="https://fxterminal.io/sign-up" class="inline-flex items-center gap-2.5 font-medium text-white dark:text-black bg-black dark:bg-white rounded-full py-3 px-6">
-                  Try free for 7 days
-                  <img src="./images/icon/icon-arrow-dark.svg" alt="Arrow" class="dark:hidden" />
-                  <img src="./images/icon/icon-arrow-light.svg" alt="Arrow" class="hidden dark:block" />
-                </a>
-              </div>
-            </div>
-          </div>
+     <!-- ===== CTA Start ===== -->
+<section class="py-20 lg:py-25 xl:py-30 px-4 md:px-8 2xl:px-0 overflow-hidden">
+  <div class="mx-auto max-w-c-1390 px-7.5 md:px-12.5 xl:px-17.5 py-12.5 xl:py-0 rounded-lg bg-gradient-to-t from-[#F8F9FF] to-[#DEE7FF] dark:bg-gradient-to-t dark:from-transparent dark:to-transparent dark:bg-blacksection dark:stroke-strokedark">
+    <div class="flex flex-wrap md:flex-nowrap md:items-center md:justify-between gap-8 md:gap-0">
+      <div class="animate_left md:w-[70%] lg:w-1/2">
+        <h2 class="text-black dark:text-white text-3xl xl:text-sectiontitle4 font-bold mb-4 w-11/12">Join Our Early Access Program!</h2>
+        <p>Experience a holistic approach to budgeting and wealth management with exclusive features tailored just for you.</p>
+      </div>
+      <div class="animate_right lg:w-[45%]">
+        <div class="flex items-center justify-end xl:justify-between">
+          <img src="./images/shape/shape-06.svg" alt="Saly" class="hidden xl:block" />
+          <a href="https://fxterminal.io/sign-up" class="inline-flex items-center gap-2.5 font-medium text-white dark:text-black bg-black dark:bg-white rounded-full py-3 px-6">
+            Join Early Access
+            <img src="./images/icon/icon-arrow-dark.svg" alt="Arrow" class="dark:hidden" />
+            <img src="./images/icon/icon-arrow-light.svg" alt="Arrow" class="hidden dark:block" />
+          </a>
         </div>
-      </section>
-      <!-- ===== CTA End ===== -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== CTA End ===== -->
+
 
       <!-- ===== FAQ Start ===== -->
-      <section class="pb-20 lg:pb-25 xl:pb-30 overflow-hidden">
-        <div class="mx-auto max-w-c-1235 px-4 md:px-8 xl:px-0 relative">
-          <div class="absolute -bottom-7.5 -z-1">
-            <img src="./images/shape/shape-dotted-light.svg" alt="Dotted" class="dark:hidden" />
-            <img src="./images/shape/shape-dotted-light.svg" alt="Dotted" class="hidden dark:block" />
-          </div>
-          <div class="flex flex-wrap md:flex-nowrap md:items-center gap-8 xl:gap-32.5">
-            <div class="animate_left md:w-2/5 lg:w-1/2">
-              <h4 class="text-black dark:text-white font-medium uppercase">OUR FAQS</h4>
-              <h2 class="relative font-bold text-black dark:text-white text-3xl xl:text-hero mb-6">
-                Frequently Asked
-                <span class="inline-block relative before:absolute before:bottom-2.5 before:left-0 before:w-full before:h-3 before:bg-titlebg2 dark:before:bg-titlebgdark before:-z-1">Questions</span>
-              </h2>
-              <!-- 
-              <a href="#" class="flex items-center gap-2.5 text-black dark:text-white mt-25">
-                Know More
-                <img class="dark:hidden" src="./images/icon/icon-arrow-light.svg" alt="Arrow" />
-                <img class="hidden dark:block" src="./images/icon/icon-arrow-dark.svg" alt="Arrow" />
-              </a>-->
-            </div>
+<section class="pb-20 lg:pb-25 xl:pb-30 overflow-hidden">
+  <div class="mx-auto max-w-c-1235 px-4 md:px-8 xl:px-0 relative">
+    <div class="absolute -bottom-7.5 -z-1">
+      <img src="./images/shape/shape-dotted-light.svg" alt="Dotted" class="dark:hidden" />
+      <img src="./images/shape/shape-dotted-light.svg" alt="Dotted" class="hidden dark:block" />
+    </div>
+    <div class="flex flex-wrap md:flex-nowrap md:items-center gap-8 xl:gap-32.5">
+      <div class="animate_left md:w-2/5 lg:w-1/2">
+        <h4 class="text-black dark:text-white font-medium uppercase">OUR FAQS</h4>
+        <h2 class="relative font-bold text-black dark:text-white text-3xl xl:text-hero mb-6">
+          Frequently Asked
+          <span class="inline-block relative before:absolute before:bottom-2.5 before:left-0 before:w-full before:h-3 before:bg-titlebg2 dark:before:bg-titlebgdark before:-z-1">Questions</span>
+        </h2>
+      </div>
 
-            <div class="animate_right md:w-3/5 lg:w-1/2">
-              <div class="bg-white dark:bg-blacksection dark:border dark:border-strokedark shadow-solid-8 rounded-lg" x-data="{selected:0}">
-                <div class="flex flex-col border-b border-stroke dark:border-strokedark">
-                  <h4
-                    @click="selected !== 0 ? selected = 0 : selected = null"
-                    class="cursor-pointer flex justify-between items-center font-medium text-metatitle3 text-black dark:text-white py-5 lg:py-7.5 px-6 lg:px-9"
-                  >
-                  What platforms does FX Terminal support?
-                    <img src="./images/icon/icon-plus-light.svg" alt="plus" class="dark:hidden" :class="selected == 0 ? 'hidden' : 'block'" />
-                    <img src="./images/icon/icon-minus-light.svg" alt="minus" class="dark:hidden" :class="selected == 0 ? 'block' : 'hidden'" />
-                    <img src="./images/icon/icon-plus-dark.svg" alt="plus" class="hidden dark:block" :class="selected == 0 ? 'dark:hidden' : 'dark:block'" />
-                    <img src="./images/icon/icon-minus-dark.svg" alt="minus" class="hidden dark:block" :class="selected == 0 ? 'dark:block' : 'dark:hidden'" />
-                  </h4>
-                  <p x-show="selected == 0" class="py-5 lg:py-7.5 px-6 lg:px-9 border-t border-stroke dark:border-strokedark">
-                    MetaTrader 5 is chosen for its widespread adoption among brokers and its robust position for the future. Please inform us about your preferred platform, and we will integrate it based on demand.
-                  </p>
-                </div>
-                <div class="flex flex-col border-b border-stroke dark:border-strokedark">
-                  <h4
-                    @click="selected !== 1 ? selected = 1 : selected = null"
-                    class="cursor-pointer flex justify-between items-center font-medium text-metatitle3 text-black dark:text-white py-5 lg:py-7.5 px-6 lg:px-9"
-                  >
-                  How does billing and cancellation work?
-                    <img src="./images/icon/icon-plus-light.svg" alt="plus" class="dark:hidden" :class="selected == 1 ? 'hidden' : 'block'" />
-                    <img src="./images/icon/icon-minus-light.svg" alt="minus" class="dark:hidden" :class="selected == 1 ? 'block' : 'hidden'" />
-                    <img src="./images/icon/icon-plus-dark.svg" alt="plus" class="hidden dark:block" :class="selected == 1 ? 'dark:hidden' : 'dark:block'" />
-                    <img src="./images/icon/icon-minus-dark.svg" alt="minus" class="hidden dark:block" :class="selected == 1 ? 'dark:block' : 'dark:hidden'" />
-                  </h4>
-                  <p x-show="selected == 1" class="py-5 lg:py-7.5 px-6 lg:px-9 border-t border-stroke dark:border-strokedark">
-                    You will be billed on a monthly basis, and you have the flexibility to cancel anytime with just a few clicks.
-                  </p>
-                </div>
-                <div class="flex flex-col">
-                  <h4
-                    @click="selected !== 2 ? selected = 2 : selected = null"
-                    :class="{'cursor-pointer flex justify-between items-center font-medium text-metatitle3 text-black dark:text-white py-5 lg:py-7.5 px-6 lg:px-9': true, 'rounded-b': selected != 2}"
-                  >
-                  Who is FX Terminal for?
-                    <img src="./images/icon/icon-plus-light.svg" alt="plus" class="dark:hidden" :class="selected == 2 ? 'hidden' : 'block'" />
-                    <img src="./images/icon/icon-minus-light.svg" alt="minus" class="dark:hidden" :class="selected == 2 ? 'block' : 'hidden'" />
-                    <img src="./images/icon/icon-plus-dark.svg" alt="plus" class="hidden dark:block" :class="selected == 2 ? 'dark:hidden' : 'dark:block'" />
-                    <img src="./images/icon/icon-minus-dark.svg" alt="minus" class="hidden dark:block" :class="selected == 2 ? 'dark:block' : 'dark:hidden'" />
-                  </h4>
-                  <p x-show="selected == 2" :class="{'py-5 lg:py-7.5 px-6 lg:px-9 border-t border-stroke dark:border-strokedark': true, 'rounded-b': selected == 2}">
-                    From retail investors to fund managers aiming to boost profits through automation. Packed with numerous features, our platform caters to diverse needs. Join our community for shared insights and strategies.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- ===== FAQ End ===== -->
-
-      <!-- ===== Testimonials Start ===== -->
-      <section>
-        <div class="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
-          <!-- Section Title Start -->
-          <div
-            class="animate_top text-center mx-auto"
-            x-data="{ sectionTitle: `TESTIMONIALS`, sectionSubtitle: `User Testimonials`, sectionTitlePara: `Hear what real users are saying about their experience with FX Terminal.`}"
-          >
-            <include src="./partials/section-title.html" />
-          </div>
-          <!-- Section Title End -->
-        </div>
-
-        <div class="animate_top mx-auto max-w-c-1235 px-4 md:px-8 xl:px-0 mt-15 xl:mt-20">
-          <!-- Slider main container -->
-          <div class="swiper testimonial-01 pb-22.5">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-              <!-- Slides -->
-              <div class="swiper-slide">
-                <div class="bg-white rounded-lg shadow-solid-9 dark:shadow-none dark:bg-blacksection dark:border dark:border-strokedark p-9 pt-7.5">
-                  <div class="flex justify-between border-b border-stroke dark:border-strokedark pb-6 mb-7.5">
-                    <div>
-                      <h4 class="text-black dark:text-white text-metatitle3 mb-1.5">Jason Anthony</h4>
-                      <p>Fund Manager</p>
-                    </div>
-                    <img class="" src="./images/user/user-02.svg" alt="User" />
-                  </div>
-
-                  <p>Using FX Terminal saves me hours per day of screen time and hassle when it comes to managing my accounts on a VPS. As an algo trader I'm able to relax and let the app tell me when to act.</p>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="bg-white rounded-lg shadow-solid-9 dark:shadow-none dark:bg-blacksection dark:border dark:border-strokedark p-9 pt-7.5">
-                  <div class="flex justify-between border-b border-stroke dark:border-strokedark pb-6 mb-7.5">
-                    <div>
-                      <h4 class="text-black dark:text-white text-metatitle3 mb-1.5">Eden Santos</h4>
-                      <p>Treasurer </p>
-                    </div>
-                    <img class="" src="./images/user/user-01.svg" alt="User" />
-                  </div>
-
-                  <p>Managing a small fund is much easier to manage with the high level dashboard and performance metrics. I can manage 10 or more accounts without it being a huge hassle</p>
-                </div>
-              </div>
-            </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-      </section>
-      <!-- ===== Testimonials End ===== -->
-
-      <!-- ===== Pricing Table Start ===== -->
-      <section class="pt-15 lg:pt-20 xl:pt-25 pb-20 lg:pb-25 xl:pb-30">
-        <div class="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
-          <!-- Section Title Start -->
-          <div
-            class="animate_top text-center mx-auto"
-            x-data="{ sectionTitle: `Pricing`, sectionSubtitle: `Accelerate Your Freedom`, sectionTitlePara: `Instantly gain full access to the tools you need to start building wealth today`}"
-          >
-            <include src="./partials/section-title.html" />
-          </div>
-          <!-- Section Title End -->
-        </div>
-
-        <div class="mx-auto max-w-[1207px] px-4 md:px-8 xl:px-0 relative mt-15 xl:mt-20">
-          <div class="absolute -bottom-15 -z-1">
-            <img src="./images/shape/shape-dotted-light.svg" alt="Dotted" class="dark:hidden" />
-          </div>
-          <div class="flex flex-wrap lg:flex-nowrap justify-center gap-7.5 xl:gap-12.5">
-
-
-            <!-- Pricing Item
-            <div
-              class="animate_top md:w-[45%] lg:w-1/3 group relative bg-white dark:bg-blacksection rounded-lg shadow-solid-10 dark:shadow-none border border-stroke dark:border-strokedark p-7.5 xl:p-12.5"
+      <div class="animate_right md:w-3/5 lg:w-1/2">
+        <div class="bg-white dark:bg-blacksection dark:border dark:border-strokedark shadow-solid-8 rounded-lg" x-data="{selected:0}">
+          <div class="flex flex-col border-b border-stroke dark:border-strokedark">
+            <h4
+              @click="selected !== 0 ? selected = 0 : selected = null"
+              class="cursor-pointer flex justify-between items-center font-medium text-metatitle3 text-black dark:text-white py-5 lg:py-7.5 px-6 lg:px-9"
             >
-              <h3 class="text-black dark:text-white font-bold text-3xl xl:text-sectiontitle3 mb-7.5">$10 <span class="text-regular text-waterloo dark:text-manatee">/month</span></h3>
-              <h4 class="text-black dark:text-white font-medium text-para2 mb-2.5">Small Pack</h4>
-              <p>Lorem ipsum dolor sit amet, consec adipisicing elit.</p>
-
-              <div class="border-t border-stroke dark:border-strokedark mt-9 pt-9 pb-12.5">
-                <ul>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0">300 GB Storage</li>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0">Unlimited Photos and Videos</li>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0 opacity-40">Exclusive Support</li>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0 opacity-40">Custom Branding Strategy</li>
-                </ul>
-              </div>
-
-              <a href="#" class="inline-flex items-center gap-2.5 text-primary dark:text-white dark:hover:text-primary font-medium transition-all duration-300">
-                Get the Plan
-                <svg class="fill-primary dark:fill-white dark:hover:fill-primary transition-all duration-300" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M10.4767 6.17348L6.00668 1.70348L7.18501 0.525146L13.6667 7.00681L7.18501 13.4885L6.00668 12.3101L10.4767 7.84015H0.333344V6.17348H10.4767Z" fill="" />
-                </svg>
-              </a>
-            </div> -->
-
-            <!-- Pricing Item -->
-            <div
-              class="animate_top md:w-[45%] lg:w-1/3 group relative bg-white dark:bg-blacksection rounded-lg shadow-solid-10 dark:shadow-none border border-stroke dark:border-strokedark p-7.5 xl:p-12.5"
-            >
-              <!--
-                <div class="absolute top-4 -right-3.5 -rotate-90 rounded-tl-full rounded-bl-full bg-primary font-medium text-white text-metatitle uppercase py-1.5 px-4.5">Beta </div>
-              -->
-              <h3 class="text-black dark:text-white font-bold text-3xl xl:text-sectiontitle3 mb-7.5">$79 <span class="text-regular text-waterloo dark:text-manatee">/month</span></h3>
-              <h4 class="text-black dark:text-white font-medium text-para2 mb-2.5">Investor / Fund Manager</h4>
-              <p>Dashboard and Algorithms.</p>
-
-              <div class="border-t border-stroke dark:border-strokedark mt-9 pt-9 pb-12.5">
-                <ul>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0">Portfolio Management Dashboard</li>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0">Latest GPT AI Model</li>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0">News and Research tools</li>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0">Auto Investing</li>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0">Exclusive Support</li>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0">Cross Platform Access</li>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0">Unlimited Accounts</li>
-                </ul>
-              </div>
-              <!---->
-              <a href="https://fxterminal.io/sign-up" class="inline-flex items-center gap-2.5 text-primary dark:text-white dark:hover:text-primary font-medium transition-all duration-300">
-                Try free for 7 days!
-                <svg class="fill-primary dark:fill-white dark:hover:fill-primary transition-all duration-300" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M10.4767 6.17348L6.00668 1.70348L7.18501 0.525146L13.6667 7.00681L7.18501 13.4885L6.00668 12.3101L10.4767 7.84015H0.333344V6.17348H10.4767Z" fill="" />
-                </svg>
-              </a>
-            </div>
-
-            <!-- Pricing Item 
-            <div
-              class="animate_top md:w-[45%] lg:w-1/3 group relative bg-white dark:bg-blacksection rounded-lg shadow-solid-10 dark:shadow-none border border-stroke dark:border-strokedark p-7.5 xl:p-12.5"
-            >
-              <h3 class="text-black dark:text-white font-bold text-3xl xl:text-sectiontitle3 mb-7.5">$189 <span class="text-regular text-waterloo dark:text-manatee">/month</span></h3>
-              <h4 class="text-black dark:text-white font-medium text-para2 mb-2.5">Large Pack</h4>
-              <p>Lorem ipsum dolor sit amet, consec adipisicing elit.</p>
-
-              <div class="border-t border-stroke dark:border-strokedark mt-9 pt-9 pb-12.5">
-                <ul>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0">300 GB Storage</li>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0">Unlimited Photos and Videos</li>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0">Exclusive Support</li>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0">Custom Branding Strategy</li>
-                </ul>
-              </div>
-
-              <a href="#" class="inline-flex items-center gap-2.5 text-primary dark:text-white dark:hover:text-primary font-medium transition-all duration-300">
-                Get the Plan
-                <svg class="fill-primary dark:fill-white dark:hover:fill-primary transition-all duration-300" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M10.4767 6.17348L6.00668 1.70348L7.18501 0.525146L13.6667 7.00681L7.18501 13.4885L6.00668 12.3101L10.4767 7.84015H0.333344V6.17348H10.4767Z" fill="" />
-                </svg>
-              </a>
-            </div>
+              What features does the platform offer?
+              <img src="./images/icon/icon-plus-light.svg" alt="plus" class="dark:hidden" :class="selected == 0 ? 'hidden' : 'block'" />
+              <img src="./images/icon/icon-minus-light.svg" alt="minus" class="dark:hidden" :class="selected == 0 ? 'block' : 'hidden'" />
+              <img src="./images/icon/icon-plus-dark.svg" alt="plus" class="hidden dark:block" :class="selected == 0 ? 'dark:hidden' : 'dark:block'" />
+              <img src="./images/icon/icon-minus-dark.svg" alt="minus" class="hidden dark:block" :class="selected == 0 ? 'dark:block' : 'dark:hidden'" />
+            </h4>
+            <p x-show="selected == 0" class="py-5 lg:py-7.5 px-6 lg:px-9 border-t border-stroke dark:border-strokedark">
+              Our platform offers a comprehensive suite of tools including budgeting assistance, personalized financial plans, automatic expense tracking, and educational resources to enhance your financial literacy.
+            </p>
           </div>
-        </div>-->
-      </section>
-      <!-- ===== Pricing Table End ===== -->
+          <div class="flex flex-col border-b border-stroke dark:border-strokedark">
+            <h4
+              @click="selected !== 1 ? selected = 1 : selected = null"
+              class="cursor-pointer flex justify-between items-center font-medium text-metatitle3 text-black dark:text-white py-5 lg:py-7.5 px-6 lg:px-9"
+            >
+              What financial insitutions are supported?
+              <img src="./images/icon/icon-plus-light.svg" alt="plus" class="dark:hidden" :class="selected == 1 ? 'hidden' : 'block'" />
+              <img src="./images/icon/icon-minus-light.svg" alt="minus" class="dark:hidden" :class="selected == 1 ? 'block' : 'hidden'" />
+              <img src="./images/icon/icon-plus-dark.svg" alt="plus" class="hidden dark:block" :class="selected == 1 ? 'dark:hidden' : 'dark:block'" />
+              <img src="./images/icon/icon-minus-dark.svg" alt="minus" class="hidden dark:block" :class="selected == 1 ? 'dark:block' : 'dark:hidden'" />
+            </h4>
+            <p x-show="selected == 1" class="py-5 lg:py-7.5 px-6 lg:px-9 border-t border-stroke dark:border-strokedark">
+              We support over 12,000 financial institutions through our partnership with Plaid. This allows you to link your bank accounts seamlessly and access your financial data securely.
+            </p>
+          </div>
+          <div class="flex flex-col">
+            <h4
+              @click="selected !== 2 ? selected = 2 : selected = null"
+              :class="{'cursor-pointer flex justify-between items-center font-medium text-metatitle3 text-black dark:text-white py-5 lg:py-7.5 px-6 lg:px-9': true, 'rounded-b': selected != 2}"
+            >
+              Is my financial data secure?
+              <img src="./images/icon/icon-plus-light.svg" alt="plus" class="dark:hidden" :class="selected == 2 ? 'hidden' : 'block'" />
+              <img src="./images/icon/icon-minus-light.svg" alt="minus" class="dark:hidden" :class="selected == 2 ? 'block' : 'hidden'" />
+              <img src="./images/icon/icon-plus-dark.svg" alt="plus" class="hidden dark:block" :class="selected == 2 ? 'dark:hidden' : 'dark:block'" />
+              <img src="./images/icon/icon-minus-dark.svg" alt="minus" class="hidden dark:block" :class="selected == 2 ? 'dark:block' : 'dark:hidden'" />
+            </h4>
+            <p x-show="selected == 2" :class="{'py-5 lg:py-7.5 px-6 lg:px-9 border-t border-stroke dark:border-strokedark': true, 'rounded-b': selected == 2}">
+              Yes, we prioritize your privacy and security. Our platform utilizes advanced encryption technologies and secure protocols to protect your personal and financial information.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== FAQ End ===== -->
+
+<!-- ===== Key Features Start ===== -->
+<section class="py-12 lg:py-16 bg-white dark:bg-blacksection">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-c-1315">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Feature Item Start -->
+      <div class="animate_top p-6 border-b md:border-b-0 md:border-r border-gray-200 dark:border-gray-700">
+        <h3 class="text-lg font-semibold text-black dark:text-white mb-2">
+          Comprehensive Overview
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400">
+          Get a complete view of your finances in one place.
+        </p>
+      </div>
+      <!-- Feature Item End -->
+
+      <!-- Feature Item Start -->
+      <div class="animate_top p-6 border-b md:border-b-0 md:border-r border-gray-200 dark:border-gray-700">
+        <h3 class="text-lg font-semibold text-black dark:text-white mb-2">
+          Smart Budgeting
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400">
+          Create and manage budgets with intuitive tools.
+        </p>
+      </div>
+      <!-- Feature Item End -->
+
+      <!-- Feature Item Start -->
+      <div class="animate_top p-6">
+        <h3 class="text-lg font-semibold text-black dark:text-white mb-2">
+          Wealth Tracking
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400">
+          Monitor investments in real-time with advanced analytics.
+        </p>
+      </div>
+      <!-- Feature Item End -->
+    </div>
+  </div>
+</section>
+<!-- ===== Key Features End ===== -->
+
+
+     <!-- ===== Pricing Table Start ===== -->
+<section class="pt-15 lg:pt-20 xl:pt-25 pb-20 lg:pb-25 xl:pb-30">
+  <div class="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
+    <!-- Section Title Start -->
+    <div
+      class="animate_top text-center mx-auto"
+      x-data="{ sectionTitle: `Pricing`, sectionSubtitle: `Accelerate Your Freedom`, sectionTitlePara: `Instantly gain full access to the tools you need to start building wealth today` }"
+    >
+      <include src="./partials/section-title.html" />
+    </div>
+    <!-- Section Title End -->
+  </div>
+
+  <div class="mx-auto max-w-[1207px] px-4 md:px-8 xl:px-0 relative mt-15 xl:mt-20">
+    <div class="absolute -bottom-15 -z-1">
+      <img src="./images/shape/shape-dotted-light.svg" alt="Dotted" class="dark:hidden" />
+    </div>
+    <div class="flex flex-wrap lg:flex-nowrap justify-center gap-7.5 xl:gap-12.5">
+
+      <!-- Pricing Item -->
+      <div
+        class="animate_top md:w-[45%] lg:w-1/3 group relative bg-white dark:bg-blacksection rounded-lg shadow-solid-10 dark:shadow-none border border-stroke dark:border-strokedark p-7.5 xl:p-12.5"
+      >
+        <h3 class="text-black dark:text-white font-bold text-3xl xl:text-sectiontitle3 mb-7.5">Free <span class="text-regular text-waterloo dark:text-manatee"> </span></h3>
+        <h4 class="text-black dark:text-white font-medium text-para2 mb-2.5">Early Access</h4>
+        <p>Join our early access program to unlock powerful tools for your wealth journey.</p>
+
+        <div class="border-t border-stroke dark:border-strokedark mt-9 pt-9 pb-12.5">
+          <ul>
+            <li class="text-black dark:text-manatee mb-4 last:mb-0">Holistic Wealth Management</li>
+            <li class="text-black dark:text-manatee mb-4 last:mb-0">Personalized Budgeting Tools</li>
+            <li class="text-black dark:text-manatee mb-4 last:mb-0">Tithe Calculation and Payment</li>
+            <li class="text-black dark:text-manatee mb-4 last:mb-0">Automated Savings Tools</li>
+            <li class="text-black dark:text-manatee mb-4 last:mb-0">Cross-Platform Access</li>
+            <li class="text-black dark:text-manatee mb-4 last:mb-0">Exclusive Early Access Features</li>
+          </ul>
+        </div>
+        <a href="https://fxterminal.io/sign-up" class="inline-flex items-center gap-2.5 text-primary dark:text-white dark:hover:text-primary font-medium transition-all duration-300">
+          Join Early Access
+          <svg class="fill-primary dark:fill-white dark:hover:fill-primary transition-all duration-300" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10.4767 6.17348L6.00668 1.70348L7.18501 0.525146L13.6667 7.00681L7.18501 13.4885L6.00668 12.3101L10.4767 7.84015H0.333344V6.17348H10.4767Z" fill="" />
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ===== Pricing Table End ===== -->
+
+
+
 
       <!-- ===== Contact Start ===== 
       <section id="support" class="px-4 md:px-8 2xl:px-0">
