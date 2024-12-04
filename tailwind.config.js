@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     fontFamily: {
       inter: ['Inter', 'sans-serif'],
+      'black-ops': ['"Black Ops One"', 'cursive'],
     },
     colors: {
       current: 'currentColor',
