@@ -55,11 +55,8 @@
 
   
   <body
-    x-data="{ page: 'home', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
-    x-init="
-         darkMode = JSON.parse(localStorage.getItem('darkMode'));
-         $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
-    :class="{'dark bg-black': darkMode === true}"
+    x-data="{ page: 'home', 'navigationOpen': false, 'scrollTop': false }"
+    class="dark bg-black"
   >
 
     <!-- ===== Bg Lines Start ===== -->
@@ -69,46 +66,71 @@
 
     <main class="pt-8">
 <!-- ===== Hero Start ===== -->
-<section id="home" class="bg-gray-100">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-0 pt-12 ">
-    <div class="py-0 flex flex-col md:flex-row items-center justify-between gap-2 ">
+<section id="home" class="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-black">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-0 pt-12">
+    <div class="py-0 flex flex-col md:flex-row items-center justify-between gap-2">
       <div class="w-full md:w-1/2 animate__animated animate__fadeInLeft">
-        <h4 class="text-primary font-semibold mb-2 mt-10 text-lg">All-in-One Wealth Management</h4>
-        <h1 class="text-black dark:text-white text-3xl xl:text-hero font-bold mb-5">
+        <h4 class="text-primary font-semibold mb-2 mt-10 text-lg">
+          <span class="bg-primary/10 text-primary px-4 py-1 rounded-full">All-in-One Wealth Management</span>
+        </h4>
+        <h1 class="text-black dark:text-white text-4xl xl:text-6xl font-bold mb-5 leading-tight">
           Automate your finances<br>
-          <span class="
-              relative 
-              inline-block 
-              before:absolute 
-              before:bottom-2 
-              before:left-0 
-              before:w-full 
-              before:h-2 
-              before:bg-primary/30 
-              before:-z-1">Build your wealth</span>
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary via-blue-600 to-blue-600 dark:from-primary dark:via-blue-400 dark:to-blue-400">
+            Build your wealth
+          </span>
         </h1>
-        <p class="text-gray-700 text-lg mb-10">
-            Stop juggling spreadsheets and receipts. Automate your budgeting, track your wealth, and reach your goals with our all-in-one platform.
+        <p class="text-gray-700 dark:text-gray-300 text-lg mb-10 leading-relaxed">
+          Stop juggling spreadsheets and receipts. Automate your budgeting, track your wealth, and reach your goals with our all-in-one platform.
         </p>
         <div class="flex flex-wrap gap-4">
-          <a href="https://app.currencycaptain.com/sign-up">
-            <button class="bg-primary hover:bg-primary-dark text-white font-semibold rounded-full px-8 py-4 text-base transition-all duration-300 shadow-lg hover:shadow-xl hover:transform hover:-translate-y-0.5">
+          <a href="https://app.currencycaptain.com/sign-up" class="group">
+            <button class="bg-gradient-to-r from-primary to-blue-600 hover:from-primary-dark hover:to-blue-700 text-white font-semibold rounded-full px-8 py-4 text-base transition-all duration-300 transform hover:scale-105 hover:shadow-lg group-hover:translate-x-1">
               Start Free 30-Day Trial
-              <span class="ml-1">→</span>
+              <span class="ml-2 group-hover:translate-x-1 inline-block transition-transform duration-200">→</span>
             </button>
           </a>
           
-          <!-- Simple user count social proof -->
-          <div class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/>
+          <!-- User count indicator -->
+          <div class="flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-black/50 backdrop-blur-sm rounded-full shadow-sm">
+            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
             </svg>
-            <span>Trusted by 16,000+ Users</span>
+            <span class="text-sm">
+              <span class="font-semibold text-black dark:text-white">16,000+</span>
+              <span class="text-gray-600 dark:text-gray-400">Active Users</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Security features below -->
+        <div class="flex flex-wrap gap-4 mt-4">
+          <div class="flex items-center gap-4">
+            <div class="flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-black/50 backdrop-blur-sm rounded-full shadow-sm">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+              </svg>
+              <span class="text-sm">
+                <span class="font-semibold text-black dark:text-white">Bank-Grade</span>
+                <span class="text-gray-600 dark:text-gray-400">Security</span>
+              </span>
+            </div>
+            <div class="flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-black/50 backdrop-blur-sm rounded-full shadow-sm">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+              <span class="text-sm">
+                <span class="font-semibold text-black dark:text-white">256-bit</span>
+                <span class="text-gray-600 dark:text-gray-400">Encryption</span>
+              </span>
+            </div>
           </div>
         </div>
       </div>
-      <div class="w-full md:w-1/2 animate__animated animate__fadeInRight h-auto">
-        <img class="w-full h-full max-h-[600px] object-cover mx-auto" src="./images/hero/tri.png" alt="Currency Captain, Wealth Mastery" style="margin: 0; padding: 0;" />
+      <div class="w-full md:w-1/2 animate__animated animate__fadeInRight h-auto relative">
+        <div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent dark:from-primary/10 rounded-3xl blur-2xl"></div>
+        <img class="w-full h-full max-h-[600px] object-cover mx-auto relative rounded-3xl shadow-2xl transform hover:scale-[1.02] transition-transform duration-300" 
+             src="./images/hero/tri.png" 
+             alt="Currency Captain, Wealth Mastery" />
       </div>
     </div>
   </div>
@@ -217,12 +239,13 @@
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7.5 xl:gap-12.5 mt-12.5 lg:mt-15 xl:mt-20">
             <!-- Features item Start -->
-            <div class="animate_top border border-white/10 bg-white/5 backdrop-blur-xl shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all duration-300 hover:shadow-solid-4 hover:transform hover:-translate-y-1 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection">
-              <div class="flex items-center justify-center rounded-[4px] bg-primary w-16 h-16">
-                <img src="./images/icon/icon-01.svg" alt="Icon" />
+            <div class="group animate_top border border-white/10 bg-white/5 backdrop-blur-xl shadow-solid-3 rounded-2xl p-7.5 xl:p-12.5 transition-all duration-300 hover:shadow-solid-4 hover:transform hover:-translate-y-2 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection">
+              <div class="relative flex items-center justify-center rounded-full bg-gradient-to-b from-primary/10 to-primary/0 w-16 h-16 mb-8 group-hover:scale-110 transition-transform duration-300">
+                <div class="absolute inset-0 rounded-full bg-primary blur-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                <img src="./images/icon/icon-01.svg" alt="Icon" class="relative z-10" />
               </div>
-              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">Smart Money Dashboard</h3>
-              <p>See exactly where your money goes with month-over-month spending comparisons, balance tracking, and upcoming payment alerts—all in one glance.</p>
+              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mb-5">Smart Money Dashboard</h3>
+              <p class="text-gray-600 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">See exactly where your money goes with month-over-month spending comparisons, balance tracking, and upcoming payment alerts—all in one glance.</p>
             </div>
             <!-- Features item End -->
           
@@ -357,7 +380,7 @@
           <p class="text-black dark:text-white font-medium text-metatitle3">01</p>
         </div>
         <div class="lg:w-auto md:w-3/5">
-          <h5 class="text-black dark:text-white text-sm xl:text-regular font-medium">Maximize Your Margin</h5>
+          <h5 class="text-black dark:text-white text-sm xl:text-regular font-medium">Income Optimization</h5>
         </div>
       </div>
 
@@ -370,7 +393,7 @@
           <p class="text-black dark:text-white font-medium text-metatitle3">02</p>
         </div>
         <div class="lg:w-auto md:w-3/5">
-          <h5 class="text-black dark:text-white text-sm xl:text-regular font-medium">Build Your Safety Net</h5>
+          <h5 class="text-black dark:text-white text-sm xl:text-regular font-medium">Emergency Fund Strategy</h5>
         </div>
       </div>
 
@@ -383,7 +406,7 @@
           <p class="text-black dark:text-white font-medium text-metatitle3">03</p>
         </div>
         <div class="lg:w-auto md:w-3/5">
-          <h5 class="text-black dark:text-white text-sm xl:text-regular font-medium">Feed Your Money Machine</h5>
+          <h5 class="text-black dark:text-white text-sm xl:text-regular font-medium">Wealth Generation System</h5>
         </div>
       </div>
     </div>
@@ -395,15 +418,16 @@
         <div class="flex flex-col md:flex-row items-center gap-8 lg:gap-19">
           <div class="w-full md:w-1/2">
             <h2 class="text-black dark:text-white text-2xl md:text-3xl xl:text-sectiontitle2 font-bold mb-7">Step 1: Maximize Your Personal Margin</h2>
-            <p class="mb-5 text-base">The secret to building wealth isn't just earning more—it's widening the gap between income and expenses. Our AI analyzes your spending patterns to find hidden savings while identifying income growth opportunities. Watch your surplus grow as you:</p>
+            <p class="mb-5 text-base">Building wealth is about increasing the gap between your income and expenses. This gap, or personal margin, is crucial for financial growth. Here's how to effectively manage it:</p>
             <ul class="list-disc pl-6 mb-5">
-              <li class="mb-2">Automatically track and optimize your spending</li>
-              <li class="mb-2">Get personalized strategies to increase your income</li>
-              <li>Turn small daily savings into major wealth builders</li>
+              <li class="mb-4"><strong>Analyze Spending Patterns:</strong> Regularly review your expenses to identify areas where you can cut back without sacrificing quality of life.</li>
+              <li class="mb-4"><strong>Identify Income Opportunities:</strong> Explore ways to increase your income through skill development, side projects, or career advancement.</li>
+              <li class="mb-4"><strong>Automate Savings:</strong> Set up automatic transfers to savings or investment accounts to ensure consistent growth of your surplus.</li>
             </ul>
+            <p class="text-sm italic">Tip: Even small daily savings can accumulate significantly over time, contributing to your wealth-building efforts.</p>
           </div>
           <div class="w-full md:w-1/2">
-            <img src="./images/hero/test.png" alt="Features" class="w-full h-auto max-w-md mx-auto" />
+            <img src="./images/hero/test.png" alt="Income Formula" class="w-full h-auto max-w-md mx-auto" />
           </div>
         </div>
       </div>
@@ -411,17 +435,23 @@
       <div x-show="featuresTab === 'tabTwo'">
         <div class="flex flex-col md:flex-row items-center gap-8 lg:gap-19">
           <div class="w-full md:w-1/2">
-            <h2 class="text-black dark:text-white text-2xl md:text-3xl xl:text-sectiontitle2 font-bold mb-7">Step 2: Create Your Financial Shield</h2>
-            <p class="mb-5 text-base">Life is unpredictable—but your finances don't have to be. Our smart emergency fund builder helps you:</p>
+            <h2 class="text-black dark:text-white text-2xl md:text-3xl xl:text-sectiontitle2 font-bold mb-7">Step 2: Master Risk Management</h2>
+            <p class="mb-5 text-base">Family offices protect generational wealth by building robust financial defenses. Here's how to apply their proven strategies:</p>
             <ul class="list-disc pl-6 mb-5">
-              <li class="mb-2">Calculate your ideal safety net size based on your unique situation</li>
-              <li class="mb-2">Automate savings with intelligent rules that adjust to your cash flow</li>
-              <li>Track progress with motivating milestones and celebrations</li>
+              <li class="mb-4">
+                <strong>Strategic Liquidity Tiers:</strong> Structure your safety net in layers—from immediate cash to short-term bonds—maximizing both security and returns
+              </li>
+              <li class="mb-4">
+                <strong>Risk-Adjusted Positioning:</strong> Maintain 6-12 months of runway, scaled to your income volatility and career stability
+              </li>
+              <li class="mb-4">
+                <strong>Opportunity Reserve:</strong> Keep additional capital ready to seize investment opportunities during market downturns
+              </li>
             </ul>
-            <p>Stop worrying about unexpected expenses and start building real wealth with confidence.</p>
+            <p class="text-sm italic">Pro Strategy: Elite wealth managers maintain 15-25% in strategic reserves, treating safety nets as active portfolio components that generate steady yields while protecting capital.</p>
           </div>
           <div class="w-full md:w-1/2">
-            <img src="./images/hero/multi.png" alt="Features" class="w-full h-auto max-w-md mx-auto" />
+            <img src="./images/hero/multi.png" alt="Risk Management Strategy" class="w-full h-auto max-w-md mx-auto" />
           </div>
         </div>
       </div>
@@ -429,18 +459,18 @@
       <div x-show="featuresTab === 'tabThree'">
         <div class="flex flex-col md:flex-row items-center gap-8 lg:gap-19">
           <div class="w-full md:w-1/2">
-            <h2 class="text-black dark:text-white text-2xl md:text-3xl xl:text-sectiontitle2 font-bold mb-7">Step 3: Build Your Freedom Machine</h2>
-            <p class="mb-5 text-base">Transform your savings into a passive income powerhouse. Our platform helps you:</p>
+            <h2 class="text-black dark:text-white text-2xl md:text-3xl xl:text-sectiontitle2 font-bold mb-7">Step 3: Create Passive Income </h2>
+            <p class="mb-5 text-base">Transform savings into lasting wealth through proven investment principles:</p>
             <ul class="list-disc pl-6 mb-5">
-              <li class="mb-2">Track and optimize your investment portfolio for maximum returns</li>
-              <li class="mb-2">Monitor your growing passive income streams</li>
-              <li class="mb-2">Visualize your path to financial freedom with clear milestones</li>
-              <li>Accelerate wealth building by reinvesting your returns</li>
+              <li class="mb-4"><strong>Diversification:</strong> Spread investments across stocks (US/International), bonds, and real estate investment trusts (REITs)</li>
+              <li class="mb-4"><strong>Dollar-Cost Averaging:</strong> Invest consistently regardless of market conditions to reduce risk</li>
+              <li class="mb-4"><strong>Compound Growth:</strong> Reinvest all returns to accelerate wealth building</li>
+              <li class="mb-4"><strong>Low-Cost Index Funds:</strong> Minimize fees to maximize long-term returns</li>
             </ul>
-            <p>Watch your money machine grow and calculate exactly when you'll achieve financial independence.</p>
+            <p class="text-sm italic">Pro Tip: A portfolio of low-cost index funds has historically returned 7-10% annually over long periods. At 8%, money doubles approximately every 9 years.</p>
           </div>
           <div class="w-full md:w-1/2">
-            <img src="./images/hero/econ.png" alt="Features" class="w-full h-auto max-w-md mx-auto" />
+            <img src="./images/hero/econ.png" alt="Wealth Building Strategy" class="w-full h-auto max-w-md mx-auto" />
           </div>
         </div>
       </div>
@@ -456,61 +486,84 @@
    <!-- ===== Freedom Calculator Start ===== -->
    <section id="freedom-calculator" class="py-20 lg:py-25 xl:py-30">
     <div class="mx-auto max-w-c-1235 px-4 md:px-8 xl:px-0 relative">
-      <!-- Adding gradient background consistent with other sections -->
-      <div class="absolute -z-1 rounded-lg left-0 top-0 w-full h-2/3 bg-gradient-to-t from-[#F8F9FF] to-[#DEE7FF] dark:bg-gradient-to-t dark:from-[#24283E] dark:to-[#252A42]"></div>
+      <!-- Enhanced gradient background with more height and blur -->
+      <div class="absolute -z-1 rounded-2xl left-0 top-0 w-full h-[85%] bg-gradient-to-tr from-[#F8F9FF] via-[#DEE7FF] to-[#F1F5FF] dark:from-[#24283E] dark:via-[#252A42] dark:to-[#2A2F4A] blur-[60px] opacity-70"></div>
       
-      <!-- Section Title using same style as other sections -->
-      <div class="animate_top text-center mx-auto mb-5">
-        <h2 class="text-black dark:text-white text-3xl xl:text-sectiontitle2 font-bold mb-4">
+      <!-- Section Title with increased top margin -->
+      <div class="animate_top text-center mx-auto mb-10 pt-10">
+        <h2 class="text-black dark:text-white text-4xl xl:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 dark:from-primary dark:to-blue-400">
           Freedom Calculator
         </h2>
-        <p class="text-gray-700 dark:text-gray-400 md:w-4/5 lg:w-3/5 mx-auto">
+        <p class="text-gray-700 dark:text-gray-300 md:w-4/5 lg:w-3/5 mx-auto text-lg">
           Calculate how much your money machine needs to grow to support your desired lifestyle
         </p>
       </div>
 
-      <!-- Calculator Box -->
-      <div class="animate_top max-w-2xl mx-auto bg-gradient-to-br from-white to-gray-50 dark:from-blacksection dark:to-gray-900 border border-stroke dark:border-strokedark rounded-lg p-7.5 xl:p-12.5 shadow-xl backdrop-blur-sm">
-        <div class="mb-10">
-          <label class="block text-black dark:text-white font-medium mb-4">
+      <!-- Modernized Calculator Box -->
+      <div class="animate_top max-w-2xl mx-auto backdrop-blur-xl bg-white/90 dark:bg-blacksection/90 rounded-3xl p-8 xl:p-12 shadow-[0_0_50px_0_rgba(0,0,0,0.1)] dark:shadow-[0_0_50px_0_rgba(0,0,0,0.3)] border border-white/20 dark:border-gray-800/50">
+        <div class="mb-12">
+          <label class="block text-black dark:text-white font-medium mb-6 text-xl">
             Desired Monthly Income
           </label>
-          <div class="flex items-center gap-4">
+          <div class="flex items-center gap-6">
             <input 
               type="range" 
               min="1000" 
               max="20000" 
               step="500" 
               value="5000"
-              class="w-full accent-primary cursor-pointer"
+              class="w-full h-3 accent-primary cursor-pointer appearance-none bg-gradient-to-r from-gray-200 to-primary/20 dark:from-gray-700 dark:to-primary/40 rounded-full overflow-hidden transition-all duration-150 hover:from-gray-300 dark:hover:from-gray-600"
               id="incomeSlider"
             >
-            <span class="text-black dark:text-white font-semibold min-w-[100px]" id="incomeDisplay">
+            <span class="text-black dark:text-white font-bold text-2xl min-w-[120px] tabular-nums bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 dark:from-primary dark:to-blue-400" id="incomeDisplay">
               $5,000
             </span>
           </div>
         </div>
 
-        <div class="bg-alabaster dark:bg-blacksection border border-stroke dark:border-strokedark rounded-lg p-7.5">
-          <h3 class="text-black dark:text-white font-medium mb-4">Required Money Machine Size</h3>
-          <div class="flex items-center justify-between">
-            <p class="text-waterloo dark:text-manatee">
+        <div class="bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-blacksection rounded-xl p-8 shadow-inner">
+          <h3 class="text-black dark:text-white font-medium mb-6 text-lg">Required Money Machine Size</h3>
+          <div class="flex items-center justify-between mb-4">
+            <p class="text-waterloo dark:text-manatee text-lg">
               At 4% Annual Yield
             </p>
-            <p class="text-black dark:text-white font-bold text-2xl" id="machineSize">
+            <p class="text-black dark:text-white font-bold text-3xl tabular-nums bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 dark:from-primary dark:to-blue-400" id="machineSize">
               $1,500,000
             </p>
           </div>
+          <div class="border-t border-gray-100 dark:border-gray-800 pt-4 mt-4">
+            <p class="text-sm text-waterloo dark:text-manatee mb-2">This is equivalent to:</p>
+            <div class="space-y-2" id="wealthEquivalents">
+              <p class="text-sm text-gray-600 dark:text-gray-400 flex items-center">
+                <span class="w-4 h-4 mr-2 rounded-full bg-primary/10 flex items-center justify-center">
+                  <span class="w-2 h-2 rounded-full bg-primary"></span>
+                </span>
+                <span id="businessEquiv">Selling a business worth $3,500,000</span>
+              </p>
+              <p class="text-sm text-gray-600 dark:text-gray-400 flex items-center">
+                <span class="w-4 h-4 mr-2 rounded-full bg-primary/10 flex items-center justify-center">
+                  <span class="w-2 h-2 rounded-full bg-primary"></span>
+                </span>
+                <span id="rentalEquiv">Acquiring 30 rental properties at $500,000 each</span>
+              </p>
+              <p class="text-sm text-gray-600 dark:text-gray-400 flex items-center">
+                <span class="w-4 h-4 mr-2 rounded-full bg-primary/10 flex items-center justify-center">
+                  <span class="w-2 h-2 rounded-full bg-primary"></span>
+                </span>
+                <span id="dividendEquiv">Building a $1,500,000 investment portfolio</span>
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div class="mt-5 text-center">
-          <p class="text-sm text-waterloo dark:text-manatee">
+        <div class="mt-8 text-center">
+          <p class="text-sm text-waterloo dark:text-manatee mb-8">
             Based on the widely-accepted 4% safe withdrawal rate for sustainable retirement income
           </p>
-          <a href="https://app.currencycaptain.com/sign-up" class="inline-block mt-7.5">
-            <button class="bg-primary hover:bg-primary-dark text-white font-medium rounded-full px-7.5 py-3 text-base transition-colors duration-300">
+          <a href="https://app.currencycaptain.com/sign-up" class="inline-block">
+            <button class="group bg-gradient-to-r from-primary to-blue-600 hover:from-primary-dark hover:to-blue-700 text-white font-medium rounded-full px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
               Start Building Your Freedom Fund
-              <span class="ml-2">→</span>
+              <span class="ml-2 group-hover:translate-x-1 inline-block transition-transform duration-200">→</span>
             </button>
           </a>
         </div>
@@ -771,7 +824,7 @@
         </div>
 
         <a href="https://app.currencycaptain.com/sign-up" class="inline-block w-full">
-          <button class="w-full bg-primary hover:bg-primary-dark text-white font-semibold rounded-full px-8 py-4 text-base transition-colors duration-300 shadow-lg hover:shadow-xl">
+          <button class="w-full bg-primary hover:bg-primary-dark text-white font-semibold rounded-full px-8 py-4 text-lg transition-colors duration-300 shadow-lg hover:shadow-xl">
             Start Your Free Trial
             <span class="ml-2">→</span>
           </button>
@@ -964,14 +1017,30 @@
       const incomeSlider = document.getElementById('incomeSlider');
       const incomeDisplay = document.getElementById('incomeDisplay');
       const machineSize = document.getElementById('machineSize');
+      const businessEquiv = document.getElementById('businessEquiv');
+      const rentalEquiv = document.getElementById('rentalEquiv');
+      const dividendEquiv = document.getElementById('dividendEquiv');
 
       function updateCalculator() {
         const monthlyIncome = parseInt(incomeSlider.value);
         const annualIncome = monthlyIncome * 12;
         const requiredCapital = annualIncome * 25; // 4% rule = multiply by 25
 
+        // Update main displays
         incomeDisplay.textContent = '$' + monthlyIncome.toLocaleString();
         machineSize.textContent = '$' + requiredCapital.toLocaleString();
+
+        // Update equivalents
+        // Business profit needed (assuming 30% profit margin)
+        const businessRevenue = Math.round((annualIncome / 0.30));
+        // Rental income (assuming 8% annual return after expenses)
+        const rentalProperties = Math.ceil(requiredCapital / 300000); // Assuming $300k per property
+        // Dividend portfolio (at 4% yield)
+        const dividendAmount = requiredCapital.toLocaleString();
+
+        businessEquiv.textContent = `Building a $${(businessRevenue).toLocaleString()}/year business at 30% margin`;
+        rentalEquiv.textContent = `${rentalProperties} properties generating $${Math.round(requiredCapital * 0.08 / rentalProperties).toLocaleString()} each/year`;
+        dividendEquiv.textContent = `A $${dividendAmount} investment portfolio yielding 4% annually`;
       }
 
       incomeSlider.addEventListener('input', updateCalculator);

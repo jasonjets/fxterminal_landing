@@ -2,47 +2,40 @@
 
 <header
   class="fixed left-0 top-0 w-full z-99999 py-4"
-  :class="{ 'bg-white dark:bg-black shadow transition duration-100' : stickyMenu }"
+  :class="{ 'bg-black shadow transition duration-100' : stickyMenu }"
   @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false"
 >
   <div class="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
     <div class="flex items-center justify-between relative h-12">
       <!-- Logo -->
-      <a href="/" class="text-black dark:text-white text-xl font-bold">
+      <a href="/" class="text-white text-xl font-bold">
         Currency Captain
       </a>
 
       <!-- Desktop Navigation -->
       <nav class="hidden lg:flex items-center gap-8">
-        <a href="#features" class="text-black dark:text-white hover:text-primary">Features</a>
-        <a href="#pricing" class="text-black dark:text-white hover:text-primary">Pricing</a>
-        <a href="#formula" class="text-black dark:text-white hover:text-primary">The Formula</a>
-        <a href="#freedom-calculator" class="text-black dark:text-white hover:text-primary">Freedom Calculator</a>
-        <a href="#about" class="text-black dark:text-white hover:text-primary">About</a>
+        <a href="#features" class="text-white hover:text-primary">Features</a>
+        <a href="#pricing" class="text-white hover:text-primary">Pricing</a>
+        <a href="#formula" class="text-white hover:text-primary">The Formula</a>
+        <a href="#freedom-calculator" class="text-white hover:text-primary">Freedom Calculator</a>
+        <a href="#about" class="text-white hover:text-primary">About</a>
       </nav>
 
       <!-- Right Side Actions -->
       <div class="hidden lg:flex items-center gap-6">
         <a href="https://app.currencycaptain.com/sign-in" 
-           class="text-black dark:text-white hover:text-primary font-medium">
+           class="text-white hover:text-primary font-medium">
           Log In
         </a>
         <a href="https://app.currencycaptain.com/sign-up" 
-           class="inline-flex items-center justify-center px-6 py-3 border border-black dark:border-white text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors rounded-md font-medium">
+           class="inline-flex items-center justify-center px-6 py-3 border border-white text-white hover:bg-white hover:text-black transition-colors rounded-md font-medium">
           Get Started
         </a>
-        
-        <!-- Dark Mode Toggle -->
-        <label class="block m-0 relative">
-          <input type="checkbox" :value="darkMode" @change="darkMode = !darkMode" class="cursor-pointer w-full h-full opacity-0 absolute top-0 z-50 m-0" />
-          <img class="dark:hidden" src="./images/icon/icon-sun.svg" alt="Sun" />
-          <img class="hidden dark:block" src="./images/icon/icon-moon.svg" alt="Moon" />
-        </label>
       </div>
 
       <!-- Mobile Menu Button -->
       <button class="lg:hidden flex items-center" @click="navigationOpen = !navigationOpen">
-        <svg class="w-6 h-6 text-black dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path x-show="!navigationOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
           <path x-show="navigationOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
         </svg>
@@ -52,19 +45,19 @@
     <!-- Mobile Navigation -->
     <div
       x-show="navigationOpen"
-      class="lg:hidden absolute top-full left-0 right-0 bg-white dark:bg-black shadow-lg py-4 px-4"
+      class="lg:hidden absolute top-full left-0 right-0 bg-black shadow-lg py-4 px-4"
       @click.away="navigationOpen = false"
     >
       <nav class="flex flex-col gap-4">
-        <a href="#features" class="text-black dark:text-white hover:text-primary">Features</a>
-        <a href="#pricing" class="text-black dark:text-white hover:text-primary">Pricing</a>
-        <a href="#formula" class="text-black dark:text-white hover:text-primary">The Formula</a>
-        <a href="#freedom-calculator" class="text-black dark:text-white hover:text-primary">Freedom Calculator</a>
-        <a href="#about" class="text-black dark:text-white hover:text-primary">About</a>
-        <hr class="border-gray-200 dark:border-gray-700">
-        <a href="https://app.currencycaptain.com/sign-in" class="text-black dark:text-white hover:text-primary">Log In</a>
+        <a href="#features" class="text-white hover:text-primary">Features</a>
+        <a href="#pricing" class="text-white hover:text-primary">Pricing</a>
+        <a href="#formula" class="text-white hover:text-primary">The Formula</a>
+        <a href="#freedom-calculator" class="text-white hover:text-primary">Freedom Calculator</a>
+        <a href="#about" class="text-white hover:text-primary">About</a>
+        <hr class="border-gray-700">
+        <a href="https://app.currencycaptain.com/sign-in" class="text-white hover:text-primary">Log In</a>
         <a href="https://app.currencycaptain.com/sign-up" 
-           class="inline-flex items-center justify-center px-6 py-3 border border-black dark:border-white text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors rounded-md font-medium">
+           class="inline-flex items-center justify-center px-6 py-3 border border-white text-white hover:bg-white hover:text-black transition-colors rounded-md font-medium">
           Get Started
         </a>
       </nav>
