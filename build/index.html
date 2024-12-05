@@ -4,186 +4,291 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Solid - Tailwind CSS Saas Template</title>
+    <meta name="description" content="Take control of your finances with Wealth Mastery. Access budgeting tools, track spending, and build wealth with our easy-to-use platform. Start today!">
+    <title>Wealth Mastery | Personal Finance & Financial Freedom Tools</title>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Currency Captain",
+        "url": "https://www.currencycaptain.com",
+        "logo": "https://www.currencycaptain.com/logo.png", 
+        "description": "Currency Captain provides comprehensive financial management tools that simplify personal budgeting, track expenses, and help you build toward financial freedom.",
+        "telephone": "+1-512-815-2274",
+      }
+      </script>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11463643965"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-11463643965');
+    </script>
+
+    <!-- Event snippet for Page view conversion page -->
+    <script>
+      gtag('event', 'conversion', {
+          'send_to': 'AW-11463643965/-craCNeVoYUZEL2mpdoq',
+          'value': 1.0,
+          'currency': 'USD'
+      });
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8CYCN0F0LB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-8CYCN0F0LB');
+    </script>
+
+
+    
   <link rel="icon" href="favicon.ico"><link href="style.css" rel="stylesheet"></head>
+
+  
   <body
     x-data="{ page: 'home', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
     x-init="
-         darkMode = JSON.parse(localStorage.getItem('darkMode'));
-         $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
-    :class="{'dark bg-black': darkMode === true}"
+         darkMode = true;
+         localStorage.setItem('darkMode', 'true');"
+    class="dark bg-black"
   >
+
     <!-- ===== Bg Lines Start ===== -->
     <div class="fixed top-0 left-0 -z-10 flex h-full w-full items-center justify-around">
   <span class="w-[1px] h-full bg-stroke dark:bg-strokedark flex animate-line1"></span>
   <span class="w-[1px] h-full bg-stroke dark:bg-strokedark flex animate-line2"></span>
   <span class="w-[1px] h-full bg-stroke dark:bg-strokedark flex animate-line3"></span>
 </div>
-    <!-- ===== Bg Lines End ===== -->
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
 
-    <!-- ===== Header Start ===== -->
-    <header
-  class="fixed left-0 top-0 w-full z-99999 py-7"
-  :class="{ 'bg-white dark:bg-black shadow !py-4 transition duration-100' : stickyMenu }"
+<header
+  class="fixed left-0 top-0 w-full z-99999 py-4"
+  :class="{ 'bg-black shadow transition duration-100' : stickyMenu }"
   @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false"
 >
-  <div class="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0 lg:flex items-center justify-between relative">
-    <div class="w-full lg:w-1/4 flex items-center justify-between">
-      <a href="index.html">
-        <img class="dark:hidden" src="images/logo-light.svg" alt="Logo Light" />
-        <img class="hidden dark:block" src="images/logo-dark.svg" alt="Logo Dark" />
+  <div class="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+    <div class="flex items-center justify-between relative h-12">
+      <!-- Logo -->
+      <a href="/" class="text-white text-xl font-bold">
+        Currency Captain
       </a>
 
-      <!-- Hamburger Toggle BTN -->
-      <button class="lg:hidden block" @click="navigationOpen = !navigationOpen">
-        <span class="block relative cursor-pointer w-5.5 h-5.5">
-          <span class="block absolute w-full h-full">
-            <span class="block relative top-0 left-0 bg-black dark:bg-white rounded-sm w-0 h-0.5 my-1 ease-in-out duration-200 delay-[0]" :class="{ '!w-full delay-300': !navigationOpen }"></span>
-            <span class="block relative top-0 left-0 bg-black dark:bg-white rounded-sm w-0 h-0.5 my-1 ease-in-out duration-200 delay-150" :class="{ '!w-full delay-400': !navigationOpen }"></span>
-            <span class="block relative top-0 left-0 bg-black dark:bg-white rounded-sm w-0 h-0.5 my-1 ease-in-out duration-200 delay-200" :class="{ '!w-full delay-500': !navigationOpen }"></span>
-          </span>
-          <span class="block absolute w-full h-full rotate-45">
-            <span class="block bg-black dark:bg-white rounded-sm ease-in-out duration-200 delay-300 absolute left-2.5 top-0 w-0.5 h-full" :class="{ 'h-0 delay-[0]': !navigationOpen }"></span>
-            <span class="block bg-black dark:bg-white rounded-sm ease-in-out duration-200 delay-400 absolute left-0 top-2.5 w-full h-0.5" :class="{ 'h-0 dealy-200': !navigationOpen }"></span>
-          </span>
-        </span>
-      </button>
-      <!-- Hamburger Toggle BTN -->
-    </div>
-
-    <div
-      class="w-full lg:w-3/4 h-0 lg:h-auto invisible lg:visible lg:flex items-center justify-between"
-      :class="{ '!visible bg-white dark:bg-blacksection shadow-solid-5 h-auto max-h-[400px] overflow-y-scroll rounded-md mt-4 p-7.5': navigationOpen }"
-    >
-      <nav>
-        <ul class="flex lg:items-center flex-col lg:flex-row gap-5 lg:gap-10">
-          <li><a href="index.html" class="hover:text-primary" :class="{ 'text-primary': page === 'home' }">Home</a></li>
-          <li><a href="index.html#features" class="hover:text-primary">Features</a></li>
-          <li class="group relative" x-data="{ dropdown: false }">
-            <a
-              href="#"
-              class="hover:text-primary flex items-center justify-between gap-3"
-              @click.prevent="dropdown = !dropdown"
-              :class="{ 'text-primary': page === 'blog-grid' || page === 'blog-single' || page === 'signin' || page === 'signup' || page === '404' }"
-            >
-              Pages
-
-              <svg
-              :class="{ 'fill-primary': dropdown }" 
-              class="fill-waterloo group-hover:fill-primary w-3 h-3 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-              </svg>
-            </a>
-
-            <!-- Dropdown Start -->
-            <ul class="dropdown" :class="{ 'flex': dropdown }">
-              <li><a href="blog-grid.html" class="hover:text-primary" :class="{ 'text-primary': page === 'blog-grid' }">Blog Grid</a></li>
-              <li><a href="blog-single.html" class="hover:text-primary" :class="{ 'text-primary': page === 'blog-single' }">Blog Single</a></li>
-              <li><a href="signin.html" class="hover:text-primary" :class="{ 'text-primary': page === 'signin' }">Sign In</a></li>
-              <li><a href="signup.html" class="hover:text-primary" :class="{ 'text-primary': page === 'signup' }">Sign Up</a></li>
-              <li><a href="404.html" class="hover:text-primary" :class="{ 'text-primary': page === '404' }">404</a></li>
-            </ul>
-            <!-- Dropdown End -->
-          </li>
-          <li><a href="index.html#support" class="hover:text-primary">Support</a></li>
-        </ul>
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="#features" class="text-white hover:text-primary">Features</a>
+        <a href="#pricing" class="text-white hover:text-primary">Pricing</a>
+        <a href="#formula" class="text-white hover:text-primary">The Formula</a>
+        <a href="#freedom-calculator" class="text-white hover:text-primary">Freedom Calculator</a>
+        <a href="#about" class="text-white hover:text-primary">About</a>
       </nav>
 
-      <div class="flex items-center gap-6 mt-7 lg:mt-0">
-        <div class="mr-1.5 absolute lg:static top-1 right-17" :class="navigationOpen ? '!visible' : '!visible'">
-          <label class="block m-0 relative">
-            <input type="checkbox" :value="darkMode" @change="darkMode = !darkMode" class="cursor-pointer w-full h-full opacity-0 absolute top-0 z-50 m-0" />
-            <img class="dark:hidden" src="images/icon-sun.svg" alt="Sun" />
-            <img class="hidden dark:block" src="images/icon-moon.svg" alt="Moon" />
-          </label>
-        </div>
-
-        <a href="signin.html" class="text-waterloo text-regular font-medium hover:text-primary">Sign In</a>
-        <a href="#" class="flex items-center justify-center bg-primary hover:bg-primaryho ease-in-out duration-300 text-white text-regular rounded-full py-2.5 px-7.5">Download</a>
+      <!-- Right Side Actions -->
+      <div class="hidden lg:flex items-center gap-6">
+        <a href="https://app.currencycaptain.com/sign-in" 
+           class="text-white hover:text-primary font-medium">
+          Log In
+        </a>
+        <a href="https://app.currencycaptain.com/sign-up" 
+           class="inline-flex items-center justify-center px-6 py-3 border border-white text-white hover:bg-white hover:text-black transition-colors rounded-md font-medium">
+          Get Started
+        </a>
       </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="lg:hidden flex items-center" @click="navigationOpen = !navigationOpen">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path x-show="!navigationOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          <path x-show="navigationOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div
+      x-show="navigationOpen"
+      class="lg:hidden absolute top-full left-0 right-0 bg-black shadow-lg py-4 px-4"
+      @click.away="navigationOpen = false"
+    >
+      <nav class="flex flex-col gap-4">
+        <a href="#features" class="text-white hover:text-primary">Features</a>
+        <a href="#pricing" class="text-white hover:text-primary">Pricing</a>
+        <a href="#formula" class="text-white hover:text-primary">The Formula</a>
+        <a href="#freedom-calculator" class="text-white hover:text-primary">Freedom Calculator</a>
+        <a href="#about" class="text-white hover:text-primary">About</a>
+        <hr class="border-gray-700">
+        <a href="https://app.currencycaptain.com/sign-in" class="text-white hover:text-primary">Log In</a>
+        <a href="https://app.currencycaptain.com/sign-up" 
+           class="inline-flex items-center justify-center px-6 py-3 border border-white text-white hover:bg-white hover:text-black transition-colors rounded-md font-medium">
+          Get Started
+        </a>
+      </nav>
     </div>
   </div>
 </header>
+    <!-- ===== Bg Lines End ===== -->
 
-    <!-- ===== Header End ===== -->
+    <main class="pt-8">
+<!-- ===== Hero Start ===== -->
+<section id="home" class="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-black">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-0 pt-12">
+    <div class="py-0 flex flex-col md:flex-row items-center justify-between gap-2">
+      <div class="w-full md:w-1/2 animate__animated animate__fadeInLeft">
+        <h4 class="text-primary font-semibold mb-2 mt-10 text-lg">
+          <span class="bg-primary/10 text-primary px-4 py-1 rounded-full">All-in-One Wealth Management</span>
+        </h4>
+        <h1 class="text-black dark:text-white text-4xl xl:text-6xl font-bold mb-5 leading-tight">
+          Automate your finances<br>
+          <span class="text-primary dark:text-primary">
+            Build your wealth
+          </span>
+        </h1>
+        <p class="text-gray-700 dark:text-gray-300 text-lg mb-10 leading-relaxed">
+          Stop juggling spreadsheets and receipts. Automate your budgeting, track your wealth, and reach your goals with our all-in-one platform.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="https://app.currencycaptain.com/sign-up" class="group">
+            <button class="bg-gradient-to-r from-primary to-blue-600 hover:from-primary-dark hover:to-blue-700 text-white font-semibold rounded-full px-8 py-4 text-base transition-all duration-300 transform hover:scale-105 hover:shadow-lg group-hover:translate-x-1">
+              Start Free 30-Day Trial
+              <span class="ml-2 group-hover:translate-x-1 inline-block transition-transform duration-200">→</span>
+            </button>
+          </a>
+          
+          <!-- User count indicator -->
+          <div class="flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-black/50 backdrop-blur-sm rounded-full shadow-sm">
+            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+            <span class="text-sm">
+              <span class="font-semibold text-black dark:text-white">16,000+</span>
+              <span class="text-gray-600 dark:text-gray-400">Active Users</span>
+            </span>
+          </div>
+        </div>
 
-    <main>
-      <!-- ===== Hero Start ===== -->
-      <section class="pt-35 md:pt-40 xl:pt-46 pb-20 xl:pb-25 overflow-hidden">
-        <div class="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-          <div class="flex lg:items-center lg:gap-8 xl:gap-32.5">
-            <div class="animate_left md:w-1/2">
-              <h4 class="text-black dark:text-white text-lg font-medium mb-4.5">🔥 Solid is one of the best option for you.</h4>
-              <h1 class="text-black dark:text-white text-3xl xl:text-hero font-bold mb-5">
-                Complete Tailwind CSS
-                <span class="inline-block relative before:absolute before:bottom-2.5 before:left-0 before:w-full before:h-3 before:bg-titlebg dark:before:bg-titlebgdark before:-z-1">Template</span>
-                for SaaS Website
-              </h1>
-              <p>Solid is a complete Tailwind CSS template crafted specially for SaaS, Software Mobile App and Web App Sites.</p>
-
-              <div class="mt-10">
-                <form action="https://formbold.com/s/unique_form_id" method="POST">
-                  <div class="flex flex-wrap gap-5">
-                    <input
-                      type="text"
-                      placeholder="Enter your email address"
-                      class="dark:bg-black border border-stroke dark:border-strokedark shadow-solid-2 dark:shadow-none rounded-full focus:outline-none focus:border-primary dark:focus:border-primary py-2.5 px-6"
-                    />
-                    <button class="flex bg-black hover:bg-blackho dark:bg-btndark text-white rounded-full ease-in-out duration-300 px-7.5 py-2.5">Get Started</button>
-                  </div>
-                </form>
-
-                <p class="text-black dark:text-white mt-5">Try for free no credit card required.</p>
-              </div>
+        <!-- Security features below -->
+        <div class="flex flex-wrap gap-4 mt-4">
+          <div class="flex items-center gap-4">
+            <div class="flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-black/50 backdrop-blur-sm rounded-full shadow-sm">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+              </svg>
+              <span class="text-sm">
+                <span class="font-semibold text-black dark:text-white">Bank-Grade</span>
+                <span class="text-gray-600 dark:text-gray-400">Security</span>
+              </span>
             </div>
-            <div class="animate_right md:w-1/2 hidden lg:block">
-              <div class="relative 2xl:-mr-7.5">
-                <img src="images/shape-01.png" alt="shape" class="absolute -left-11.5 top-0" />
-                <img src="images/shape-02.svg" alt="shape" class="absolute right-0 bottom-0" />
-                <img src="images/shape-03.svg" alt="shape" class="absolute -right-6.5 bottom-0" />
-                <div>
-                  <img class="dark:hidden shadow-solid-l" src="images/hero/iphone.png" />
-                  <img class="hidden dark:block shadow-solid-l" src="images/hero-dark.svg" alt="Hero" />
-                </div>
-              </div>
+            <div class="flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-black/50 backdrop-blur-sm rounded-full shadow-sm">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+              <span class="text-sm">
+                <span class="font-semibold text-black dark:text-white">256-bit</span>
+                <span class="text-gray-600 dark:text-gray-400">Encryption</span>
+              </span>
             </div>
           </div>
         </div>
-      </section>
-      <!-- ===== Hero End ===== -->
+      </div>
+      <div class="w-full md:w-1/2 animate__animated animate__fadeInRight h-auto relative">
+        <div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent dark:from-primary/10 rounded-3xl blur-2xl"></div>
+        <img class="w-full h-full max-h-[600px] object-cover mx-auto relative rounded-3xl shadow-2xl transform hover:scale-[1.02] transition-transform duration-300" 
+             src="images/tri.png" 
+             alt="Currency Captain, Wealth Mastery" />
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== Hero End ===== -->
 
-      <!-- ===== Clients Start ===== -->
+
+
+
+
+      <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols": [
+    {
+      "proName": "FOREXCOM:SPXUSD",
+      "title": "S&P 500"
+    },
+    {
+      "proName": "FOREXCOM:NSXUSD",
+      "title": "US 100"
+    },
+    {
+      "proName": "FX_IDC:EURUSD",
+      "title": "EUR to USD"
+    },
+    {
+      "proName": "BITSTAMP:BTCUSD",
+      "title": "Bitcoin"
+    },
+    {
+      "proName": "BITSTAMP:ETHUSD",
+      "title": "Ethereum"
+    }
+  ],
+  "showSymbolLogo": true,
+  "isTransparent": false,
+  "largeChartUrl": "",
+  "displayMode": "regular",
+  "colorTheme": "dark",
+  "locale": "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+
+
+
+
+
+
+
+      <!-- ===== Clients Start ===== 
+      
       <section class="bg-alabaster dark:bg-black border border-x-0 border-y-stroke dark:border-y-strokedark py-11">
         <div class="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
           <div class="grid grid-cols-3 md:grid-cols-6 gap-7.5 lg:gap-12.5 xl:gap-29 justify-center items-center">
             <a href="#" class="animate_top block">
-              <img class="opacity-65 transition-all duration-300 hover:opacity-100 dark:hidden" src="images/brand-light-01.svg" alt="Clients" />
-              <img class="hidden opacity-50 transition-all duration-300 hover:opacity-100 dark:block" src="images/brand-dark-01.svg" alt="Clients" />
+              <img class="opacity-65 transition-all duration-300 hover:opacity-100 dark:hidden" src="./images/brand/brand-light-01.svg" alt="Clients" />
+              <img class="hidden opacity-50 transition-all duration-300 hover:opacity-100 dark:block" src="./images/brand/brand-dark-01.svg" alt="Clients" />
             </a>
             <a href="#" class="animate_top block">
-              <img class="opacity-65 transition-all duration-300 hover:opacity-100 dark:hidden" src="images/brand-light-02.svg" alt="Clients" />
-              <img class="hidden opacity-50 transition-all duration-300 hover:opacity-100 dark:block" src="images/brand-dark-02.svg" alt="Clients" />
+              <img class="opacity-65 transition-all duration-300 hover:opacity-100 dark:hidden" src="./images/brand/brand-light-02.svg" alt="Clients" />
+              <img class="hidden opacity-50 transition-all duration-300 hover:opacity-100 dark:block" src="./images/brand/brand-dark-02.svg" alt="Clients" />
             </a>
             <a href="#" class="animate_top block">
-              <img class="opacity-65 transition-all duration-300 hover:opacity-100 dark:hidden" src="images/brand-light-03.svg" alt="Clients" />
-              <img class="hidden opacity-50 transition-all duration-300 hover:opacity-100 dark:block" src="images/brand-dark-03.svg" alt="Clients" />
+              <img class="opacity-65 transition-all duration-300 hover:opacity-100 dark:hidden" src="./images/brand/brand-light-03.svg" alt="Clients" />
+              <img class="hidden opacity-50 transition-all duration-300 hover:opacity-100 dark:block" src="./images/brand/brand-dark-03.svg" alt="Clients" />
             </a>
             <a href="#" class="animate_top block">
-              <img class="opacity-65 transition-all duration-300 hover:opacity-100 dark:hidden" src="images/brand-light-04.svg" alt="Clients" />
-              <img class="hidden opacity-50 transition-all duration-300 hover:opacity-100 dark:block" src="images/brand-dark-04.svg" alt="Clients" />
+              <img class="opacity-65 transition-all duration-300 hover:opacity-100 dark:hidden" src="./images/brand/brand-light-04.svg" alt="Clients" />
+              <img class="hidden opacity-50 transition-all duration-300 hover:opacity-100 dark:block" src="./images/brand/brand-dark-04.svg" alt="Clients" />
             </a>
             <a href="#" class="animate_top block">
-              <img class="opacity-65 transition-all duration-300 hover:opacity-100 dark:hidden" src="images/brand-light-05.svg" alt="Clients" />
-              <img class="hidden opacity-50 transition-all duration-300 hover:opacity-100 dark:block" src="images/brand-dark-05.svg" alt="Clients" />
+              <img class="opacity-65 transition-all duration-300 hover:opacity-100 dark:hidden" src="./images/brand/brand-light-05.svg" alt="Clients" />
+              <img class="hidden opacity-50 transition-all duration-300 hover:opacity-100 dark:block" src="./images/brand/brand-dark-05.svg" alt="Clients" />
             </a>
             <a href="#" class="animate_top block">
-              <img class="opacity-65 transition-all duration-300 hover:opacity-100 dark:hidden" src="images/brand-light-06.svg" alt="Clients" />
-              <img class="hidden opacity-50 transition-all duration-300 hover:opacity-100 dark:block" src="images/brand-dark-06.svg" alt="Clients" />
+              <img class="opacity-65 transition-all duration-300 hover:opacity-100 dark:hidden" src="./images/brand/brand-light-06.svg" alt="Clients" />
+              <img class="hidden opacity-50 transition-all duration-300 hover:opacity-100 dark:block" src="./images/brand/brand-dark-06.svg" alt="Clients" />
             </a>
           </div>
         </div>
       </section>
-      <!-- ===== Clients End ===== -->
+       ===== Clients End ===== -->
 
       <!-- ===== Features Start ===== -->
       <section id="features" class="py-20 lg:py-25 xl:py-30">
@@ -191,7 +296,14 @@
           <!-- Section Title Start -->
           <div
             class="animate_top text-center mx-auto"
-            x-data="{ sectionTitle: `SAAS FEATURES`, sectionSubtitle: `Our Software's Core Features`, sectionTitlePara: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.`}"
+            x-data="{ 
+              sectionTitle: `Your Financial Command Center`, 
+              sectionSubtitle: `Everything You Need to Build Wealth`, 
+              sectionTitlePara: `
+                Take control of your money with powerful AI-driven insights, 
+                automated tracking, and intelligent recommendations that help you 
+                save more and stress less.
+                `}"
           >
             <div class="bg-zumthor dark:bg-blacksection dark:border dark:border-strokedark inline-block rounded-full py-1.5 px-4.5 mb-4">
   <h4 x-text="sectionTitle" class="font-medium text-sectiontitle text-black dark:text-white"></h4>
@@ -204,619 +316,619 @@
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7.5 xl:gap-12.5 mt-12.5 lg:mt-15 xl:mt-20">
             <!-- Features item Start -->
-            <div class="animate_top border border-white shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all hover:shadow-solid-4 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection">
-              <div class="flex items-center justify-center rounded-[4px] bg-primary w-16 h-16">
-                <img src="images/icon-01.svg" alt="Icon" />
+            <div class="group animate_top border border-white/10 bg-white/5 backdrop-blur-xl shadow-solid-3 rounded-2xl p-7.5 xl:p-12.5 transition-all duration-300 hover:shadow-solid-4 hover:transform hover:-translate-y-2 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection">
+              <div class="relative flex items-center justify-center rounded-full bg-gradient-to-b from-primary/10 to-primary/0 w-16 h-16 mb-8 group-hover:scale-110 transition-transform duration-300">
+                <div class="absolute inset-0 rounded-full bg-primary blur-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                <img src="images/icon-01.svg" alt="Icon" class="relative z-10" />
               </div>
-              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">Crafted for SaaS</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.</p>
+              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mb-5">Smart Money Dashboard</h3>
+              <p class="text-gray-600 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">See exactly where your money goes with month-over-month spending comparisons, balance tracking, and upcoming payment alerts—all in one glance.</p>
             </div>
             <!-- Features item End -->
-
+          
             <!-- Features item Start -->
-            <div class="animate_top border border-white shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all hover:shadow-solid-4 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection">
+            <div class="animate_top border border-white/10 bg-white/5 backdrop-blur-xl shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all duration-300 hover:shadow-solid-4 hover:transform hover:-translate-y-1 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection">
               <div class="flex items-center justify-center rounded-[4px] bg-primary w-16 h-16">
                 <img src="images/icon-02.svg" alt="Icon" />
               </div>
-              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">High-quality Design</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.</p>
+              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">AI Financial Assistant</h3>
+              <p>Your personal finance expert available 24/7. Get personalized advice, spending alerts, and smart recommendations to optimize your money.</p>
             </div>
             <!-- Features item End -->
-
+          
             <!-- Features item Start -->
-            <div class="animate_top border border-white shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all hover:shadow-solid-4 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection">
+            <div class="animate_top border border-white/10 bg-white/5 backdrop-blur-xl shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all duration-300 hover:shadow-solid-4 hover:transform hover:-translate-y-1 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection">
               <div class="flex items-center justify-center rounded-[4px] bg-primary w-16 h-16">
                 <img src="images/icon-03.svg" alt="Icon" />
               </div>
-              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">All Essential Sections</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.</p>
+              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">Bill & Budget Mastery</h3>
+              <p>Never miss a payment with our smart calendar. Track your 'left after bills' amount and get instant alerts when you're approaching budget limits.</p>
             </div>
             <!-- Features item End -->
-
+          
             <!-- Features item Start -->
-            <div class="animate_top border border-white shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all hover:shadow-solid-4 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection">
+            <div class="animate_top border border-white/10 bg-white/5 backdrop-blur-xl shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all duration-300 hover:shadow-solid-4 hover:transform hover:-translate-y-1 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection">
               <div class="flex items-center justify-center rounded-[4px] bg-primary w-16 h-16">
                 <img src="images/icon-04.svg" alt="Icon" />
               </div>
-              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">Speed Optimized</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.</p>
+              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">Wealth Building Insights</h3>
+              <p>Transform your debt-to-income ratio with smart recommendations. Track your net worth growth and get personalized strategies to build wealth faster.</p>
             </div>
             <!-- Features item End -->
-
+          
             <!-- Features item Start -->
-            <div class="animate_top border border-white shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all hover:shadow-solid-4 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection">
-              <div class="flex items-center justify-center rounded-[4px] bg-primary w-16 h-16">
-                <img src="images/icon-05.svg" alt="Icon" />
+            <div class="animate_top border border-white/10 bg-white/5 backdrop-blur-xl shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all duration-300 hover:shadow-solid-4 hover:transform hover:-translate-y-1 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection">
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center justify-center rounded-[4px] bg-primary w-16 h-16">
+                  <img src="images/icon-05.svg" alt="Icon" />
+                </div>
+                <div class="bg-meta text-white text-metatitle inline-flex rounded-full py-1 px-4.5">New</div>
               </div>
-              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">Fully Customizable</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.</p>
+              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">Smart Transaction Analysis</h3>
+              <p>Automatically categorize frequent purchases, spot spending patterns, and get actionable insights to save more on your regular expenses.</p>
             </div>
             <!-- Features item End -->
-
+          
             <!-- Features item Start -->
-            <div class="animate_top border border-white shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all hover:shadow-solid-4 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection">
+            <div class="animate_top border border-white/10 bg-white/5 backdrop-blur-xl shadow-solid-3 rounded-lg p-7.5 xl:p-12.5 transition-all duration-300 hover:shadow-solid-4 hover:transform hover:-translate-y-1 dark:hover:bg-hoverdark dark:border-strokedark dark:bg-blacksection">
               <div class="flex items-center justify-center rounded-[4px] bg-primary w-16 h-16">
                 <img src="images/icon-06.svg" alt="Icon" />
               </div>
-              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">Regular Updates</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.</p>
+              <h3 class="font-semibold text-xl xl:text-itemtitle text-black dark:text-white mt-7.5 mb-5">Market Intelligence Hub</h3>
+              <p>Stay informed with real-time financial news, market updates, and personalized alerts that matter to your portfolio and financial goals.</p>
             </div>
             <!-- Features item End -->
           </div>
+          
+          
+          
         </div>
       </section>
       <!-- ===== Features End ===== -->
 
-      <!-- ===== About Start ===== -->
-      <section class="pb-20 lg:pb-25 xl:pb-30 overflow-hidden">
-        <div class="mx-auto max-w-c-1235 px-4 md:px-8 xl:px-0">
-          <div class="flex items-center gap-8 lg:gap-32.5">
-            <div class="animate_left hidden md:block md:w-1/2">
-              <img src="images/about-light-01.svg" alt="About" class="dark:hidden" />
-              <img src="images/about-dark-01.svg" alt="About" class="hidden dark:block" />
-            </div>
-            <div class="animate_right md:w-1/2">
-              <h4 class="text-black dark:text-white font-medium uppercase">
-                <a href="#" class="bg-meta text-white text-metatitle inline-flex rounded-full py-1 px-4.5 mr-4 mb-4">New</a> start tracking visitors
-              </h4>
-              <h2 class="relative font-bold text-black dark:text-white text-3xl xl:text-hero mb-6">
-                Know More About Our
-                <span class="inline-block relative before:absolute before:bottom-2.5 before:left-0 before:w-full before:h-3 before:bg-titlebg dark:before:bg-titlebgdark before:-z-1">Product.</span>
-              </h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies lacus non fermentum ultrices. Fusce consectetur le.</p>
 
-              <div class="mt-7.5 flex items-center gap-5">
-                <div class="w-15 h-15 rounded-[50%] border border-stroke dark:border-strokedark dark:bg-blacksection flex items-center justify-center">
-                  <p class="text-black dark:text-white font-semibold text-metatitle2">01</p>
-                </div>
-                <div class="w-3/4">
-                  <h5 class="text-black dark:text-white text-metatitle2 mb-0.5">Lorem ipsum dolor.</h5>
-                  <p>Ut ultricies lacus non fermentum ultrices.</p>
-                </div>
-              </div>
-              <div class="mt-7.5 flex items-center gap-5">
-                <div class="w-15 h-15 rounded-[50%] border border-stroke dark:border-strokedark dark:bg-blacksection flex items-center justify-center">
-                  <p class="text-black dark:text-white font-semibold text-metatitle2">02</p>
-                </div>
-                <div class="w-3/4">
-                  <h5 class="text-black dark:text-white text-metatitle2 mb-0.5">Fusce consectetur le.</h5>
-                  <p>consectetur adipiscing elit fermentum ultricies.</p>
-                </div>
-              </div>
+    <!-- ===== About Start ===== -->
+<section id="about" class="pb-20 lg:pb-25 xl:pb-30 overflow-hidden">
+  <div class="mx-auto max-w-c-1235 px-4 md:px-8 xl:px-0">
+    <div class="flex items-center gap-8 lg:gap-32.5">
+      <div class="animate_left hidden md:block md:w-1/2">
+        <img src="images/grow.png" alt="About" class="block" />
+      </div>
+      <div class="animate_right md:w-1/2">
+        <h4 class="text-black dark:text-white font-medium uppercase">
+          <a href="#" class="bg-meta text-white text-metatitle inline-flex rounded-full py-1 px-4.5 mr-4 mb-4">Smart Money</a> Built by Financial Engineers
+        </h4>
+        <h2 class="relative font-bold text-black dark:text-white text-3xl xl:text-hero mb-6">
+          Better Budgeting,
+          <span class="inline-block relative before:absolute before:bottom-2.5 before:left-0 before:w-full before:h-3 before:bg-titlebg dark:before:bg-titlebgdark before:-z-1">Smarter Growth</span>
+        </h2>
+        <p>Take control of your daily finances with intelligent tools that do more than just track spending. Our platform combines practical budgeting with sophisticated wealth-building insights, developed by quant engineers to help everyday people build lasting wealth.</p>
+
+        <div class="mt-7.5 flex items-center gap-5">
+          <div class="w-15 h-15 rounded-[50%] border border-stroke dark:border-strokedark dark:bg-blacksection flex items-center justify-center">
+            <p class="text-black dark:text-white font-semibold text-metatitle2">01</p>
+          </div>
+          <div class="w-3/4">
+            <h5 class="text-black dark:text-white text-metatitle2 mb-0.5">Smart Daily Management</h5>
+            <p>Effortlessly track spending, automate savings, and get AI-powered insights to optimize your budget.</p>
+          </div>
+        </div>
+        <div class="mt-7.5 flex items-center gap-5">
+          <div class="w-15 h-15 rounded-[50%] border border-stroke dark:border-strokedark dark:bg-blacksection flex items-center justify-center">
+            <p class="text-black dark:text-white font-semibold text-metatitle2">02</p>
+          </div>
+          <div class="w-3/4">
+            <h5 class="text-black dark:text-white text-metatitle2 mb-0.5">Intelligent Wealth Building</h5>
+            <p>Turn everyday savings into lasting wealth with smart strategies backed by financial engineering.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== About End ===== -->
+
+
+ 
+
+
+
+
+
+
+      <!-- ===== Formula Tab Start ===== -->
+<section id="formula" class="pt-18.5 pb-20 lg:pb-22.5 relative" x-data="{ featuresTab: 'tabOne' }">
+  <div class="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+    <div class="absolute top-0 -z-1">
+      <img class="dark:hidden" src="images/shape-dotted-light.svg" alt="Dotted Shape" />
+      <img class="block" src="images/shape-dotted-dark.svg" alt="Dotted Shape" />
+    </div>
+
+    <!-- Tab Menues Start -->
+    <div
+      class="animate_top border border-stroke dark:border-strokedark dark:bg-blacksection shadow-solid-5 dark:shadow-solid-6 bg-white rounded-[10px] flex flex-wrap md:flex-nowrap md:items-center justify-center lg:gap-7.5 xl:gap-12.5 mb-15 xl:mb-21.5"
+    >
+      <div
+        class="relative cursor-pointer w-full md:w-auto border-b last:border-0 md:border-0 border-stroke dark:border-strokedark flex items-center gap-4 py-2 xl:py-5 px-6 xl:px-13.5"
+        :class="{ 'active before:w-full before:h-1 before:bg-primary before:absolute before:bottom-0 before:left-0 before:rounded-tl-[4px] before:rounded-tr-[4px]': featuresTab === 'tabOne' }"
+        @click.prevent="featuresTab = 'tabOne'"
+      >
+        <div class="w-12.5 h-12.5 rounded-[50%] border border-stroke dark:border-strokedark dark:bg-blacksection flex items-center justify-center">
+          <p class="text-black dark:text-white font-medium text-metatitle3">01</p>
+        </div>
+        <div class="lg:w-auto md:w-3/5">
+          <h5 class="text-black dark:text-white text-sm xl:text-regular font-medium">Income Optimization</h5>
+        </div>
+      </div>
+
+      <div
+        class="relative cursor-pointer w-full md:w-auto border-b last:border-0 md:border-0 border-stroke dark:border-strokedark flex items-center gap-4 py-2 xl:py-5 px-6 xl:px-13.5"
+        :class="{ 'active before:w-full before:h-1 before:bg-primary before:absolute before:bottom-0 before:left-0 before:rounded-tl-[4px] before:rounded-tr-[4px]': featuresTab === 'tabTwo' }"
+        @click.prevent="featuresTab = 'tabTwo'"
+      >
+        <div class="w-12.5 h-12.5 rounded-[50%] border border-stroke dark:border-strokedark dark:bg-blacksection flex items-center justify-center">
+          <p class="text-black dark:text-white font-medium text-metatitle3">02</p>
+        </div>
+        <div class="lg:w-auto md:w-3/5">
+          <h5 class="text-black dark:text-white text-sm xl:text-regular font-medium">Emergency Fund Strategy</h5>
+        </div>
+      </div>
+
+      <div
+        class="relative cursor-pointer w-full md:w-auto border-b last:border-0 md:border-0 border-stroke dark:border-strokedark flex items-center gap-4 py-2 xl:py-5 px-6 xl:px-13.5"
+        :class="{ 'active before:w-full before:h-1 before:bg-primary before:absolute before:bottom-0 before:left-0 before:rounded-tl-[4px] before:rounded-tr-[4px]': featuresTab === 'tabThree' }"
+        @click.prevent="featuresTab = 'tabThree'"
+      >
+        <div class="w-12.5 h-12.5 rounded-[50%] border border-stroke dark:border-strokedark dark:bg-blacksection flex items-center justify-center">
+          <p class="text-black dark:text-white font-medium text-metatitle3">03</p>
+        </div>
+        <div class="lg:w-auto md:w-3/5">
+          <h5 class="text-black dark:text-white text-sm xl:text-regular font-medium">Wealth Generation System</h5>
+        </div>
+      </div>
+    </div>
+    <!-- Tab Menues End -->
+
+    <!-- Tab Content Start -->
+    <div class="animate_top mx-auto max-w-c-1154">
+      <div x-show="featuresTab === 'tabOne'">
+        <div class="flex flex-col md:flex-row items-center gap-8 lg:gap-19">
+          <div class="w-full md:w-1/2">
+            <h2 class="text-black dark:text-white text-2xl md:text-3xl xl:text-sectiontitle2 font-bold mb-7">Step 1: Maximize Your Personal Margin</h2>
+            <p class="mb-5 text-base">Building wealth is about increasing the gap between your income and expenses. This gap, or personal margin, is crucial for financial growth. Here's how to effectively manage it:</p>
+            <ul class="list-disc pl-6 mb-5">
+              <li class="mb-4"><strong>Analyze Spending Patterns:</strong> Regularly review your expenses to identify areas where you can cut back without sacrificing quality of life.</li>
+              <li class="mb-4"><strong>Identify Income Opportunities:</strong> Explore ways to increase your income through skill development, side projects, or career advancement.</li>
+              <li class="mb-4"><strong>Automate Savings:</strong> Set up automatic transfers to savings or investment accounts to ensure consistent growth of your surplus.</li>
+            </ul>
+            <p class="text-sm italic">Tip: Even small daily savings can accumulate significantly over time, contributing to your wealth-building efforts.</p>
+          </div>
+          <div class="w-full md:w-1/2">
+            <img src="images/test.png" alt="Income Formula" class="w-full h-auto max-w-md mx-auto" />
+          </div>
+        </div>
+      </div>
+
+      <div x-show="featuresTab === 'tabTwo'">
+        <div class="flex flex-col md:flex-row items-center gap-8 lg:gap-19">
+          <div class="w-full md:w-1/2">
+            <h2 class="text-black dark:text-white text-2xl md:text-3xl xl:text-sectiontitle2 font-bold mb-7">Step 2: Master Risk Management</h2>
+            <p class="mb-5 text-base">Family offices protect generational wealth by building robust financial defenses. Here's how to apply their proven strategies:</p>
+            <ul class="list-disc pl-6 mb-5">
+              <li class="mb-4">
+                <strong>Strategic Liquidity Tiers:</strong> Structure your safety net in layers—from immediate cash to short-term bonds—maximizing both security and returns
+              </li>
+              <li class="mb-4">
+                <strong>Risk-Adjusted Positioning:</strong> Maintain 6-12 months of runway, scaled to your income volatility and career stability
+              </li>
+              <li class="mb-4">
+                <strong>Opportunity Reserve:</strong> Keep additional capital ready to seize investment opportunities during market downturns
+              </li>
+            </ul>
+            <p class="text-sm italic">Pro Strategy: Elite wealth managers maintain 15-25% in strategic reserves, treating safety nets as active portfolio components that generate steady yields while protecting capital.</p>
+          </div>
+          <div class="w-full md:w-1/2">
+            <img src="images/multi.png" alt="Risk Management Strategy" class="w-full h-auto max-w-md mx-auto" />
+          </div>
+        </div>
+      </div>
+
+      <div x-show="featuresTab === 'tabThree'">
+        <div class="flex flex-col md:flex-row items-center gap-8 lg:gap-19">
+          <div class="w-full md:w-1/2">
+            <h2 class="text-black dark:text-white text-2xl md:text-3xl xl:text-sectiontitle2 font-bold mb-7">Step 3: Create Passive Income </h2>
+            <p class="mb-5 text-base">Transform savings into lasting wealth through proven investment principles:</p>
+            <ul class="list-disc pl-6 mb-5">
+              <li class="mb-4"><strong>Diversification:</strong> Spread investments across stocks (US/International), bonds, and real estate investment trusts (REITs)</li>
+              <li class="mb-4"><strong>Dollar-Cost Averaging:</strong> Invest consistently regardless of market conditions to reduce risk</li>
+              <li class="mb-4"><strong>Compound Growth:</strong> Reinvest all returns to accelerate wealth building</li>
+              <li class="mb-4"><strong>Low-Cost Index Funds:</strong> Minimize fees to maximize long-term returns</li>
+            </ul>
+            <p class="text-sm italic">Pro Tip: A portfolio of low-cost index funds has historically returned 7-10% annually over long periods. At 8%, money doubles approximately every 9 years.</p>
+          </div>
+          <div class="w-full md:w-1/2">
+            <img src="images/econ.png" alt="Wealth Building Strategy" class="w-full h-auto max-w-md mx-auto" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Tab Content End -->
+  </div>
+</section>
+<!-- ===== Formula Tab End ===== -->
+
+
+
+
+   <!-- ===== Freedom Calculator Start ===== -->
+   <section id="freedom-calculator" class="py-20 lg:py-25 xl:py-30">
+    <div class="mx-auto max-w-c-1235 px-4 md:px-8 xl:px-0 relative">
+      <!-- Enhanced gradient background with more height and blur -->
+      <div class="absolute -z-1 rounded-2xl left-0 top-0 w-full h-[85%] bg-gradient-to-tr from-[#F8F9FF] via-[#DEE7FF] to-[#F1F5FF] dark:from-[#24283E] dark:via-[#252A42] dark:to-[#2A2F4A] blur-[60px] opacity-70"></div>
+      
+      <!-- Section Title with increased top margin -->
+      <div class="animate_top text-center mx-auto mb-10 pt-10">
+        <h2 class="text-black dark:text-white text-4xl xl:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 dark:from-primary dark:to-blue-400">
+          Freedom Calculator
+        </h2>
+        <p class="text-gray-700 dark:text-gray-300 md:w-4/5 lg:w-3/5 mx-auto text-lg">
+          Calculate how much your money machine needs to grow to support your desired lifestyle
+        </p>
+      </div>
+
+      <!-- Modernized Calculator Box -->
+      <div class="animate_top max-w-2xl mx-auto backdrop-blur-xl bg-white/90 dark:bg-blacksection/90 rounded-3xl p-8 xl:p-12 shadow-[0_0_50px_0_rgba(0,0,0,0.1)] dark:shadow-[0_0_50px_0_rgba(0,0,0,0.3)] border border-white/20 dark:border-gray-800/50">
+        <div class="mb-12">
+          <label class="block text-black dark:text-white font-medium mb-6 text-xl">
+            Desired Monthly Income
+          </label>
+          <div class="flex items-center gap-6">
+            <input 
+              type="range" 
+              min="1000" 
+              max="20000" 
+              step="500" 
+              value="5000"
+              class="w-full h-3 accent-primary cursor-pointer appearance-none bg-gradient-to-r from-gray-200 to-primary/20 dark:from-gray-700 dark:to-primary/40 rounded-full overflow-hidden transition-all duration-150 hover:from-gray-300 dark:hover:from-gray-600"
+              id="incomeSlider"
+            >
+            <span class="text-black dark:text-white font-bold text-2xl min-w-[120px] tabular-nums bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 dark:from-primary dark:to-blue-400" id="incomeDisplay">
+              $5,000
+            </span>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-blacksection rounded-xl p-8 shadow-inner">
+          <h3 class="text-black dark:text-white font-medium mb-6 text-lg">Required Money Machine Size</h3>
+          <div class="flex items-center justify-between mb-4">
+            <p class="text-waterloo dark:text-manatee text-lg">
+              At 4% Annual Yield
+            </p>
+            <p class="text-black dark:text-white font-bold text-3xl tabular-nums bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 dark:from-primary dark:to-blue-400" id="machineSize">
+              $1,500,000
+            </p>
+          </div>
+          <div class="border-t border-gray-100 dark:border-gray-800 pt-4 mt-4">
+            <p class="text-sm text-waterloo dark:text-manatee mb-2">This is equivalent to:</p>
+            <div class="space-y-2" id="wealthEquivalents">
+              <p class="text-sm text-gray-600 dark:text-gray-400 flex items-center">
+                <span class="w-4 h-4 mr-2 rounded-full bg-primary/10 flex items-center justify-center">
+                  <span class="w-2 h-2 rounded-full bg-primary"></span>
+                </span>
+                <span id="businessEquiv">Selling a business worth $3,500,000</span>
+              </p>
+              <p class="text-sm text-gray-600 dark:text-gray-400 flex items-center">
+                <span class="w-4 h-4 mr-2 rounded-full bg-primary/10 flex items-center justify-center">
+                  <span class="w-2 h-2 rounded-full bg-primary"></span>
+                </span>
+                <span id="rentalEquiv">Acquiring 30 rental properties at $500,000 each</span>
+              </p>
+              <p class="text-sm text-gray-600 dark:text-gray-400 flex items-center">
+                <span class="w-4 h-4 mr-2 rounded-full bg-primary/10 flex items-center justify-center">
+                  <span class="w-2 h-2 rounded-full bg-primary"></span>
+                </span>
+                <span id="dividendEquiv">Building a $1,500,000 investment portfolio</span>
+              </p>
             </div>
           </div>
         </div>
-      </section>
-      <!-- ===== About End ===== -->
 
-      <!-- ===== About Two Start ===== -->
-      <section>
-        <div class="mx-auto max-w-c-1235 px-4 md:px-8 2xl:px-0 overflow-hidden">
-          <div class="flex items-center gap-8 lg:gap-32.5">
-            <div class="animate_left md:w-1/2">
-              <h4 class="text-black dark:text-white font-medium uppercase">grow your business faster</h4>
-              <h2 class="relative font-bold text-black dark:text-white text-3xl xl:text-hero mb-6">
-                Track Your Audience
-                <span class="inline-block relative before:absolute before:bottom-2.5 before:left-0 before:w-full before:h-3 before:bg-titlebg2 dark:before:bg-titlebgdark before:-z-1">Activities</span>
-              </h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies lacus non fermentum ultrices. Fusce consectetur le.</p>
-
-              <a href="#" class="flex items-center gap-2.5 text-black dark:text-white mt-7.5">
-                Know More
-                <img class="dark:hidden" src="images/icon-arrow-light.svg" alt="Arrow" />
-                <img class="hidden dark:block" src="images/icon-arrow-dark.svg" alt="Arrow" />
-              </a>
-            </div>
-            <div class="animate_right hidden md:block md:w-1/2">
-              <img src="images/about-light-02.svg" alt="About" class="dark:hidden" />
-              <img src="images/about-dark-02.svg" alt="About" class="hidden dark:block" />
-            </div>
-          </div>
+        <div class="mt-8 text-center">
+          <p class="text-sm text-waterloo dark:text-manatee mb-8">
+            Based on the widely-accepted 4% safe withdrawal rate for sustainable retirement income
+          </p>
+          <a href="https://app.currencycaptain.com/sign-up" class="inline-block">
+            <button class="group bg-gradient-to-r from-primary to-blue-600 hover:from-primary-dark hover:to-blue-700 text-white font-medium rounded-full px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+              Start Building Your Freedom Fund
+              <span class="ml-2 group-hover:translate-x-1 inline-block transition-transform duration-200">→</span>
+            </button>
+          </a>
         </div>
-      </section>
-      <!-- ===== About Two End ===== -->
-
-      <!-- ===== Features Tab Start ===== -->
-      <section class="pt-18.5 pb-20 lg:pb-22.5 relative" x-data="{ featuresTab: 'tabOne' }">
-        <div class="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-          <div class="absolute top-0 -z-1">
-            <img class="dark:hidden" src="images/shape-dotted-light.svg" alt="Dotted Shape" />
-            <img class="hidden dark:block" src="images/shape-dotted-dark.svg" alt="Dotted Shape" />
-          </div>
-
-          <!-- Tab Menues Start -->
-          <div
-            class="animate_top border border-stroke dark:border-strokedark dark:bg-blacksection shadow-solid-5 dark:shadow-solid-6 bg-white rounded-[10px] flex flex-wrap md:flex-nowrap md:items-center justify-center lg:gap-7.5 xl:gap-12.5 mb-15 xl:mb-21.5"
-          >
-            <div
-              class="relative cursor-pointer w-full md:w-auto border-b last:border-0 md:border-0 border-stroke dark:border-strokedark flex items-center gap-4 py-2 xl:py-5 px-6 xl:px-13.5"
-              :class="{ 'active before:w-full before:h-1 before:bg-primary before:absolute before:bottom-0 before:left-0 before:rounded-tl-[4px] before:rounded-tr-[4px]': featuresTab === 'tabOne' }"
-              @click.prevent="featuresTab = 'tabOne'"
-            >
-              <div class="w-12.5 h-12.5 rounded-[50%] border border-stroke dark:border-strokedark dark:bg-blacksection flex items-center justify-center">
-                <p class="text-black dark:text-white font-medium text-metatitle3">01</p>
-              </div>
-              <div class="lg:w-auto md:w-3/5">
-                <h5 class="text-black dark:text-white text-sm xl:text-regular font-medium">Clean User Interface</h5>
-              </div>
-            </div>
-            <div
-              class="relative cursor-pointer w-full md:w-auto border-b last:border-0 md:border-0 border-stroke dark:border-strokedark flex items-center gap-4 py-2 xl:py-5 px-6 xl:px-13.5"
-              :class="{ 'active before:w-full before:h-1 before:bg-primary before:absolute before:bottom-0 before:left-0 before:rounded-tl-[4px] before:rounded-tr-[4px]': featuresTab === 'tabTwo' }"
-              @click.prevent="featuresTab = 'tabTwo'"
-            >
-              <div class="w-12.5 h-12.5 rounded-[50%] border border-stroke dark:border-strokedark dark:bg-blacksection flex items-center justify-center">
-                <p class="text-black dark:text-white font-medium text-metatitle3">02</p>
-              </div>
-              <div class="lg:w-auto md:w-3/5">
-                <h5 class="text-black dark:text-white text-sm xl:text-regular font-medium">Cloud Data Save Options</h5>
-              </div>
-            </div>
-            <div
-              class="relative cursor-pointer w-full md:w-auto border-b last:border-0 md:border-0 border-stroke dark:border-strokedark flex items-center gap-4 py-2 xl:py-5 px-6 xl:px-13.5"
-              :class="{ 'active before:w-full before:h-1 before:bg-primary before:absolute before:bottom-0 before:left-0 before:rounded-tl-[4px] before:rounded-tr-[4px]': featuresTab === 'tabThree' }"
-              @click.prevent="featuresTab = 'tabThree'"
-            >
-              <div class="w-12.5 h-12.5 rounded-[50%] border border-stroke dark:border-strokedark dark:bg-blacksection flex items-center justify-center">
-                <p class="text-black dark:text-white font-medium text-metatitle3">03</p>
-              </div>
-              <div class="lg:w-auto md:w-3/5">
-                <h5 class="text-black dark:text-white text-sm xl:text-regular font-medium">Management And Collaboration</h5>
-              </div>
-            </div>
-          </div>
-          <!-- Tab Menues End -->
-
-          <!-- Tab Content Start -->
-          <div class="animate_top mx-auto max-w-c-1154">
-            <div x-show="featuresTab === 'tabOne'">
-              <div class="flex items-center gap-8 lg:gap-19">
-                <div class="md:w-1/2">
-                  <h2 class="text-black dark:text-white text-3xl xl:text-sectiontitle2 font-bold mb-7">Solid Has Neat & Clean User Interface.</h2>
-                  <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies lacus non fermentum ultrices. Fusce consectetur le.</p>
-                  <p class="w-11/12">Nam id eleifend dui, id iaculis purus. Etiam lobortis neque nec finibus sagittis. Nulla ligula nunc egestas ut.</p>
-                </div>
-                <div class="hidden md:block md:w-1/2">
-                  <img src="images/features-light-01.svg" alt="Features" class="dark:hidden" />
-                  <img src="images/features-dark-01.svg" alt="Features" class="hidden dark:block" />
-                </div>
-              </div>
-            </div>
-
-            <div x-show="featuresTab === 'tabTwo'">
-              <div class="flex items-center gap-8 lg:gap-19">
-                <div class="md:w-1/2">
-                  <h2 class="text-black dark:text-white text-3xl xl:text-sectiontitle2 font-bold mb-7">Solid Has Cloud Data Save Options.</h2>
-                  <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies lacus non fermentum ultrices. Fusce consectetur le.</p>
-                  <p class="w-11/12">Nam id eleifend dui, id iaculis purus. Etiam lobortis neque nec finibus sagittis. Nulla ligula nunc egestas ut.</p>
-                </div>
-                <div class="hidden md:block md:w-1/2">
-                  <img src="images/features-light-01.svg" alt="Features" class="dark:hidden" />
-                  <img src="images/features-dark-01.svg" alt="Features" class="hidden dark:block" />
-                </div>
-              </div>
-            </div>
-
-            <div x-show="featuresTab === 'tabThree'">
-              <div class="flex items-center gap-8 lg:gap-19">
-                <div class="md:w-1/2">
-                  <h2 class="text-black dark:text-white text-3xl xl:text-sectiontitle2 font-bold mb-7">Solid Has Management And Collaboration.</h2>
-                  <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies lacus non fermentum ultrices. Fusce consectetur le.</p>
-                  <p class="w-11/12">Nam id eleifend dui, id iaculis purus. Etiam lobortis neque nec finibus sagittis. Nulla ligula nunc egestas ut.</p>
-                </div>
-                <div class="hidden md:block md:w-1/2">
-                  <img src="images/features-light-01.svg" alt="Features" class="dark:hidden" />
-                  <img src="images/features-dark-01.svg" alt="Features" class="hidden dark:block" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Tab Content End -->
-        </div>
-      </section>
-      <!-- ===== Features Tab End ===== -->
+      </div>
+    </div>
+  </section>
+  <!-- ===== Freedom Calculator End ===== -->
 
       <!-- ===== Funfact Start ===== -->
       <section class="py-20 lg:py-22.5 px-4 md:px-8 2xl:px-0">
         <div
           class="mx-auto max-w-c-1390 py-22.5 xl:py-27.5 relative z-1 rounded-lg bg-gradient-to-t from-[#F8F9FF] to-[#DEE7FF] dark:bg-gradient-to-t dark:from-transparent dark:to-transparent dark:bg-blacksection dark:stroke-strokedark"
         >
-          <img src="images/shape-04.svg" alt="Man" class="absolute -top-25 -left-15 lg:left-0 -z-1" />
           <img src="images/shape-05.svg" alt="Doodle" class="absolute bottom-0 right-0 -z-1" />
           <img src="images/shape-dotted-light-02.svg" alt="Dotted" class="absolute top-0 left-0 -z-1 dark:hidden" />
           <img src="images/shape-dotted-dark-02.svg" alt="Dotted" class="absolute top-0 left-0 -z-1 hidden dark:block" />
 
           <div class="animate_top mx-auto text-center md:w-4/5 lg:w-2/3 xl:w-1/2 mb-12.5 lg:mb-17.5 px-4 md:px-0">
-            <h2 class="font-bold text-black dark:text-white text-3xl xl:text-sectiontitle3 mb-4">Trusted by Global Companies.</h2>
-            <p class="lg:w-11/12 mx-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.</p>
+            <h2 class="font-bold text-black dark:text-white text-3xl xl:text-sectiontitle3 mb-4">Building Financial Freedom Together</h2>
+            <p class="lg:w-11/12 mx-auto">Join thousands of others who are taking control of their financial future with our comprehensive wealth management platform.</p>
           </div>
 
           <div class="flex flex-wrap justify-center gap-8 lg:gap-42.5">
             <div class="animate_top text-center">
-              <h3 class="font-bold text-black dark:text-white text-3xl xl:text-sectiontitle3 mb-2.5">500K</h3>
-              <p class="text-lg lg:text-para2">World Wide Clients</p>
+              <h3 class="font-bold text-black dark:text-white text-3xl xl:text-sectiontitle3 mb-2.5">16K+</h3>
+              <p class="text-lg lg:text-para2">Users Empowered</p>
             </div>
             <div class="animate_top text-center">
-              <h3 class="font-bold text-black dark:text-white text-3xl xl:text-sectiontitle3 mb-2.5">1M+</h3>
-              <p class="text-lg lg:text-para2">Downloads</p>
+              <h3 class="font-bold text-black dark:text-white text-3xl xl:text-sectiontitle3 mb-2.5">12K+</h3>
+              <p class="text-lg lg:text-para2">Connected Banks</p>
             </div>
             <div class="animate_top text-center">
-              <h3 class="font-bold text-black dark:text-white text-3xl xl:text-sectiontitle3 mb-2.5">865</h3>
-              <p class="text-lg lg:text-para2">Winning Award</p>
+              <h3 class="font-bold text-black dark:text-white text-3xl xl:text-sectiontitle3 mb-2.5">70+</h3>
+              <p class="text-lg lg:text-para2">Countries Reached</p>
             </div>
           </div>
         </div>
       </section>
       <!-- ===== Funfact End ===== -->
 
-      <!-- ===== Integrations Start ===== -->
-      <section>
-        <div class="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-          <!-- Section Title Start -->
-          <div
-            class="animate_top text-center mx-auto"
-            x-data="{ sectionTitle: `INTEGRATIONS`, sectionSubtitle: `Remotely Maintain Your Data, From Anywhere, Anytime.`, sectionTitlePara: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.`}"
-          >
-            <div class="bg-zumthor dark:bg-blacksection dark:border dark:border-strokedark inline-block rounded-full py-1.5 px-4.5 mb-4">
-  <h4 x-text="sectionTitle" class="font-medium text-sectiontitle text-black dark:text-white"></h4>
-</div>
-<h2 x-text="sectionSubtitle" class="font-bold text-3xl xl:text-sectiontitle3 text-black dark:text-white md:w-4/5 xl:w-1/2 mx-auto mb-4"></h2>
-<p class="mx-auto md:w-4/5 lg:w-3/5 xl:w-[46%]" x-text="sectionTitlePara"></p>
-
-          </div>
-          <!-- Section Title End -->
-        </div>
-
-        <div class="mx-auto max-w-c-1154 px-4 md:px-8 xl:px-0 relative z-50 mt-15 xl:mt-20">
-          <div class="absolute -top-3/4 -z-1">
-            <img src="images/shape-dotted-light.svg" alt="Dotted" class="dark:hidden" />
-            <img src="images/shape-dotted-dark.svg" alt="Dotted" class="hidden dark:block" />
-          </div>
-          <div class="flex flex-wrap gap-y-10 justify-around">
-            <div class="animate_top w-1/6">
-              <div class="inline-block rounded-[10px] shadow-solid-7 bg-white dark:bg-btndark p-4.5">
-                <img src="images/brand-07.svg" alt="Brand" />
-              </div>
-            </div>
-
-            <div class="animate_top w-1/6"></div>
-
-            <div class="animate_top w-1/6">
-              <div class="inline-block rounded-[10px] shadow-solid-7 bg-white dark:bg-btndark p-4.5">
-                <img src="images/brand-08.svg" alt="Brand" />
-              </div>
-            </div>
-
-            <div class="animate_top w-1/6">
-              <div class="bg-[#FFDB26] rounded-full w-[11px] h-[11px]"></div>
-            </div>
-
-            <div class="animate_top w-1/6">
-              <div class="inline-block rounded-[10px] shadow-solid-7 bg-white dark:bg-btndark p-4.5">
-                <img src="images/brand-09.svg" alt="Brand" />
-              </div>
-            </div>
-
-            <div class="animate_top w-1/6"></div>
-
-            <div class="animate_top w-1/6">
-              <div class="bg-[#62E888] rounded-full w-[15px] h-[15px]"></div>
-            </div>
-
-            <div class="animate_top w-1/6">
-              <div class="inline-block rounded-[10px] shadow-solid-7 bg-white dark:bg-btndark p-4.5">
-                <img src="images/brand-10.svg" alt="Brand" />
-              </div>
-            </div>
-
-            <div class="animate_top w-1/6">
-              <div class="bg-[#EF5C00] rounded-full w-[23px] h-[23px]"></div>
-            </div>
-
-            <div class="animate_top w-1/6">
-              <div class="inline-block rounded-[10px] shadow-solid-7 bg-white dark:bg-btndark p-4.5">
-                <img src="images/brand-11.svg" alt="Brand" />
-              </div>
-            </div>
-
-            <div class="animate_top w-1/6">
-              <div class="bg-[#016BFF] rounded-full w-[15px] h-[15px]"></div>
-            </div>
-
-            <div class="animate_top w-1/6">
-              <div class="inline-block rounded-[10px] shadow-solid-7 bg-white dark:bg-btndark p-4.5">
-                <img src="images/brand-12.svg" alt="Brand" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- ===== Integrations End ===== -->
-
-      <!-- ===== CTA Start ===== -->
-      <section class="py-20 lg:py-25 xl:py-30 px-4 md:px-8 2xl:px-0 overflow-hidden">
-        <div
-          class="mx-auto max-w-c-1390 px-7.5 md:px-12.5 xl:px-17.5 py-12.5 xl:py-0 rounded-lg bg-gradient-to-t from-[#F8F9FF] to-[#DEE7FF] dark:bg-gradient-to-t dark:from-transparent dark:to-transparent dark:bg-blacksection dark:stroke-strokedark"
-        >
-          <div class="flex flex-wrap md:flex-nowrap md:items-center md:justify-between gap-8 md:gap-0">
-            <div class="animate_left md:w-[70%] lg:w-1/2">
-              <h2 class="text-black dark:text-white text-3xl xl:text-sectiontitle4 font-bold mb-4 w-11/12">Join With Us Today & Increase Your Productivity</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.</p>
-            </div>
-            <div class="animate_right lg:w-[45%]">
-              <div class="flex items-center justify-end xl:justify-between">
-                <img src="images/shape-06.svg" alt="Saly" class="hidden xl:block" />
-                <a href="signup.html" class="inline-flex items-center gap-2.5 font-medium text-white dark:text-black bg-black dark:bg-white rounded-full py-3 px-6">
-                  Sign up free
-                  <img src="images/icon-arrow-dark.svg" alt="Arrow" class="dark:hidden" />
-                  <img src="images/icon-arrow-light.svg" alt="Arrow" class="hidden dark:block" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- ===== CTA End ===== -->
-
       <!-- ===== FAQ Start ===== -->
-      <section class="pb-20 lg:pb-25 xl:pb-30 overflow-hidden">
-        <div class="mx-auto max-w-c-1235 px-4 md:px-8 xl:px-0 relative">
-          <div class="absolute -bottom-7.5 -z-1">
-            <img src="images/shape-dotted-light.svg" alt="Dotted" class="dark:hidden" />
-            <img src="images/shape-dotted-light.svg" alt="Dotted" class="hidden dark:block" />
-          </div>
-          <div class="flex flex-wrap md:flex-nowrap md:items-center gap-8 xl:gap-32.5">
-            <div class="animate_left md:w-2/5 lg:w-1/2">
-              <h4 class="text-black dark:text-white font-medium uppercase">OUR FAQS</h4>
-              <h2 class="relative font-bold text-black dark:text-white text-3xl xl:text-hero mb-6">
-                Frequently Asked
-                <span class="inline-block relative before:absolute before:bottom-2.5 before:left-0 before:w-full before:h-3 before:bg-titlebg2 dark:before:bg-titlebgdark before:-z-1">Questions</span>
-              </h2>
+<section class="pb-20 lg:pb-25 xl:pb-30 overflow-hidden">
+  <div class="mx-auto max-w-c-1235 px-4 md:px-8 xl:px-0 relative">
+    <div class="absolute -bottom-7.5 -z-1">
+      <img src="images/shape-dotted-light.svg" alt="Dotted" class="dark:hidden" />
+      <img src="images/shape-dotted-light.svg" alt="Dotted" class="hidden dark:block" />
+    </div>
+    <div class="flex flex-wrap md:flex-nowrap md:items-center gap-8 xl:gap-32.5">
+      <div class="animate_left md:w-2/5 lg:w-1/2">
+        <h4 class="text-black dark:text-white font-medium uppercase">OUR FAQS</h4>
+        <h2 class="relative font-bold text-black dark:text-white text-3xl xl:text-hero mb-6">
+          Frequently Asked
+          <span class="inline-block relative before:absolute before:bottom-2.5 before:left-0 before:w-full before:h-3 before:bg-titlebg2 dark:before:bg-titlebgdark before:-z-1">Questions</span>
+        </h2>
+      </div>
 
-              <a href="#" class="flex items-center gap-2.5 text-black dark:text-white mt-25">
-                Know More
-                <img class="dark:hidden" src="images/icon-arrow-light.svg" alt="Arrow" />
-                <img class="hidden dark:block" src="images/icon-arrow-dark.svg" alt="Arrow" />
-              </a>
-            </div>
-
-            <div class="animate_right md:w-3/5 lg:w-1/2">
-              <div class="bg-white dark:bg-blacksection dark:border dark:border-strokedark shadow-solid-8 rounded-lg" x-data="{selected:0}">
-                <div class="flex flex-col border-b border-stroke dark:border-strokedark">
-                  <h4
-                    @click="selected !== 0 ? selected = 0 : selected = null"
-                    class="cursor-pointer flex justify-between items-center font-medium text-metatitle3 text-black dark:text-white py-5 lg:py-7.5 px-6 lg:px-9"
-                  >
-                    Lorem ipsum dolor sit amet, consectetur.
-                    <img src="images/icon-plus-light.svg" alt="plus" class="dark:hidden" :class="selected == 0 ? 'hidden' : 'block'" />
-                    <img src="images/icon-minus-light.svg" alt="minus" class="dark:hidden" :class="selected == 0 ? 'block' : 'hidden'" />
-                    <img src="images/icon-plus-dark.svg" alt="plus" class="hidden dark:block" :class="selected == 0 ? 'dark:hidden' : 'dark:block'" />
-                    <img src="images/icon-minus-dark.svg" alt="minus" class="hidden dark:block" :class="selected == 0 ? 'dark:block' : 'dark:hidden'" />
-                  </h4>
-                  <p x-show="selected == 0" class="py-5 lg:py-7.5 px-6 lg:px-9 border-t border-stroke dark:border-strokedark">
-                    We provide digital experience services to startups and small businesses. We help our clients succeed by creating brand identities, digital experiences.
-                  </p>
-                </div>
-                <div class="flex flex-col border-b border-stroke dark:border-strokedark">
-                  <h4
-                    @click="selected !== 1 ? selected = 1 : selected = null"
-                    class="cursor-pointer flex justify-between items-center font-medium text-metatitle3 text-black dark:text-white py-5 lg:py-7.5 px-6 lg:px-9"
-                  >
-                    Lorem ipsum dolor sit amet, consectetur.
-                    <img src="images/icon-plus-light.svg" alt="plus" class="dark:hidden" :class="selected == 1 ? 'hidden' : 'block'" />
-                    <img src="images/icon-minus-light.svg" alt="minus" class="dark:hidden" :class="selected == 1 ? 'block' : 'hidden'" />
-                    <img src="images/icon-plus-dark.svg" alt="plus" class="hidden dark:block" :class="selected == 1 ? 'dark:hidden' : 'dark:block'" />
-                    <img src="images/icon-minus-dark.svg" alt="minus" class="hidden dark:block" :class="selected == 1 ? 'dark:block' : 'dark:hidden'" />
-                  </h4>
-                  <p x-show="selected == 1" class="py-5 lg:py-7.5 px-6 lg:px-9 border-t border-stroke dark:border-strokedark">
-                    We provide digital experience services to startups and small businesses. We help our clients succeed by creating brand identities, digital experiences.
-                  </p>
-                </div>
-                <div class="flex flex-col">
-                  <h4
-                    @click="selected !== 2 ? selected = 2 : selected = null"
-                    :class="{'cursor-pointer flex justify-between items-center font-medium text-metatitle3 text-black dark:text-white py-5 lg:py-7.5 px-6 lg:px-9': true, 'rounded-b': selected != 2}"
-                  >
-                    Lorem ipsum dolor sit amet, consectetur.
-                    <img src="images/icon-plus-light.svg" alt="plus" class="dark:hidden" :class="selected == 2 ? 'hidden' : 'block'" />
-                    <img src="images/icon-minus-light.svg" alt="minus" class="dark:hidden" :class="selected == 2 ? 'block' : 'hidden'" />
-                    <img src="images/icon-plus-dark.svg" alt="plus" class="hidden dark:block" :class="selected == 2 ? 'dark:hidden' : 'dark:block'" />
-                    <img src="images/icon-minus-dark.svg" alt="minus" class="hidden dark:block" :class="selected == 2 ? 'dark:block' : 'dark:hidden'" />
-                  </h4>
-                  <p x-show="selected == 2" :class="{'py-5 lg:py-7.5 px-6 lg:px-9 border-t border-stroke dark:border-strokedark': true, 'rounded-b': selected == 2}">
-                    We provide digital experience services to startups and small businesses. We help our clients succeed by creating brand identities, digital experiences.
-                  </p>
-                </div>
-              </div>
-            </div>
+      <div class="animate_right md:w-3/5 lg:w-1/2">
+        <div class="bg-white dark:bg-blacksection dark:border dark:border-strokedark shadow-solid-8 rounded-lg" x-data="{selected:0}">
+          <div class="flex flex-col border-b border-stroke dark:border-strokedark">
+            <h4
+              @click="selected !== 0 ? selected = 0 : selected = null"
+              class="cursor-pointer flex justify-between items-center font-medium text-metatitle3 text-black dark:text-white py-5 lg:py-7.5 px-6 lg:px-9"
+            >
+              How is this different from my bank's budgeting tools?
+              <img src="images/icon-plus-light.svg" alt="plus" class="dark:hidden" :class="selected == 0 ? 'hidden' : 'block'" />
+              <img src="images/icon-minus-light.svg" alt="minus" class="dark:hidden" :class="selected == 0 ? 'block' : 'hidden'" />
+              <img src="images/icon-plus-dark.svg" alt="plus" class="hidden dark:block" :class="selected == 0 ? 'dark:hidden' : 'dark:block'" />
+              <img src="images/icon-minus-dark.svg" alt="minus" class="hidden dark:block" :class="selected == 0 ? 'dark:block' : 'dark:hidden'" />
+            </h4>
+            <p x-show="selected == 0" class="py-5 lg:py-7.5 px-6 lg:px-9 border-t border-stroke dark:border-strokedark">
+              Unlike basic bank tools, we provide a complete wealth-building platform that connects all your accounts in one place. You'll get smart automation features, personalized recommendations, and powerful tools specifically designed to help you save more and build wealth faster - all with a cleaner, easier-to-use interface than your bank's portal.
+            </p>
           </div>
+          <div class="flex flex-col border-b border-stroke dark:border-strokedark">
+            <h4
+              @click="selected !== 1 ? selected = 1 : selected = null"
+              class="cursor-pointer flex justify-between items-center font-medium text-metatitle3 text-black dark:text-white py-5 lg:py-7.5 px-6 lg:px-9"
+            >
+              Is my data safe and private?
+              <img src="images/icon-plus-light.svg" alt="plus" class="dark:hidden" :class="selected == 1 ? 'hidden' : 'block'" />
+              <img src="images/icon-minus-light.svg" alt="minus" class="dark:hidden" :class="selected == 1 ? 'block' : 'hidden'" />
+              <img src="images/icon-plus-dark.svg" alt="plus" class="hidden dark:block" :class="selected == 1 ? 'dark:hidden' : 'dark:block'" />
+              <img src="images/icon-minus-dark.svg" alt="minus" class="hidden dark:block" :class="selected == 1 ? 'dark:block' : 'dark:hidden'" />
+            </h4>
+            <p x-show="selected == 1" class="py-5 lg:py-7.5 px-6 lg:px-9 border-t border-stroke dark:border-strokedark">
+              Absolutely. We use the same security standards as major banks (256-bit encryption) and never store your banking credentials. Your data is encrypted, private, and used only to power your personal dashboard. Plus, you can delete your data anytime with one click.
+            </p>
+          </div>
+          <div class="flex flex-col border-b border-stroke dark:border-strokedark">
+            <h4
+              @click="selected !== 2 ? selected = 2 : selected = null"
+              class="cursor-pointer flex justify-between items-center font-medium text-metatitle3 text-black dark:text-white py-5 lg:py-7.5 px-6 lg:px-9"
+            >
+              What if I'm not satisfied with the service?
+              <img src="images/icon-plus-light.svg" alt="plus" class="dark:hidden" :class="selected == 2 ? 'hidden' : 'block'" />
+              <img src="images/icon-minus-light.svg" alt="minus" class="dark:hidden" :class="selected == 2 ? 'block' : 'hidden'" />
+              <img src="images/icon-plus-dark.svg" alt="plus" class="hidden dark:block" :class="selected == 2 ? 'dark:hidden' : 'dark:block'" />
+              <img src="images/icon-minus-dark.svg" alt="minus" class="hidden dark:block" :class="selected == 2 ? 'dark:block' : 'dark:hidden'" />
+            </h4>
+            <p x-show="selected == 2" class="py-5 lg:py-7.5 px-6 lg:px-9 border-t border-stroke dark:border-strokedark">
+              Try us free for 30 days with full access to all features. If you're not completely satisfied, cancel anytime with one click - no questions asked. After your trial, it's just $8.99/month, and you can still cancel anytime. We're confident you'll love the control and clarity our platform provides.
+            </p>
+          </div>
+          <div class="flex flex-col">
+            <h4
+              @click="selected !== 3 ? selected = 3 : selected = null"
+              class="cursor-pointer flex justify-between items-center font-medium text-metatitle3 text-black dark:text-white py-5 lg:py-7.5 px-6 lg:px-9"
+            >
+              How quickly can I get started?
+              <img src="images/icon-plus-light.svg" alt="plus" class="dark:hidden" :class="selected == 3 ? 'hidden' : 'block'" />
+              <img src="images/icon-minus-light.svg" alt="minus" class="dark:hidden" :class="selected == 3 ? 'block' : 'hidden'" />
+              <img src="images/icon-plus-dark.svg" alt="plus" class="hidden dark:block" :class="selected == 3 ? 'dark:hidden' : 'dark:block'" />
+              <img src="images/icon-minus-dark.svg" alt="minus" class="hidden dark:block" :class="selected == 3 ? 'dark:block' : 'dark:hidden'" />
+            </h4>
+            <p x-show="selected == 3" class="py-5 lg:py-7.5 px-6 lg:px-9 border-t border-stroke dark:border-strokedark">
+              Setup takes just 30 seconds. Connect your accounts instantly, and you'll see your complete financial dashboard right away. Our smart system automatically categorizes your transactions and sets up personalized budgets based on your spending patterns. Plus, our support team is available 24/7 if you need any help.
+            </p>
+          </div>
+
+    
+
+
+
+
+
         </div>
-      </section>
-      <!-- ===== FAQ End ===== -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== FAQ End ===== -->
 
-      <!-- ===== Testimonials Start ===== -->
-      <section>
-        <div class="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
-          <!-- Section Title Start -->
-          <div
-            class="animate_top text-center mx-auto"
-            x-data="{ sectionTitle: `TESTIMONIALS`, sectionSubtitle: `Client’s Testimonials`, sectionTitlePara: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.`}"
-          >
-            <div class="bg-zumthor dark:bg-blacksection dark:border dark:border-strokedark inline-block rounded-full py-1.5 px-4.5 mb-4">
+<!-- ===== Key Features Start ===== -->
+<section id="features" class="py-20 lg:py-25 xl:py-30">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-c-1315">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Feature Item Start -->
+      <div class="animate_top p-6 border-b md:border-b-0 md:border-r border-gray-200 dark:border-gray-700">
+        <h3 class="text-lg font-semibold text-black dark:text-white mb-2">
+          Comprehensive Overview
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400">
+          Get a complete view of your finances in one place.
+        </p>
+      </div>
+      <!-- Feature Item End -->
+
+      <!-- Feature Item Start -->
+      <div class="animate_top p-6 border-b md:border-b-0 md:border-r border-gray-200 dark:border-gray-700">
+        <h3 class="text-lg font-semibold text-black dark:text-white mb-2">
+          Smart Budgeting
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400">
+          Create and manage budgets with intuitive tools.
+        </p>
+      </div>
+      <!-- Feature Item End -->
+
+      <!-- Feature Item Start -->
+      <div class="animate_top p-6">
+        <h3 class="text-lg font-semibold text-black dark:text-white mb-2">
+          Wealth Tracking
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400">
+          Monitor investments in real-time with advanced analytics.
+        </p>
+      </div>
+      <!-- Feature Item End -->
+    </div>
+  </div>
+</section>
+<!-- ===== Key Features End ===== -->
+
+
+<!-- ===== Pricing Table Start ===== -->
+<section id="pricing" class="pt-15 lg:pt-20 xl:pt-25 pb-20 lg:pb-25 xl:pb-30">
+  <div class="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
+    <!-- Section Title Start -->
+    <div
+      class="animate_top text-center mx-auto"
+      x-data="{ 
+        sectionTitle: `Limited Time Offer`, 
+        sectionSubtitle: `Start Building Wealth Today`, 
+        sectionTitlePara: `Join thousands of others who are taking control of their financial future with our all-in-one wealth building platform`
+      }"
+    >
+      <div class="bg-zumthor dark:bg-blacksection dark:border dark:border-strokedark inline-block rounded-full py-1.5 px-4.5 mb-4">
   <h4 x-text="sectionTitle" class="font-medium text-sectiontitle text-black dark:text-white"></h4>
 </div>
 <h2 x-text="sectionSubtitle" class="font-bold text-3xl xl:text-sectiontitle3 text-black dark:text-white md:w-4/5 xl:w-1/2 mx-auto mb-4"></h2>
 <p class="mx-auto md:w-4/5 lg:w-3/5 xl:w-[46%]" x-text="sectionTitlePara"></p>
 
-          </div>
-          <!-- Section Title End -->
+    </div>
+    <!-- Section Title End -->
+  </div>
+
+  <div class="mx-auto max-w-[1207px] px-4 md:px-8 xl:px-0 relative mt-15 xl:mt-20">
+    <div class="absolute -bottom-15 -z-1">
+      <img src="images/shape-dotted-light.svg" alt="Dotted" class="dark:hidden" />
+    </div>
+    <div class="flex flex-wrap lg:flex-nowrap justify-center gap-7.5 xl:gap-12.5">
+
+      <!-- Pricing Item -->
+      <div
+        class="animate_top md:w-[45%] lg:w-1/3 group relative bg-white dark:bg-blacksection rounded-lg shadow-solid-10 dark:shadow-none border border-stroke dark:border-strokedark p-7.5 xl:p-12.5"
+      >
+        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+          <span class="bg-primary text-white text-sm font-semibold px-4 py-2 rounded-full whitespace-nowrap">
+            30-Day Free Trial
+          </span>
         </div>
 
-        <div class="animate_top mx-auto max-w-c-1235 px-4 md:px-8 xl:px-0 mt-15 xl:mt-20">
-          <!-- Slider main container -->
-          <div class="swiper testimonial-01 pb-22.5">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-              <!-- Slides -->
-              <div class="swiper-slide">
-                <div class="bg-white rounded-lg shadow-solid-9 dark:shadow-none dark:bg-blacksection dark:border dark:border-strokedark p-9 pt-7.5">
-                  <div class="flex justify-between border-b border-stroke dark:border-strokedark pb-6 mb-7.5">
-                    <div>
-                      <h4 class="text-black dark:text-white text-metatitle3 mb-1.5">Devid Smith</h4>
-                      <p>Founter @democompany</p>
-                    </div>
-                    <img class="" src="images/user-01.svg" alt="User" />
-                  </div>
-
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit, ligula sit amet cursus tincidunt, lorem sem elementum nisi, convallis fringilla ante nibh non urna.</p>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="bg-white rounded-lg shadow-solid-9 dark:shadow-none dark:bg-blacksection dark:border dark:border-strokedark p-9 pt-7.5">
-                  <div class="flex justify-between border-b border-stroke dark:border-strokedark pb-6 mb-7.5">
-                    <div>
-                      <h4 class="text-black dark:text-white text-metatitle3 mb-1.5">Jhon Abraham</h4>
-                      <p>Founter @democompany</p>
-                    </div>
-                    <img class="" src="images/user-02.svg" alt="User" />
-                  </div>
-
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris hendrerit, ligula sit amet cursus tincidunt, lorem sem elementum nisi, convallis fringilla ante nibh non urna.</p>
-                </div>
-              </div>
-            </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-          </div>
+        <div class="flex items-center gap-2.5 mb-7.5">
+          <h3 class="text-black dark:text-white font-bold text-3xl xl:text-sectiontitle3">$8.99</h3>
+          <span class="text-regular text-waterloo dark:text-manatee">/month</span>
         </div>
-      </section>
-      <!-- ===== Testimonials End ===== -->
+        
+        <div class="flex items-center gap-2 mb-2.5">
+          <h4 class="text-black dark:text-white font-medium text-para2">Special</h4>
+          <span class="bg-meta text-white text-xs px-2 py-1 rounded-full">Save 40%</span>
+        </div>
+        <p class="text-gray-600 dark:text-gray-400">Try free for 30 days, then just $8.99/month to transform your financial future.</p>
 
-      <!-- ===== Pricing Table Start ===== -->
-      <section class="pt-15 lg:pt-20 xl:pt-25 pb-20 lg:pb-25 xl:pb-30">
-        <div class="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
-          <!-- Section Title Start -->
-          <div
-            class="animate_top text-center mx-auto"
-            x-data="{ sectionTitle: `PRICING PLANS`, sectionSubtitle: `Simple Pricing`, sectionTitlePara: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.`}"
-          >
-            <div class="bg-zumthor dark:bg-blacksection dark:border dark:border-strokedark inline-block rounded-full py-1.5 px-4.5 mb-4">
-  <h4 x-text="sectionTitle" class="font-medium text-sectiontitle text-black dark:text-white"></h4>
-</div>
-<h2 x-text="sectionSubtitle" class="font-bold text-3xl xl:text-sectiontitle3 text-black dark:text-white md:w-4/5 xl:w-1/2 mx-auto mb-4"></h2>
-<p class="mx-auto md:w-4/5 lg:w-3/5 xl:w-[46%]" x-text="sectionTitlePara"></p>
-
-          </div>
-          <!-- Section Title End -->
+        <div class="border-t border-stroke dark:border-strokedark mt-9 pt-9 pb-12.5">
+          <ul>
+            <li class="flex items-center gap-2 text-black dark:text-manatee mb-4">
+              <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+              </svg>
+              Expense Tracking & Categorization
+            </li>
+            <li class="flex items-center gap-2 text-black dark:text-manatee mb-4">
+              <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+              </svg>
+              Basic Budgeting Tools
+            </li>
+            <li class="flex items-center gap-2 text-black dark:text-manatee mb-4">
+              <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+              </svg>
+              Monthly Spending Reports
+            </li>
+            <li class="flex items-center gap-2 text-black dark:text-manatee mb-4">
+              <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+              </svg>
+              Bank Account Connection
+            </li>
+            <li class="flex items-center gap-2 text-black dark:text-manatee mb-4">
+              <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+              </svg>
+              Email Support
+            </li>
+            <li class="flex items-center gap-2 text-black dark:text-manatee mb-4">
+              <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+              </svg>
+              Secure Data Encryption
+            </li>
+          </ul>
         </div>
 
-        <div class="mx-auto max-w-[1207px] px-4 md:px-8 xl:px-0 relative mt-15 xl:mt-20">
-          <div class="absolute -bottom-15 -z-1">
-            <img src="images/shape-dotted-light.svg" alt="Dotted" class="dark:hidden" />
-          </div>
-          <div class="flex flex-wrap lg:flex-nowrap justify-center gap-7.5 xl:gap-12.5">
-            <!-- Pricing Item -->
-            <div class="animate_top md:w-[45%] lg:w-1/3 group relative bg-white dark:bg-blacksection rounded-lg shadow-solid-10 dark:shadow-none border border-stroke dark:border-strokedark p-7.5 xl:p-12.5">
-              <h3 class="text-black dark:text-white font-bold text-3xl xl:text-sectiontitle3 mb-7.5">$10 <span class="text-regular text-waterloo dark:text-manatee">/month</span></h3>
-              <h4 class="text-black dark:text-white font-medium text-para2 mb-2.5">Small Pack</h4>
-              <p>Lorem ipsum dolor sit amet, consec adipisicing elit.</p>
+        <a href="https://app.currencycaptain.com/sign-up" class="inline-block w-full">
+          <button class="w-full bg-primary hover:bg-primary-dark text-white font-semibold rounded-full px-8 py-4 text-lg transition-colors duration-300 shadow-lg hover:shadow-xl">
+            Start Your Free Trial
+            <span class="ml-2">→</span>
+          </button>
+        </a>
+        <p class="text-center text-sm text-gray-500 mt-4">30-Day Money-Back Guarantee • Cancel Anytime</p>
+      </div>
 
-              <div class="border-t border-stroke dark:border-strokedark mt-9 pt-9 pb-12.5">
-                <ul>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0">300 GB Storage</li>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0">Unlimited Photos and Videos</li>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0 opacity-40">Exclusive Support</li>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0 opacity-40">Custom Branding Strategy</li>
-                </ul>
-              </div>
+    </div>
+  </div>
+</section>
+<!-- ===== Pricing Table End ===== -->
 
-              <a href="#" class="inline-flex items-center gap-2.5 text-primary dark:text-white dark:hover:text-primary font-medium transition-all duration-300">
-                Get the Plan
-                <svg class="fill-primary dark:fill-white dark:hover:fill-primary transition-all duration-300" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M10.4767 6.17348L6.00668 1.70348L7.18501 0.525146L13.6667 7.00681L7.18501 13.4885L6.00668 12.3101L10.4767 7.84015H0.333344V6.17348H10.4767Z" fill="" />
-                </svg>
-              </a>
-            </div>
 
-            <!-- Pricing Item -->
-            <div class="animate_top md:w-[45%] lg:w-1/3 group relative bg-white dark:bg-blacksection rounded-lg shadow-solid-10 dark:shadow-none border border-stroke dark:border-strokedark p-7.5 xl:p-12.5">
-              <div class="absolute top-7.5 -right-3.5 -rotate-90 rounded-tl-full rounded-bl-full bg-primary font-medium text-white text-metatitle uppercase py-1.5 px-4.5">popular</div>
 
-              <h3 class="text-black dark:text-white font-bold text-3xl xl:text-sectiontitle3 mb-7.5">$59 <span class="text-regular text-waterloo dark:text-manatee">/month</span></h3>
-              <h4 class="text-black dark:text-white font-medium text-para2 mb-2.5">Medium Pack</h4>
-              <p>Lorem ipsum dolor sit amet, consec adipisicing elit.</p>
 
-              <div class="border-t border-stroke dark:border-strokedark mt-9 pt-9 pb-12.5">
-                <ul>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0">300 GB Storage</li>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0">Unlimited Photos and Videos</li>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0">Exclusive Support</li>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0 opacity-40">Custom Branding Strategy</li>
-                </ul>
-              </div>
-
-              <a href="#" class="inline-flex items-center gap-2.5 text-primary dark:text-white dark:hover:text-primary font-medium transition-all duration-300">
-                Get the Plan
-                <svg class="fill-primary dark:fill-white dark:hover:fill-primary transition-all duration-300" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M10.4767 6.17348L6.00668 1.70348L7.18501 0.525146L13.6667 7.00681L7.18501 13.4885L6.00668 12.3101L10.4767 7.84015H0.333344V6.17348H10.4767Z" fill="" />
-                </svg>
-              </a>
-            </div>
-
-            <!-- Pricing Item -->
-            <div class="animate_top md:w-[45%] lg:w-1/3 group relative bg-white dark:bg-blacksection rounded-lg shadow-solid-10 dark:shadow-none border border-stroke dark:border-strokedark p-7.5 xl:p-12.5">
-              <h3 class="text-black dark:text-white font-bold text-3xl xl:text-sectiontitle3 mb-7.5">$189 <span class="text-regular text-waterloo dark:text-manatee">/month</span></h3>
-              <h4 class="text-black dark:text-white font-medium text-para2 mb-2.5">Large Pack</h4>
-              <p>Lorem ipsum dolor sit amet, consec adipisicing elit.</p>
-
-              <div class="border-t border-stroke dark:border-strokedark mt-9 pt-9 pb-12.5">
-                <ul>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0">300 GB Storage</li>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0">Unlimited Photos and Videos</li>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0">Exclusive Support</li>
-                  <li class="text-black dark:text-manatee mb-4 last:mb-0">Custom Branding Strategy</li>
-                </ul>
-              </div>
-
-              <a href="#" class="inline-flex items-center gap-2.5 text-primary dark:text-white dark:hover:text-primary font-medium transition-all duration-300">
-                Get the Plan
-                <svg class="fill-primary dark:fill-white dark:hover:fill-primary transition-all duration-300" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M10.4767 6.17348L6.00668 1.70348L7.18501 0.525146L13.6667 7.00681L7.18501 13.4885L6.00668 12.3101L10.4767 7.84015H0.333344V6.17348H10.4767Z" fill="" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- ===== Pricing Table End ===== -->
-
-      <!-- ===== Contact Start ===== -->
+      <!-- ===== Contact Start ===== 
       <section id="support" class="px-4 md:px-8 2xl:px-0">
         <div class="mx-auto max-w-c-1390 relative pt-10 lg:pt-15 xl:pt-20 px-7.5 lg:px-15 xl:px-20 overflow-hidden">
           <div class="absolute -z-1 rounded-lg left-0 top-0 w-full h-2/3 bg-gradient-to-t from-[#F8F9FF] to-[#DEE7FF] dark:bg-gradient-to-t dark:from-[#24283E] dark:to-[#252A42]"></div>
           <div class="absolute -z-1 bottom-5 left-0 w-full h-1/3">
-            <img src="images/shape-dotted-light.svg" alt="Dotted" class="dark:hidden" />
-            <img src="images/shape-dotted-dark.svg" alt="Dotted" class="hidden dark:block" />
+            <img src="./images/shape/shape-dotted-light.svg" alt="Dotted" class="dark:hidden" />
+            <img src="./images/shape/shape-dotted-dark.svg" alt="Dotted" class="hidden dark:block" />
           </div>
 
           <div class="flex flex-wrap md:flex-nowrap flex-col-reverse md:flex-row gap-8 xl:gap-20 md:justify-between">
@@ -876,7 +988,7 @@
                           </span>
                         </div>
                       </div>
-                      By clicking Checkbox, you agree to use our “Form” terms And consent cookie usage in browser.
+                      By clicking Checkbox, you agree to use our "Form" terms And consent cookie usage in browser.
                     </label>
                   </div>
 
@@ -909,12 +1021,12 @@
           </div>
         </div>
       </section>
-      <!-- ===== Contact End ===== -->
+       ===== Contact End ===== -->
 
-      <!-- ===== Blog Start ===== -->
+      <!-- ===== Blog Start ===== 
       <section class="py-20 lg:py-25 xl:py-30">
-        <div class="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
-          <!-- Section Title Start -->
+        <div class="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">-->
+          <!-- Section Title Start 
           <div
             class="animate_top text-center mx-auto"
             x-data="{ sectionTitle: `NEWS & BLOGS`, sectionSubtitle: `Latest News & Blogs`, sectionTitlePara: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.`}"
@@ -925,16 +1037,16 @@
 <h2 x-text="sectionSubtitle" class="font-bold text-3xl xl:text-sectiontitle3 text-black dark:text-white md:w-4/5 xl:w-1/2 mx-auto mb-4"></h2>
 <p class="mx-auto md:w-4/5 lg:w-3/5 xl:w-[46%]" x-text="sectionTitlePara"></p>
 
-          </div>
-          <!-- Section Title End -->
+          </div>-->
+          <!-- Section Title End 
         </div>
 
         <div class="mx-auto max-w-c-1280 px-4 md:px-8 xl:px-0 mt-15 xl:mt-20">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7.5 xl:gap-10">
-            <!-- Blog Item -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7.5 xl:gap-10">-->
+            <!-- Blog Item 
             <div class="animate_top bg-white dark:bg-blacksection rounded-lg shadow-solid-8 p-4 pb-9">
               <a href="#" class="block">
-                <img src="images/blog-01.png" alt="Blog" />
+                <img src="./images/blog/blog-01.png" alt="Blog" />
               </a>
 
               <div class="px-4">
@@ -943,12 +1055,12 @@
                 </h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit convallis tortor.</p>
               </div>
-            </div>
+            </div>-->
 
-            <!-- Blog Item -->
+            <!-- Blog Item 
             <div class="animate_top bg-white dark:bg-blacksection rounded-lg shadow-solid-8 p-4 pb-9">
               <a href="#" class="block">
-                <img src="images/blog-02.png" alt="Blog" />
+                <img src="./images/blog/blog-02.png" alt="Blog" />
               </a>
 
               <div class="px-4">
@@ -957,12 +1069,12 @@
                 </h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit convallis tortor.</p>
               </div>
-            </div>
+            </div>-->
 
-            <!-- Blog Item -->
+            <!-- Blog Item 
             <div class="animate_top bg-white dark:bg-blacksection rounded-lg shadow-solid-8 p-4 pb-9">
               <a href="#" class="block">
-                <img src="images/blog-03.png" alt="Blog" />
+                <img src="./images/blog/blog-03.png" alt="Blog" />
               </a>
 
               <div class="px-4">
@@ -974,166 +1086,43 @@
             </div>
           </div>
         </div>
-      </section>
+      </section>-->
       <!-- ===== Blog End ===== -->
     </main>
     <!-- ===== Footer Start ===== -->
     <footer class="bg-white dark:bg-blacksection border-t border-stroke dark:border-strokedark">
   <div class="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-    <!-- Footer Top -->
-    <div class="py-20 lg:py-25">
-      <div class="flex flex-wrap lg:justify-between gap-8 lg:gap-0">
-        <div class="animate_top w-1/2 lg:w-1/4">
-          <a href="index.html">
-            <img src="images/logo-light.svg" alt="Logo" class="dark:hidden" />
-            <img src="images/logo-dark.svg" alt="Logo" class="hidden dark:block" />
-          </a>
-
-          <p class="mt-5 mb-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-          <p class="uppercase tracking-[5px] text-sectiontitle mb-1.5">contact</p>
-          <a href="#" class="text-black dark:text-white font-medium text-itemtitle">hello@solid.com</a>
-        </div>
-
-        <div class="w-full lg:w-2/3 xl:w-7/12 flex flex-col md:flex-row md:justify-between gap-8 md:gap-0">
-          <div class="animate_top">
-            <h4 class="font-medium text-black dark:text-white text-itemtitle2 mb-9">Quick Links</h4>
-
-            <ul>
-              <li><a href="#" class="inline-block hover:text-primary mb-3">Home</a></li>
-              <li><a href="#" class="inline-block hover:text-primary mb-3">Product</a></li>
-              <li><a href="#" class="inline-block hover:text-primary mb-3">Careers</a></li>
-              <li><a href="#" class="inline-block hover:text-primary mb-3">Pricing</a></li>
-            </ul>
-          </div>
-
-          <div class="animate_top">
-            <h4 class="font-medium text-black dark:text-white text-itemtitle2 mb-9">Support</h4>
-
-            <ul>
-              <li><a href="#" class="inline-block hover:text-primary mb-3">Company</a></li>
-              <li><a href="#" class="inline-block hover:text-primary mb-3">Press media</a></li>
-              <li><a href="#" class="inline-block hover:text-primary mb-3">Our Blog</a></li>
-              <li><a href="#" class="inline-block hover:text-primary mb-3">Contact Us</a></li>
-            </ul>
-          </div>
-
-          <div class="animate_top">
-            <h4 class="font-medium text-black dark:text-white text-itemtitle2 mb-9">Newsletter</h4>
-            <p class="mb-4 w-[90%]">Subscribe to receive future updates</p>
-
-            <form action="#">
-              <div class="relative">
-                <input
-                  type="text"
-                  placeholder="Email address"
-                  class="w-full dark:bg-black border border-stroke dark:border-strokedark shadow-solid-11 dark:shadow-none rounded-full focus:outline-none focus:border-primary dark:focus:border-primary py-3 px-6"
-                />
-
-                <button class="absolute right-0 p-4">
-                  <svg class="fill-[#757693] dark:fill-white hover:fill-primary" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_48_1487)">
-                      <path
-                        d="M3.1175 1.17318L18.5025 9.63484C18.5678 9.67081 18.6223 9.72365 18.6602 9.78786C18.6982 9.85206 18.7182 9.92527 18.7182 9.99984C18.7182 10.0744 18.6982 10.1476 18.6602 10.2118C18.6223 10.276 18.5678 10.3289 18.5025 10.3648L3.1175 18.8265C3.05406 18.8614 2.98262 18.8792 2.91023 18.8781C2.83783 18.8769 2.76698 18.857 2.70465 18.8201C2.64232 18.7833 2.59066 18.7308 2.55478 18.6679C2.51889 18.6051 2.50001 18.5339 2.5 18.4615V1.53818C2.50001 1.46577 2.51889 1.39462 2.55478 1.33174C2.59066 1.26885 2.64232 1.2164 2.70465 1.17956C2.76698 1.14272 2.83783 1.12275 2.91023 1.12163C2.98262 1.12051 3.05406 1.13828 3.1175 1.17318ZM4.16667 10.8332V16.3473L15.7083 9.99984L4.16667 3.65234V9.16651H8.33333V10.8332H4.16667Z"
-                        fill=""
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_48_1487">
-                        <rect width="20" height="20" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Footer Top -->
-
     <!-- Footer Bottom -->
     <div class="border-t border-stroke dark:border-strokedark flex flex-wrap flex-col lg:flex-row items-center justify-center lg:justify-between gap-5 lg:gap-0 py-7">
       <div class="animate_top">
-        <ul class="flex items-center gap-8">
-          <li><a href="#" class="hover:text-primary">English</a></li>
-          <li><a href="#" class="hover:text-primary">Privacy Policy</a></li>
-          <li><a href="#" class="hover:text-primary">Support</a></li>
-        </ul>
-      </div>
-
+        <footer className="text-white text-xs">
+          <div className="fixed bg-[#111827] bottom-0 left-0 z-20 w-full border-t border-gray-200 shadow md:flex md:items-center md:justify-between p-3 dark:border-gray-600">
+            <p>&copy; 2024 Blackshore Technologies Inc. All rights reserved.</p>
+            <nav className="mt-2">
+              <ul className="flex justify-center space-x-4">
+              <li>
+              <a href="mailto:info@blackshoretechnologies.com" className="hover:underline">Contact/Support</a>
+            </li>
+                <li>
+                  <a href="https://app.currencycaptain.com/riskDisclaimer" className="hover:underline">Risk Disclaimer</a>
+                </li>
+                <li>
+                  <a href="https://app.currencycaptain.com/privacy-policy" className="hover:underline">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="https://app.currencycaptain.com/terms" className="hover:underline">Terms</a>
+                </li>
+                <li>
+                  <a href="https://app.currencycaptain.com/earnings-disclaimer" className="hover:underline">Earnings Disclaimer</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          </footer>
+    </div>
+    
       <div class="animate_top">
-        <p>&copy; 2025 Solid. All rights reserved</p>
-      </div>
-
-      <div class="animate_top">
-        <ul class="flex items-center gap-5">
-          <li>
-            <a href="#">
-              <svg class="fill-[#D1D8E0] hover:fill-primary transition-all duration-300" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_48_1499)">
-                  <path d="M14 13.5H16.5L17.5 9.5H14V7.5C14 6.47 14 5.5 16 5.5H17.5V2.14C17.174 2.097 15.943 2 14.643 2C11.928 2 10 3.657 10 6.7V9.5H7V13.5H10V22H14V13.5Z" fill="" />
-                </g>
-                <defs>
-                  <clipPath id="clip0_48_1499">
-                    <rect width="24" height="24" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <svg class="fill-[#D1D8E0] hover:fill-primary transition-all duration-300" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_48_1502)">
-                  <path
-                    d="M22.162 5.65593C21.3985 5.99362 20.589 6.2154 19.76 6.31393C20.6337 5.79136 21.2877 4.96894 21.6 3.99993C20.78 4.48793 19.881 4.82993 18.944 5.01493C18.3146 4.34151 17.4803 3.89489 16.5709 3.74451C15.6615 3.59413 14.7279 3.74842 13.9153 4.18338C13.1026 4.61834 12.4564 5.30961 12.0771 6.14972C11.6978 6.98983 11.6067 7.93171 11.818 8.82893C10.1551 8.74558 8.52832 8.31345 7.04328 7.56059C5.55823 6.80773 4.24812 5.75098 3.19799 4.45893C2.82628 5.09738 2.63095 5.82315 2.63199 6.56193C2.63199 8.01193 3.36999 9.29293 4.49199 10.0429C3.828 10.022 3.17862 9.84271 2.59799 9.51993V9.57193C2.59819 10.5376 2.93236 11.4735 3.54384 12.221C4.15532 12.9684 5.00647 13.4814 5.95299 13.6729C5.33661 13.84 4.6903 13.8646 4.06299 13.7449C4.32986 14.5762 4.85 15.3031 5.55058 15.824C6.25117 16.345 7.09712 16.6337 7.96999 16.6499C7.10247 17.3313 6.10917 17.8349 5.04687 18.1321C3.98458 18.4293 2.87412 18.5142 1.77899 18.3819C3.69069 19.6114 5.91609 20.2641 8.18899 20.2619C15.882 20.2619 20.089 13.8889 20.089 8.36193C20.089 8.18193 20.084 7.99993 20.076 7.82193C20.8949 7.2301 21.6016 6.49695 22.163 5.65693L22.162 5.65593Z"
-                    fill=""
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_48_1502">
-                    <rect width="24" height="24" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <svg class="fill-[#D1D8E0] hover:fill-primary transition-all duration-300" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_48_1505)">
-                  <path
-                    d="M6.94 5.00002C6.93974 5.53046 6.72877 6.03906 6.35351 6.41394C5.97825 6.78883 5.46944 6.99929 4.939 6.99902C4.40857 6.99876 3.89997 6.78779 3.52508 6.41253C3.1502 6.03727 2.93974 5.52846 2.94 4.99802C2.94027 4.46759 3.15124 3.95899 3.5265 3.5841C3.90176 3.20922 4.41057 2.99876 4.941 2.99902C5.47144 2.99929 5.98004 3.21026 6.35492 3.58552C6.72981 3.96078 6.94027 4.46959 6.94 5.00002ZM7 8.48002H3V21H7V8.48002ZM13.32 8.48002H9.34V21H13.28V14.43C13.28 10.77 18.05 10.43 18.05 14.43V21H22V13.07C22 6.90002 14.94 7.13002 13.28 10.16L13.32 8.48002Z"
-                    fill=""
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_48_1505">
-                    <rect width="24" height="24" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <svg class="fill-[#D1D8E0] hover:fill-primary transition-all duration-300" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_48_1508)">
-                  <path
-                    d="M7.443 5.3501C8.082 5.3501 8.673 5.4001 9.213 5.5481C9.70301 5.63814 10.1708 5.82293 10.59 6.0921C10.984 6.3391 11.279 6.6861 11.475 7.1311C11.672 7.5761 11.77 8.1211 11.77 8.7141C11.77 9.4071 11.623 10.0001 11.279 10.4451C10.984 10.8911 10.492 11.2861 9.902 11.5831C10.738 11.8311 11.377 12.2761 11.77 12.8691C12.164 13.4631 12.41 14.2051 12.41 15.0461C12.41 15.7391 12.262 16.3321 12.016 16.8271C11.77 17.3221 11.377 17.7671 10.934 18.0641C10.4528 18.3825 9.92084 18.6165 9.361 18.7561C8.771 18.9051 8.181 19.0041 7.591 19.0041H1V5.3501H7.443ZM7.049 10.8901C7.59 10.8901 8.033 10.7421 8.377 10.4951C8.721 10.2481 8.869 9.8021 8.869 9.2581C8.869 8.9611 8.819 8.6641 8.721 8.4671C8.623 8.2691 8.475 8.1201 8.279 7.9721C8.082 7.8731 7.885 7.7741 7.639 7.7251C7.393 7.6751 7.148 7.6751 6.852 7.6751H4V10.8911H7.05L7.049 10.8901ZM7.197 16.7281C7.492 16.7281 7.787 16.6781 8.033 16.6291C8.28138 16.5819 8.51628 16.4805 8.721 16.3321C8.92139 16.1873 9.08903 16.002 9.213 15.7881C9.311 15.5411 9.41 15.2441 9.41 14.8981C9.41 14.2051 9.213 13.7101 8.82 13.3641C8.426 13.0671 7.885 12.9191 7.246 12.9191H4V16.7291H7.197V16.7281ZM16.689 16.6781C17.082 17.0741 17.672 17.2721 18.459 17.2721C19 17.2721 19.492 17.1241 19.885 16.8771C20.279 16.5801 20.525 16.2831 20.623 15.9861H23.033C22.639 17.1731 22.049 18.0141 21.263 18.5581C20.475 19.0531 19.541 19.3501 18.41 19.3501C17.6864 19.3523 16.9688 19.2179 16.295 18.9541C15.6887 18.7266 15.148 18.3529 14.721 17.8661C14.2643 17.4107 13.9267 16.8498 13.738 16.2331C13.492 15.5901 13.393 14.8981 13.393 14.1061C13.393 13.3641 13.492 12.6721 13.738 12.0281C13.9745 11.4082 14.3245 10.8378 14.77 10.3461C15.213 9.9011 15.754 9.5061 16.344 9.2581C17.0007 8.99416 17.7022 8.85969 18.41 8.8621C19.246 8.8621 19.984 9.0111 20.623 9.3571C21.263 9.7031 21.754 10.0991 22.148 10.6931C22.5499 11.2636 22.8494 11.8998 23.033 12.5731C23.131 13.2651 23.18 13.9581 23.131 14.7491H16C16 15.5411 16.295 16.2831 16.689 16.6791V16.6781ZM19.787 11.4841C19.443 11.1381 18.902 10.9401 18.262 10.9401C17.82 10.9401 17.475 11.0391 17.18 11.1871C16.885 11.3361 16.689 11.5341 16.492 11.7321C16.311 11.9234 16.1912 12.1643 16.148 12.4241C16.098 12.6721 16.049 12.8691 16.049 13.0671H20.475C20.377 12.3251 20.131 11.8311 19.787 11.4841V11.4841ZM15.459 6.2901H20.967V7.6261H15.46V6.2901H15.459Z"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_48_1508">
-                    <rect width="24" height="24" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </a>
-          </li>
-        </ul>
+        
       </div>
     </div>
     <!-- Footer Bottom -->
@@ -1155,5 +1144,42 @@
 </button>
 
     <!-- ====== Back To Top End ===== -->
+
+ 
+
+    <!-- Add this script just before the closing body tag -->
+    <script>
+      const incomeSlider = document.getElementById('incomeSlider');
+      const incomeDisplay = document.getElementById('incomeDisplay');
+      const machineSize = document.getElementById('machineSize');
+      const businessEquiv = document.getElementById('businessEquiv');
+      const rentalEquiv = document.getElementById('rentalEquiv');
+      const dividendEquiv = document.getElementById('dividendEquiv');
+
+      function updateCalculator() {
+        const monthlyIncome = parseInt(incomeSlider.value);
+        const annualIncome = monthlyIncome * 12;
+        const requiredCapital = annualIncome * 25; // 4% rule = multiply by 25
+
+        // Update main displays
+        incomeDisplay.textContent = '$' + monthlyIncome.toLocaleString();
+        machineSize.textContent = '$' + requiredCapital.toLocaleString();
+
+        // Update equivalents
+        // Business profit needed (assuming 30% profit margin)
+        const businessRevenue = Math.round((annualIncome / 0.30));
+        // Rental income (assuming 8% annual return after expenses)
+        const rentalProperties = Math.ceil(requiredCapital / 300000); // Assuming $300k per property
+        // Dividend portfolio (at 4% yield)
+        const dividendAmount = requiredCapital.toLocaleString();
+
+        businessEquiv.textContent = `Building a $${(businessRevenue).toLocaleString()}/year business at 30% margin`;
+        rentalEquiv.textContent = `${rentalProperties} properties generating $${Math.round(requiredCapital * 0.08 / rentalProperties).toLocaleString()} each/year`;
+        dividendEquiv.textContent = `A $${dividendAmount} investment portfolio yielding 4% annually`;
+      }
+
+      incomeSlider.addEventListener('input', updateCalculator);
+      updateCalculator(); // Initialize values
+    </script>
   <script defer src="bundle.js"></script></body>
 </html>
