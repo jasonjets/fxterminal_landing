@@ -49,15 +49,15 @@
       @click.away="navigationOpen = false"
     >
       <nav class="flex flex-col gap-4">
-        <a href="#features" class="text-white hover:text-primary">Features</a>
-        <a href="#pricing" class="text-white hover:text-primary">Pricing</a>
-        <a href="#formula" class="text-white hover:text-primary">The Formula</a>
-        <a href="#freedom-calculator" class="text-white hover:text-primary">Freedom Calculator</a>
-        <a href="#about" class="text-white hover:text-primary">About</a>
+        <a href="#features" class="text-white hover:text-primary" @click="navigationOpen = false">Features</a>
+        <a href="#pricing" class="text-white hover:text-primary" @click="navigationOpen = false">Pricing</a>
+        <a href="#formula" class="text-white hover:text-primary" @click="navigationOpen = false">The Formula</a>
+        <a href="#freedom-calculator" class="text-white hover:text-primary" @click="navigationOpen = false">Freedom Calculator</a>
+        <a href="#about" class="text-white hover:text-primary" @click="navigationOpen = false">About</a>
         <hr class="border-gray-700">
-        <a href="https://app.currencycaptain.com/sign-in" class="text-white hover:text-primary">Log In</a>
+        <a href="https://app.currencycaptain.com/sign-in" class="text-white hover:text-primary" @click="navigationOpen = false">Log In</a>
         <a href="https://app.currencycaptain.com/sign-up" 
-           class="inline-flex items-center justify-center px-6 py-3 border border-white text-white hover:bg-white hover:text-black transition-colors rounded-md font-medium">
+           class="inline-flex items-center justify-center px-6 py-3 border border-white text-white hover:bg-white hover:text-black transition-colors rounded-md font-medium" @click="navigationOpen = false">
           Get Started
         </a>
       </nav>
